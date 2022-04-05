@@ -9,3 +9,41 @@ body {
     outline: none;
     min-height: 100vh;
 }
+
+
+:root {
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+    --weight-800: 800;
+    --weight-p00: 900;
+}
+
+.homeBackground {
+    background: rgb(42, 42, 42);
+    height: 100vh;
+}
+
+.formContainer {
+    max-width: 396px;
+    padding: 10px 5px;
+    background-color: white;
+}
+
+.recoveryButtonDivider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+}
+
+.likeLogo {
+    font-weight: 400;
+}
+
+.noneLinkElementCloner {
+    color: #4599FF;
+    cursor: pointer;
+    display: inline-block;
+}
