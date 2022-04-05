@@ -4,7 +4,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import PasswordRecovery from "../common/passwordrecovery/PasswordRecovery";
 import Register from "../common/register/Register";
-import Login from "./../common/login/Login";
+import Login from "../common/login/Login";
 
 const Dashboard = () => {
   return (

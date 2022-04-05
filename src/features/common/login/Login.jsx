@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="homeBackground">
-      <div className="formContainer">
+      <div className="p-1 formContainer">
         <Form onSubmit={handleSubmit} autoComplete="off">
           <FormGroup>
             <Label htmlFor="email">Email</Label>

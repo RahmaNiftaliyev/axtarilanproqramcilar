@@ -24,10 +24,35 @@ body {
 .homeBackground {
     background: rgb(42, 42, 42);
     height: 100vh;
+    display: flex;
+}
+
+.grid-initial {
+    display: grid;
+    grid-column-gap: 5px;
+}
+
+.frame-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.frame-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+[class*="formContainer"] {
+    margin: auto;
 }
 
 .formContainer {
-    max-width: 396px;
+    width: 396px;
+    padding: 10px 5px;
+    background-color: white;
+}
+
+.formContainer-md {
+    max-width: 540px;
     padding: 10px 5px;
     background-color: white;
 }
