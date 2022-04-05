@@ -10,13 +10,12 @@ export default  (
   ParamsStore
 ) => {
   ParamsReactDom.render(
-    <ParamsReactDom>
+
       <ParamsBrowserRouter>
         <ParamsProvider store={ParamsStore}>
           <ParamsApp />
         </ParamsProvider>
-      </ParamsBrowserRouter>
-    </ParamsReactDom>,
+      </ParamsBrowserRouter>,
     rootElement
   );
 };
