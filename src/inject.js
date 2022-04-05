@@ -1,23 +1,18 @@
-/* eslint-disable import/no-anonymous-default-export */
-const rootElement = document.getElementById("root");
+import React from "react";
 
-export default  (
-  React,
-  ParamsReactDom,
-  ParamsBrowserRouter,
-  ParamsProvider,
-  ParamsApp,
-  ParamsStore
-) => {
-  ParamsReactDom.render(
+const inject = (ParamsReactDom,ParamsBrowserRouter,ParamsProvider,ParamsApp,ParamsStore) => {
 
-      <ParamsBrowserRouter>
-        <ParamsProvider store={ParamsStore}>
-          <ParamsApp />
-        </ParamsProvider>
-      </ParamsBrowserRouter>,
-    rootElement
-  );
-};
+    const rootElement = document.getElementById("root");
+    return{
+        obj:ParamsReactDom.render(
+            <ParamsBrowserRouter>
+              <ParamsProvider store={ ParamsStore }>
+                <ParamsApp />
+              </ParamsProvider>
+            </ParamsBrowserRouter>,
+            rootElement
+          )
+    }
+}
 
-
+export default inject
