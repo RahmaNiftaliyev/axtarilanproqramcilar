@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// @ts-nocheck
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -7,4 +9,4 @@ import App from "./features/root/App";
 import "./index.css";
 import inject from "./inject";
 
-inject(React, ReactDOM, BrowserRouter, Provider, App, store);
+inject(ReactDOM, BrowserRouter, Provider, App, store);

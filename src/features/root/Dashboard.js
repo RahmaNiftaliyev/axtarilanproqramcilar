@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// @ts-nocheck
 import React from 'react'
 import {Routes, Route} from 'react-router-dom';
 import Login from './../common/login/Login'
