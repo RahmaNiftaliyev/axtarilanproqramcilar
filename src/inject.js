@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 
 const inject = (
@@ -5,19 +6,18 @@ const inject = (
   ParamsBrowserRouter,
   ParamsProvider,
   ParamsApp,
-  ParamsStore
+  ParamsStore,
+  ParamsReact
 ) => {
-  const rootElement = document.getElementById("root");
-  return {
-    obj: ParamsReactDom.render(
-      <ParamsBrowserRouter>
-        <ParamsProvider store={ParamsStore}>
-          <ParamsApp />
-        </ParamsProvider>
-      </ParamsBrowserRouter>,
-      rootElement
-    ),
-  };
+  const container = document.getElementById("root");
+  const root = ParamsReactDom.createRoot(container);
+  return root.render(
+    <ParamsBrowserRouter>
+      <ParamsProvider store={ParamsStore}>
+        <ParamsApp name="Axtarılan Proqramçılar" />
+      </ParamsProvider>
+    </ParamsBrowserRouter>
+  );
 };
 
 export default inject;
