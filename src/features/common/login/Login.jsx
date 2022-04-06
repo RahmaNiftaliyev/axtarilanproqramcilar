@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -8,11 +9,14 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const isDisabled = [email, password].every(Boolean);
+  const navigate = useNavigate();
 
   const setErrorController = (callback) => {
     callback("pls set all fields");
-    setTimeout(() => callback(''), 2000);
+    setTimeout(() => callback(""), 2000);
   };
+
+
 
   const handleSubmit = (e) => {
     if (!isDisabled) {
@@ -56,7 +60,10 @@ const Login = () => {
             Login
           </Button>
         </Form>
-        <Link to="/recovery">Forgot Password?</Link>
+        <FormGroup>
+          <Link to="/recovery">Forgot Password?</Link>
+          <Button type onClick={() => navigate("/register")}>Register</Button>
+        </FormGroup>
       </div>
     </div>
   );

@@ -1,12 +1,18 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-lone-blocks */
+/* eslint-disable no-undef */
+/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { selectAllGenders } from "./../../redux/gendersSlice";
+import { selectAllMonthes } from "./../../redux/registerSlice";
 
 const Register = () => {
   const allGenders = useSelector(selectAllGenders);
+  const allRegisters = useSelector(selectAllMonthes);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,14 +20,64 @@ const Register = () => {
   const [number, setNumer] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [birthday, setBirthday] = useState("");
   const [gender, setGender] = useState("");
   const [error, setError] = useState("");
+  const [data, setData] = useState([]);
   const [isSetted, setIsSetted] = useState(false);
-
-  const renderedOptions = allGenders.map((g) => {
-    return <option id={g.id}>{g.gender}</option>;
+  const [birthday, setBirthday] = useState({
+    month: new Date().getMonth(),
+    day: new Date().getDate(),
+    year: new Date().getFullYear(),
   });
+
+  const [optionCheck, setOptionCheck] = useState(false);
+
+  // gender options
+  const renderedOptions = allGenders.map((gender) => {
+    return (
+      <option key={gender.id} value={gender.gender}>
+        {gender.gender}
+      </option>
+    );
+  });
+
+  console.log(birthday);
+
+  // 12 months
+  const months = allRegisters.map((register) => register.name);
+
+  const renderedMonths = months.map((month, index) => {
+    return (
+      <option
+        key={index}
+        defaultValue={month}
+        selected={birthday.month === index ? true : false}
+      >
+        {month}
+      </option>
+    );
+  });
+
+  const dayLogicController = (
+    counter = allRegisters.find((monthObj) => {
+      return parseInt(monthObj.id) === birthday.month ? monthObj.maxDate : null;
+    })
+  ) => {
+    let days = [];
+    const maxContent = counter;
+    if (maxContent.maxDate >= 31) {
+      for (let i = 0; i <= maxContent.maxDate; i++) {
+        debugger;
+        days.push(i);
+      }
+    } else {
+      for (let i = 1905; i <= maxContent; i++) {
+        days.push(i);
+      }
+    }
+
+    return days;
+  };
 
   const emailNumberHandler = (e) => {
     console.log(e.target.value);
@@ -61,20 +117,61 @@ const Register = () => {
               />
             </FormGroup>
             {/* email or mobile number */}
-            <Input
-              type="email"
-              id="email"
-              placeholder={error && error.length > 0 ? error : "First Name"}
-              name="email"
-              aria-labelledby="email"
-              value={isSetted ? email : ""}
-              onChange={emailNumberHandler}
-            />
-            <FormGroup></FormGroup>
+
+            <FormGroup>
+              <Input
+                type="email"
+                id="email"
+                placeholder={error && error.length > 0 ? error : "username"}
+                name="email"
+                aria-labelledby="email"
+                value={isSetted ? email : ""}
+                onChange={emailNumberHandler}
+              />
+            </FormGroup>
             {/* password */}
-            <FormGroup></FormGroup>
-            {/* birthday year month day */}
-            <FormGroup></FormGroup>
+            <FormGroup>
+              <Input
+                type="password"
+                id="password"
+                placeholder={error && error.length > 0 ? error : "password"}
+                name="password"
+                aria-labelledby="password"
+                value={password}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </FormGroup>
+            {/* birthday year month day start => */}
+            <FormGroup className="grid-initial frame-3">
+              <Input type="select">{renderedMonths}</Input>
+              <Input type="select">
+                {dayLogicController().map((day, index) => {
+                  return (
+                    <option
+                      key={index}
+                      value={day}
+                      selected={birthday.day === day}
+                    >
+                      {day > 0 ? day : "Choose Day"}
+                    </option>
+                  );
+                })}
+              </Input>
+              <Input type="select">
+                {dayLogicController(birthday.year).map((year, index) => {
+                  return (
+                    <option
+                      key={index}
+                      value={year}
+                      selected={birthday.year === year}
+                    >
+                      {year > 0 ? year : "Choose Year"}
+                    </option>
+                  );
+                })}
+              </Input>
+            </FormGroup>
+            {/* birthday year month day end => */}
             {/* genders */}
             <FormGroup>
               <Input type="select">
