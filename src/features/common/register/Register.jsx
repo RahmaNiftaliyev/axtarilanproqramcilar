@@ -59,7 +59,7 @@ const Register = () => {
 
   const dayLogicController = (
     counter = allRegisters.find((monthObj) => {
-      return parseInt(monthObj.id) === birthday.month ? monthObj.maxDate : null;
+      return parseInt(monthObj.id) === birthday.month ? monthObj : null;
     })
   ) => {
     let days = [];

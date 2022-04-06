@@ -1,5 +1,6 @@
-Folder Structure Conventions
-Folder structure options and naming conventions for software projects
+# Folder Structure Conventions  
+
+# <Folder structure options and naming conventions for software projects>
 
 A typical top-level directory layout
 .
@@ -10,8 +11,6 @@ A typical top-level directory layout
 ├── tools                   # Tools and utilities
 ├── LICENSE
 └── README.md
-
-
 
 Use short lowercase names at least for the top-level files and folders except LICENSE, README.md
 
@@ -35,8 +34,6 @@ A: Because you don't want to test the code, you want to test the program.
 │   └── unit                # Unit tests
 └── ...
 
-
-
 Samples: jQuery, Node.js, D3.js, AngularJS, Adobe Brackets, three.js, Express, Socket.IO, Less.js, Bower, Mozilla PDF.js, Grunt, Gulp, Semantic UI, Zepto.js, Jade, RethinkDB, Vagrant, Sails.js, GitHub Hubot, Facebook React, Ansible, ASP.NET, browserify, Paper.js, Julia, Karma
 
 Documentation files
@@ -51,7 +48,6 @@ Often it is beneficial to include some reference data into the project, such as 
 │   ├── usage.md            # Getting started guide
 │   └── ...                 # etc.
 └── ...
-
 
 ![ScreenShot_20220406094017](https://user-images.githubusercontent.com/58683199/162051113-6126be35-608c-4b86-a676-a80aa17c3689.jpeg)
 
@@ -78,4 +74,4 @@ You’ll have to check with your own legal counsel regarding your particular pro
 
 Even in the absence of a license file, you may grant some rights in cases where you publish your source code to a site that requires accepting terms of service. For example, if you publish your source code in a public repository on GitHub, you have accepted the Terms of Service which do allow other GitHub users some rights. Specifically, you allow others to view and fork your repository.
 
-For more info on how to choose a license for an open source project, please refer to http://choosealicense.com
+For more info on how to choose a license for an open source project, please refer to <http://choosealicense.com>
