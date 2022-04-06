@@ -4,12 +4,12 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Form, FormGroup, Input, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Button, Form, FormGroup, Input } from "reactstrap";
 import { selectAllGenders } from "./../../redux/gendersSlice";
 import { selectAllMonthes } from "./../../redux/registerSlice";
-import { Link } from "react-router-dom";
 
 const Register = () => {
   const allGenders = useSelector(selectAllGenders);
