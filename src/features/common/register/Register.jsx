@@ -32,17 +32,6 @@ const Register = () => {
 
   const [optionCheck, setOptionCheck] = useState(false);
 
-  // gender options
-  const renderedOptions = allGenders.map((gender) => {
-    return (
-      <option key={gender.id} value={gender.gender}>
-        {gender.gender}
-      </option>
-    );
-  });
-
-  console.log(birthday);
-
   // 12 months
   const months = allRegisters.map((register) => register.name);
 
@@ -57,6 +46,15 @@ const Register = () => {
       </option>
     );
   });
+
+  // today in add
+
+  const handleDateOfBirth = (e) => {
+    setBirthday({
+      ...birthday,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const dayLogicController = (
     counter = allRegisters.find((monthObj) => {
@@ -79,10 +77,21 @@ const Register = () => {
     return days;
   };
 
+  // gender options
+  const renderedOptions = allGenders.map((gender) => {
+    return (
+      <option key={gender.id} value={gender.gender}>
+        {gender.gender}
+      </option>
+    );
+  });
+
+  // write your email or phone-number 2step choise unput data and attributes controller
   const emailNumberHandler = (e) => {
     console.log(e.target.value);
   };
 
+  // try submit registration form
   const handleRegister = (e) => {
     e.preventDefault();
   };
@@ -90,11 +99,11 @@ const Register = () => {
   return (
     <div className="homeBackground">
       <div className="p-1 formContainer-md">
-        <h1>Axtarılan Proqramçılar</h1>
+        <h1 className="text-silver">Axtarılan Proqramçılar</h1>
         <div>
-          <h2>Create a new account</h2>
-          <p>It’s quick and easy.</p>
-          <Form onSubmit={handleRegister}>
+          <h2 className="text-erotica">Create a new account</h2>
+          <p className="text-erotica">It’s quick and easy.</p>
+          <Form onSubmit={handleRegister} autoComplete="off">
             {/* firstname and lastname */}
             <FormGroup className="grid-initial frame-2">
               <Input
@@ -138,13 +147,29 @@ const Register = () => {
                 name="password"
                 aria-labelledby="password"
                 value={password}
-                onChange={(e) => setLastName(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </FormGroup>
             {/* birthday year month day start => */}
             <FormGroup className="grid-initial frame-3">
-              <Input type="select">{renderedMonths}</Input>
-              <Input type="select">
+              <Input
+                type="select"
+                id="month"
+                name="month"
+                aria-labelledby="month"
+                value={birthday.month}
+                onChange={(e) => handleDateOfBirth(e)}
+              >
+                {renderedMonths}
+              </Input>
+              <Input
+                type="select"
+                id="date"
+                name="date"
+                aria-labelledby="date"
+                value={birthday.day}
+                onChange={(e) => handleDateOfBirth(e)}
+              >
                 {dayLogicController().map((day, index) => {
                   return (
                     <option
@@ -157,7 +182,14 @@ const Register = () => {
                   );
                 })}
               </Input>
-              <Input type="select">
+              <Input
+                type="select"
+                name="year"
+                id="year"
+                aria-labelledby="year"
+                value={birthday.year}
+                onChange={(e) => handleDateOfBirth(e)}
+              >
                 {dayLogicController(birthday.year).map((year, index) => {
                   return (
                     <option
@@ -172,13 +204,27 @@ const Register = () => {
               </Input>
             </FormGroup>
             {/* birthday year month day end => */}
-            {/* genders */}
+
+            {/* genders start => */}
             <FormGroup>
               <Input type="select">
                 <option>Choose Gender</option>
                 {renderedOptions}
               </Input>
+              <small className="text-white">
+                By clicking Sign Up, you agree to our Terms, Data Policy and
+                Cookies Policy. You may receive SMS Notifications from us and
+                can opt out any time.
+              </small>
             </FormGroup>
+            {/* genders end => */}
+            {/* form submit button */}
+            <FormGroup>
+              <Button type="submit" color="primary" block outline>
+                Submit
+              </Button>
+            </FormGroup>
+            {/* form submit button */}
           </Form>
         </div>
       </div>

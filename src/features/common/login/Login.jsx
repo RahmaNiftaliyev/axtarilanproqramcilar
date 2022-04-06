@@ -16,8 +16,6 @@ const Login = () => {
     setTimeout(() => callback(""), 2000);
   };
 
-
-
   const handleSubmit = (e) => {
     if (!isDisabled) {
       setErrorController(setError);
@@ -56,13 +54,23 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormGroup>
-          <Button color="primary" block outline>
-            Login
-          </Button>
+          <FormGroup>
+            <Button color="primary" block outline>
+              Login
+            </Button>
+          </FormGroup>
         </Form>
-        <FormGroup>
+        <FormGroup className="d-flex flex-column">
           <Link to="/recovery">Forgot Password?</Link>
-          <Button type onClick={() => navigate("/register")}>Register</Button>
+          <Button
+            type
+            primary
+            outline
+            block
+            onClick={() => navigate("/register")}
+          >
+            Sign up for Axtarılan proqramçılar
+          </Button>
         </FormGroup>
       </div>
     </div>
