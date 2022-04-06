@@ -8,12 +8,14 @@ import Login from "../common/login/Login";
 
 const Dashboard = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/recovery" element={<PasswordRecovery />} />
-      </Routes>
+    <div className="commonContainer">
+      <div className="navTop">
+          <div className="navBar"></div>
+          <div className="aside"></div>
+          <div className="main"></div>
+          <div className="footer"></div>
+      </div>
+
     </div>
   );
 };
