@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { selectAllGenders } from "./../../redux/gendersSlice";
 import { selectAllMonthes } from "./../../redux/registerSlice";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const allGenders = useSelector(selectAllGenders);
@@ -65,7 +66,6 @@ const Register = () => {
     const maxContent = counter;
     if (maxContent.maxDate >= 31) {
       for (let i = 0; i <= maxContent.maxDate; i++) {
-        debugger;
         days.push(i);
       }
     } else {
@@ -98,11 +98,11 @@ const Register = () => {
 
   return (
     <div className="homeBackground">
-      <div className="p-1 formContainer-md">
-        <h1 className="text-silver">Axtarılan Proqramçılar</h1>
-        <div>
-          <h2 className="text-erotica">Create a new account</h2>
-          <p className="text-erotica">It’s quick and easy.</p>
+      <div className="p-1 formContainer">
+        <h1 className="text-silver text-center">Axtarılan Proqramçılar</h1>
+        <div className="login-register-padding">
+          <h2 className="text-white">Create a new account</h2>
+          <p className="text-white">It’s quick and easy.</p>
           <Form onSubmit={handleRegister} autoComplete="off">
             {/* firstname and lastname */}
             <FormGroup className="grid-initial frame-2">
@@ -131,10 +131,13 @@ const Register = () => {
               <Input
                 type="email"
                 id="email"
-                placeholder={error && error.length > 0 ? error : "username"}
+                placeholder={
+                  error && error.length > 0 ? error : "Mobile number or email"
+                }
                 name="email"
                 aria-labelledby="email"
                 value={isSetted ? email : ""}
+                autoComplete="off"
                 onChange={emailNumberHandler}
               />
             </FormGroup>
@@ -146,6 +149,7 @@ const Register = () => {
                 placeholder={error && error.length > 0 ? error : "password"}
                 name="password"
                 aria-labelledby="password"
+                autoComplete="off"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -211,18 +215,42 @@ const Register = () => {
                 <option>Choose Gender</option>
                 {renderedOptions}
               </Input>
-              <small className="text-white">
+            </FormGroup>
+            {/* genders end => */}
+            {/* if gender custom => start */}
+            <FormGroup>
+              <Input
+                type="select"
+                name="option"
+                id="option"
+                aria-labelledby="option"
+              >
+                <option disabled={true}>Select your pronoun</option>
+                <option value={1}>She: "Wish her a happy birthday!"</option>
+                <option value={2}>He: "Wish him a happy birthday!"</option>
+                <option value={6}>They: "Wish them a happy birthday!"</option>
+              </Input>
+              <small className="text-islamic text-md">
+                Your pronoun is visible to everyone.
+              </small>
+            </FormGroup>
+            <FormGroup>
+              <Input placeholder="Gender (optional)" />
+              <small className="text-islamic">
                 By clicking Sign Up, you agree to our Terms, Data Policy and
                 Cookies Policy. You may receive SMS Notifications from us and
                 can opt out any time.
               </small>
             </FormGroup>
-            {/* genders end => */}
+            {/* if gender custom => end */}
             {/* form submit button */}
             <FormGroup>
-              <Button type="submit" color="primary" block outline>
-                Submit
+              <Button type="submit" color="success" block outline>
+                Sign Up
               </Button>
+              <Link to="/" className="text-decoration-none text-islamic mt-2">
+                Already have an account?
+              </Link>
             </FormGroup>
             {/* form submit button */}
           </Form>

@@ -26,10 +26,10 @@ const Login = () => {
 
   return (
     <div className="homeBackground">
-      <div className="p-1 formContainer">
+      <div className="p-1 formContainer w-25 px-4 py-3">
         <Form onSubmit={handleSubmit} autoComplete="off">
           <FormGroup>
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-erotica">Email</Label>
             <Input
               type="email"
               name="email"
@@ -42,7 +42,7 @@ const Login = () => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password" className="text-erotica">Password</Label>
             <Input
               type="password"
               name="password"
@@ -58,15 +58,17 @@ const Login = () => {
             <Button color="primary" block outline>
               Login
             </Button>
+            <Link to="/recovery">Forgot Password?</Link>
           </FormGroup>
         </Form>
         <FormGroup className="d-flex flex-column">
-          <Link to="/recovery">Forgot Password?</Link>
+        
           <Button
             type
             primary
             outline
             block
+            color="success"
             onClick={() => navigate("/register")}
           >
             Sign up for Axtarılan proqramçılar
