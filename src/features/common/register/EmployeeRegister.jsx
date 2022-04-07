@@ -4,6 +4,10 @@ import { Form, FormGroup, Input, Button } from "reactstrap";
 import { selectAllGenders } from "./../../redux/gendersSlice";
 import { selectAllMonthes } from "./../../redux/registerSlice";
 import { Link } from "react-router-dom";
+import TerminalReact from "../../tool/terminal/TerminalReact";
+import terminal from './terminal'
+
+
 
 const EmployeeRegister = () => {
   const allGenders = useSelector(selectAllGenders);
@@ -90,8 +94,15 @@ const EmployeeRegister = () => {
     e.preventDefault();
   };
 
+  
+
   return (
-    <div className="homeBackground">
+    <TerminalReact
+      terminalColor={terminal.TERMINAL_DARK}
+      terminalText="Welcome to our wanted society"
+      terminalTextSize={"16px"}
+      terminalTextWeight={"400"}
+    >
       <div className="p-1 formContainer">
         <h1 className="text-silver text-center">Axtarılan Proqramçılar</h1>
         <div className="login-register-padding">
@@ -250,7 +261,7 @@ const EmployeeRegister = () => {
           </Form>
         </div>
       </div>
-    </div>
+    </TerminalReact>
   );
 };
 
