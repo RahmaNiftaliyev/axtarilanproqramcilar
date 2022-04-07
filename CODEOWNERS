@@ -29,7 +29,7 @@
 # subdirectories.
 /build/logs/ @doctocat
 
-# The `docs/*` pattern will match files like
+# The "docs/*" pattern will match files like
 # `docs/getting-started.md` but not further nested files like
 # `docs/build-app/troubleshooting.md`.
 docs/*  docs@example.com
