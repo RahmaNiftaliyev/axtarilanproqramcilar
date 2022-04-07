@@ -1,1 +1,52 @@
 node_modules
+
+# Install the latest version of Node.js
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Install the latest version of npm
+sudo npm install npm@latest -g
+
+# Install the latest version of Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install -y yarn
+
+# Install the latest version of Ruby
+sudo apt-get install -y ruby-full
+
+# Install the latest version of RubyGems
+sudo gem update --system
+
+# Install the latest version of Postgres
+sudo apt-get install -y postgresql postgresql-contrib
+
+# Install the latest version of Redis
+sudo apt-get install -y redis-server
+
+# Install the latest version of MongoDB
+sudo apt-get install -y mongodb
+
+# Install the latest version of MySQL
+sudo apt-get install -y mysql-server
+
+# Install the latest version of Elasticsearch
+sudo apt-get install -y elasticsearch
+
+# Install the latest version of Redis
+sudo apt-get install -y redis-server
+
+# Install the latest version of Memcached
+sudo apt-get install -y memcached
+
+# Install the latest version of Node.js
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Install the latest version of npm
+sudo npm install npm@latest -g
+
+# Install the latest version of Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get

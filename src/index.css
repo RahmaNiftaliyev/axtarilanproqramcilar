@@ -30,31 +30,30 @@
   grid-area: header;
   background-color: #080A0F;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #42526D;
 }
 
 
 .aside {
   grid-area: aside;
   background-color: #080A0F;
-  background: linear-gradient(135deg, transparent 10%, #080A0F 10%);
-  position: relative;
-  z-index: 5;
-  box-shadow: 5px 0px 10px #0B2E5B;
+  background: #080A0F;
+  box-shadow: 3px 0px 10px #0B2E5B;
+
 }
 
 .asideInside {
   width: 47px;
   height: 100%;
   background-color: #080A0F;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid #42526D;
 }
 
 .main {
   grid-area: main;
-  background: url(./features/common/assets/jpg/background4.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background:#081E41;
 
 
 }
@@ -62,5 +61,5 @@
 .footer {
   grid-area: footer;
   background-color: #080A0F;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #42526D;
 }
