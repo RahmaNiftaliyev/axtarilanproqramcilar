@@ -7,53 +7,7 @@
   font-family: "VT323", monospace !important;
 }
 
-#root {
-  height: 100vh !important;
-}
-
-.container_IDE {
+body {
+ background-image: url(./features/common/assets/png/background2.png);
   min-height: 100vh;
-  display: grid;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  grid-template-columns: 312px 1fr;
-  grid-template-rows:  1fr 22px;
-  gap: 0px 0px;
-  grid-template-areas:
-    "aside main"
-    "footer footer";
-}
-
-.header {
-  grid-area: header;
-  position: relative;
-  z-index: 1;
-}
-
-
-.aside {
-  grid-area: aside;
-  background-color: #F3F3F3;
-}
-
-.asideInside {
-  width: 47px;
-  height: 100%;
-  border-right: 1px solid #42526D;
-  background-color: #2C2C2C;
-}
-
-.main {
-  grid-area: main;
-  background-image: url("./features/common/assets/jpg/background2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
- 
-}
-
-.footer {
-  grid-area: footer;
-  background-color: #007ACC;
 }

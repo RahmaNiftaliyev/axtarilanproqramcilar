@@ -2,4 +2,4 @@
 '@primer/react': minor
 ---
 
-Adds a toggle switch component
+# Adds a toggle switch component

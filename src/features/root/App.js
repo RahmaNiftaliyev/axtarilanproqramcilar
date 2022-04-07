@@ -1,14 +1,12 @@
 import React from "react";
+import Dashboard from "./Dashboard";
+import Application from './Application';
 
 const App = () => {
   return (
-    <div className="container_IDE">
-      <div className="header"></div>
-      <div className="aside">
-        <div className="asideInside"></div>
-      </div>
-      <div className="main"></div>
-      <div className="footer"></div>
+    <div>
+      <Dashboard />
+      <Application />
     </div>
   );
 };
