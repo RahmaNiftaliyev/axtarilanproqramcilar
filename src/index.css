@@ -17,22 +17,26 @@ body {
 .terminal-dark {
   background-color: #0c162d;
   color: white;
-  box-shadow: #0c3262 0px 54px 55px, #0c3262 0px -12px 30px, #0c3262 0px 4px 6px,
-    #0c3262 0px 12px 13px, #0c3262 0px -3px 5px;
+  box-shadow: rgb(132, 152, 174) 0px 20px 30px -10px;
   margin-top: 40px;
   margin-left: 40px;
-  padding:  0 0 20px 0;
+  padding: 0 0 20px 0;
 }
 
 .termina-md {
   height: 400px;
   max-width: 490px;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .terminaHeader {
   height: 28px;
-  background: #19253B;
-  border-top-left-radius:6px ;
-  border-top-right-radius:6px ;
+  background: #919db2;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #00fe00;
+}
+
+.terminal-pl-md {
+  padding-left: 20px;
 }

@@ -9,7 +9,7 @@ const TerminalReact = ({
 }) => {
   const typeWriterInvoker = () => {
     return {
-      text: [terminalText],
+      text: [terminalText ? terminalText : "console.log('Hello World')"],
       infiniteLoop: true,
       blinker: "|",
       delay: 1000,
@@ -21,9 +21,11 @@ const TerminalReact = ({
 
   return (
     <div className={`${terminalColor} termina-md`}>
-        <div className="terminaHeader"></div>
-      <h1 className="text-center">Welcome to our wanted society</h1>
-      <div style={{paddingLeft:"20px"}}>{text}</div>
+        <div className="terminaHeader d-flex align-items-center">
+          <h3 className="terminal-pl-md">login.js</h3>
+        </div>
+      <h1 className="terminal-pl-md">Welcome to our wanted society</h1>
+      <div className="terminal-pl-md">{text}</div>
     </div>
   );
 };

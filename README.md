@@ -1,6 +1,4 @@
-# Folder Structure Conventions  
-
-# Folder structure options and naming conventions for software projects
+# Folder Structure options and naming Conventions for software projects
 
 A typical top-level directory layout
 .

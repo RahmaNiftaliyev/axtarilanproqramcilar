@@ -3,6 +3,10 @@ import developersReducer from "./../features/redux/developersSlice";
 import customersReducer from "./../features/redux/customersSlice";
 import gendersReducer from "./../features/redux/gendersSlice";
 import registerReducer from "./../features/redux/registerSlice";
+import designersReducer from "./../features/redux/designersSlice";
+import postsReducer from "./../features/redux/postsSlice";
+import notificationsReducer from "./../features/redux/notificationsSlice";
+import emailsReducer from "./../features/redux/emailsSlice";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -11,4 +15,8 @@ export default {
   customers: customersReducer,
   genders: gendersReducer,
   register: registerReducer,
+  designers: designersReducer,
+  posts: postsReducer,
+  notifications: notificationsReducer,
+  emails: emailsReducer,
 };

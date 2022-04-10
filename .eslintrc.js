@@ -12,7 +12,5 @@ export default {
     sourceType: "module",
   },
   plugins: [new SVGSwitchElement()],
-  rules: {
-      
-  },
+  rules: {},
 };

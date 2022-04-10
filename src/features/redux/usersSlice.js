@@ -2,10 +2,15 @@
 // @ts-nocheck
 import { createSlice, createAsyncThunk, createEntityAdapter } from "@reduxjs/toolkit";
 
-const usersAdapter = createEntityAdapter({
-    selectId:(user) => user.id,
+
+const adapterizer = () => {
+    return {
+        selectId:(user) => user.id,
     sortComparer:(previousUser,nextUser) => previousUser.id.localeCompare(nextUser.id) 
-})
+    }
+}
+
+const usersAdapter = createEntityAdapter(adapterizer())
 
 
 const initialState = {
