@@ -23,6 +23,12 @@ body {
   padding: 0 0 20px 0;
 }
 
+div.terminal-dark input,select,option {
+  background: transparent!important;
+  color: white!important;
+  background-color: transparent!important;
+}
+
 .termina-md {
   height: 400px;
   max-width: 490px;
@@ -39,4 +45,19 @@ body {
 
 .terminal-pl-md {
   padding-left: 20px;
+}
+
+.login-register-button {
+  display: block;
+  border: 0px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 19px;
+  margin: 5px;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  padding: 0px 10px;
+  height: 50px;
+  background-color: black;
 }

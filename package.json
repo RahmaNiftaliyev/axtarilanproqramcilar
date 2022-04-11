@@ -1,6 +1,6 @@
 {
   "name": "axtarilanproqramcilar",
-  "version": "2.0.0",
+  "version": "4.0.0",
   "private": true,
   "dependencies": {
     "@primer/css": "^19.8.2",
@@ -16,11 +16,14 @@
     "nan": "^2.15.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-github-login-button": "1.0.1",
+    "react-google-login": "5.2.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.0",
+    "react-social-login-buttons": "3.6.0",
     "reactstrap": "9.0.1",
     "select2": "4.1.0-rc.0",
     "styled-components": "^5.3.5"
