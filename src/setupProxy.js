@@ -26,18 +26,13 @@ module.exports = function(app) {
                     proxyRes.headers["location"] = proxyRes.headers["location"].replace(/^\/api/, "");
                 } else if (proxyRes.headers["location"] === "/") {
                     proxyRes.headers["location"] = "/";
-                } else {
-                    proxyRes.headers["location"] = "/";
-                }
-
+                } 
                 if (proxyRes.headers["content-location"]) {
                     proxyRes.headers["content-location"] = proxyRes.headers["content-location"].replace(
                         /^\/api/,
                         "",
                     );
                 } else if (proxyRes.headers["content-location"] === "") {
-                    proxyRes.headers["content-location"] = "/";
-                } else {
                     proxyRes.headers["content-location"] = "/";
                 }
             },

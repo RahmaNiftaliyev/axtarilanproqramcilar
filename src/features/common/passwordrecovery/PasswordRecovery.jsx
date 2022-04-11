@@ -32,9 +32,7 @@ const PasswordRecovery = () => {
   const handleRecovery = (e) => {
     if (!number) {
       errorHandler();
-    } else {
-      errorHandler();
-    }
+    } 
 
     e.preventDefault();
   };
