@@ -1,17 +1,15 @@
 /* eslint-disable no-undef */
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
-
 const adapterizer = () => {
   return {
     selectIds: (month) => month.id,
-    sortComparer:(previousMonth,nextMonth) => previousMonth.id.localeCompare(nextMonth.id)
-  }
-}
+    sortComparer: (previousMonth, nextMonth) =>
+      previousMonth.id.localeCompare(nextMonth.id),
+  };
+};
 
 const registerAdapter = createEntityAdapter(adapterizer());
-
-
 
 const initialState = {
   status: "idle",
@@ -36,26 +34,21 @@ const initialState = {
   },
 };
 
-
 const sliceInvoker = () => {
-   return {
-    name:"register",
+  return {
+    name: "register",
     initialState,
-    reducers:{},
-    extraReducers:{}
-   }
-}
-
+    reducers: {},
+    extraReducers: {},
+  };
+};
 
 const registerSlice = createSlice(sliceInvoker());
 
-
 export const {
+  selectAll: selectAllMonthes,
+  selectById: selectMonthById,
+  selectEntities: selectMonthEntity,
+} = registerAdapter.getSelectors((state) => state.register.fullYear);
 
-  selectAll:selectAllMonthes,
-  selectById:selectMonthById,
-  selectEntities:selectMonthEntity
-
-} = registerAdapter.getSelectors(state => state.register.fullYear)
-
-export default registerSlice.reducer
+export default registerSlice.reducer;

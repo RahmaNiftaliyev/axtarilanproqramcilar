@@ -41,13 +41,13 @@ const PasswordRecovery = () => {
 
   return (
     <div className="homeBackground">
-      <div className="p-1 formContainer">
-        <h1 className="text-center border border-bottom-1 likeLogo">
+      <div className="px-4 py-3 formContainer">
+        <h1 className="text-center border-bottom border-1 likeLogo text-silver">
           Axtarılan Proqramçılar
         </h1>
         <Form onSubmit={handleRecovery}>
           <FormGroup>
-            <Label htmlFor="number">{labelText}</Label>
+            <Label htmlFor="number" className="text-white">{labelText}</Label>
             <Input
               type="text"
               name="number"
