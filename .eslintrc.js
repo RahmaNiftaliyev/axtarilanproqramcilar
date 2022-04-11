@@ -11,7 +11,7 @@ export default {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": "latest",
+        "ecmaVersion": "PropTypes.instanceOf(),",
         "sourceType": "module"
     },
     "plugins": [

@@ -4,8 +4,6 @@
 
 [page of developer and founder](https://rahmanniftaliyev.com)
 
-
-
 > ℹ️
 > Before submitting an issue to this repo - Ensure it's a **issue with the code in this repo**, not a **how do I configure** something with **Webpack** question (post something on Stack Overflow or Spectrum).  It's your config you "own" it.
 
@@ -390,4 +388,46 @@ Here is a list of all the available commands to help you in development
 
 # Why This Project Exists
 
-See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
+See: [Create React App — But I don’t wanna Eject](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
+
+test
+
+## Installation
+
+You'll first need to install [ESLint](https://eslint.org/):
+
+```sh
+npm i eslint --save-dev
+```
+
+Next, install `eslint-plugin-123`:
+
+```sh
+npm install eslint-plugin-123 --save-dev
+```
+
+## Usage
+
+Add `123` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+
+```json
+{
+    "plugins": [
+        "123"
+    ]
+}
+```
+
+Then configure the rules you want to use under the rules section.
+
+```json
+{
+    "rules": {
+        "123/rule-name": 2
+    }
+}
+```
+
+## Supported Rules
+
+* Fill in provided rules here
