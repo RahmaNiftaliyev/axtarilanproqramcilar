@@ -26,10 +26,12 @@ module.exports = {
         ...sharedPlugins,
         replacementPlugin('development')
       ]
+
     },
     production: {
       presets: makePresets(false),
       plugins: [...sharedPlugins, replacementPlugin('production')]
+      
     },
     test: {
       presets: makePresets('commonjs'),
