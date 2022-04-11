@@ -4,6 +4,20 @@
 
 [page of developer and founder](https://rahmanniftaliyev.com)
 
+![1649693408420.png](image/README/1649693408420.png)
+
+![1649693452332.png](image/README/1649693452332.png)
+
+package.json
+
+![](image/README/1649693470292.png)
+
+
+folder structure
+
+
+![](image/README/1649693692021.png)
+
 > ℹ️
 > Before submitting an issue to this repo - Ensure it's a **issue with the code in this repo**, not a **how do I configure** something with **Webpack** question (post something on Stack Overflow or Spectrum).  It's your config you "own" it.
 
