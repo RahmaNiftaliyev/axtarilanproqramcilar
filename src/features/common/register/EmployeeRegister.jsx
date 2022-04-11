@@ -145,12 +145,12 @@ const EmployeeRegister = () => {
               id="month"
               name="month"
               aria-labelledby="month"
-              defaultValue={allRegisters[birthday.month].name}
+              defaultValue={allRegisters[birthday.month].id - 1}
               onChange={handleDateOfBirth}
             >
               {months.map((month, index) => {
                 return (
-                  <option key={index} value={month}>
+                  <option key={index} value={index}>
                     {month}
                   </option>
                 );
@@ -193,29 +193,35 @@ const EmployeeRegister = () => {
 
           {/* genders start => */}
           <FormGroup>
-            <Input type="select">
+            <Input
+              type="select"
+              defaultValue={'gender'}
+              onChange={(e) => setGender(e.target.value)}
+            >
               <option>Choose Gender</option>
               {renderedOptions}
             </Input>
           </FormGroup>
           {/* genders end => */}
           {/* if gender custom => start */}
-          <FormGroup>
-            <Input
-              type="select"
-              name="option"
-              id="option"
-              aria-labelledby="option"
-            >
-              <option disabled={true}>Select your pronoun</option>
-              <option value={1}>She: "Wish her a happy birthday!"</option>
-              <option value={2}>He: "Wish him a happy birthday!"</option>
-              <option value={6}>They: "Wish them a happy birthday!"</option>
-            </Input>
-            <small className="text-islamic text-md">
-              Your pronoun is visible to everyone.
-            </small>
-          </FormGroup>
+          {gender.toLowerCase() === 'custom' && (
+            <FormGroup>
+              <Input
+                type="select"
+                name="option"
+                id="option"
+                aria-labelledby="option"
+              >
+                <option disabled={true}>Select your pronoun</option>
+                <option value={1}>She: "Wish her a happy birthday!"</option>
+                <option value={2}>He: "Wish him a happy birthday!"</option>
+                <option value={6}>They: "Wish them a happy birthday!"</option>
+              </Input>
+              <small className="text-islamic text-md">
+                Your pronoun is visible to everyone.
+              </small>
+            </FormGroup>
+          )}
           <FormGroup>
             <Input placeholder="Gender (optional)" />
             <small className="text-islamic">
@@ -227,7 +233,7 @@ const EmployeeRegister = () => {
           {/* if gender custom => end */}
           {/* form submit button */}
           <FormGroup>
-            <button className="m-1 login-register-button" type="submit" >
+            <button className="m-1 login-register-button" type="submit">
               Sign Up
             </button>
             <GithubLoginButton></GithubLoginButton>

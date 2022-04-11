@@ -25,7 +25,7 @@ body {
 
 div.terminal-dark input,select,option {
   background: transparent!important;
-  color: white!important;
+  color: red!important;
   background-color: transparent!important;
 }
 

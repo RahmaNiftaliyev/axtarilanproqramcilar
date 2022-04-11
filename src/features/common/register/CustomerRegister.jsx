@@ -4,7 +4,7 @@ import { Form, FormGroup, Input, Button } from 'reactstrap';
 import { selectAllGenders } from './../../redux/gendersSlice';
 import { selectAllMonthes } from './../../redux/registerSlice';
 import { Link } from 'react-router-dom';
-import {GoogleLoginButton } from 'react-social-login-buttons'
+import { GoogleLoginButton } from 'react-social-login-buttons';
 
 const CustomerRegister = () => {
   const allGenders = useSelector(selectAllGenders);
@@ -92,7 +92,7 @@ const CustomerRegister = () => {
   };
 
   return (
-    <div className="p-1 formContainer w-50 bg-light">
+    <div className="p-1 formContainer w-50 bg-success">
       <h1 className="text-silver text-center">Axtarılan Proqramçılar</h1>
       <div className="login-register-padding">
         <h2 className="text-white">Create a new account</h2>
@@ -155,12 +155,12 @@ const CustomerRegister = () => {
               id="month"
               name="month"
               aria-labelledby="month"
-              defaultValue={allRegisters[birthday.month].name}
-              onChange={(e) => handleDateOfBirth(e)}
+              defaultValue={allRegisters[birthday.month].id - 1}
+              onChange={handleDateOfBirth}
             >
               {months.map((month, index) => {
                 return (
-                  <option key={index} value={month}>
+                  <option key={index} value={index}>
                     {month}
                   </option>
                 );
@@ -203,29 +203,37 @@ const CustomerRegister = () => {
 
           {/* genders start => */}
           <FormGroup>
-            <Input type="select">
+            <Input
+              type="select"
+              name="gender"
+              id="gender"
+              defaultValue={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
               <option>Choose Gender</option>
               {renderedOptions}
             </Input>
           </FormGroup>
           {/* genders end => */}
           {/* if gender custom => start */}
-          <FormGroup>
-            <Input
-              type="select"
-              name="option"
-              id="option"
-              aria-labelledby="option"
-            >
-              <option disabled={true}>Select your pronoun</option>
-              <option value={1}>She: "Wish her a happy birthday!"</option>
-              <option value={2}>He: "Wish him a happy birthday!"</option>
-              <option value={6}>They: "Wish them a happy birthday!"</option>
-            </Input>
-            <small className="text-islamic text-md">
-              Your pronoun is visible to everyone.
-            </small>
-          </FormGroup>
+          {gender.toLowerCase() === 'custom' && (
+            <FormGroup>
+              <Input
+                type="select"
+                name="option"
+                id="option"
+                aria-labelledby="option"
+              >
+                <option disabled={true}>Select your pronoun</option>
+                <option value={1}>She: "Wish her a happy birthday!"</option>
+                <option value={2}>He: "Wish him a happy birthday!"</option>
+                <option value={6}>They: "Wish them a happy birthday!"</option>
+              </Input>
+              <small className="text-islamic text-md">
+                Your pronoun is visible to everyone.
+              </small>
+            </FormGroup>
+          )}
           <FormGroup>
             <Input placeholder="Gender (optional)" />
             <small className="text-islamic">
@@ -240,7 +248,7 @@ const CustomerRegister = () => {
             <button className="m-1 login-register-button" type="submit">
               Sign Up
             </button>
-              <GoogleLoginButton></GoogleLoginButton>
+            <GoogleLoginButton></GoogleLoginButton>
             <Link to="/" className="text-decoration-none text-islamic mt-2">
               Already have an account?
             </Link>
