@@ -7,7 +7,13 @@ const fileRoot = process.cwd()
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  _entry: './src/index.js',
+  get entry() {
+    return this._entry
+  },
+  set entry(value) {
+    this._entry = value
+  },
   output: {
     path: path.join(fileRoot, 'dist'),
     filename: 'google-login.js',
