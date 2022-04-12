@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Register from './../common/register/Register';
@@ -14,19 +15,6 @@ const Dashboard = () => {
 
   return (
     <div className={`${!wanted ? 'homeBackground' : ''} minHeight`}>
-      <video
-        src={video}
-        autoPlay
-        loop
-        muted
-        style={{
-          objectFit: 'cover',
-          position: 'absolute',
-          zIndex: '-1',
-          top: '0',
-          left: '0',
-        }}
-      />
       <button
         className={`${!wanted ? 'wantedButton' : 'd-none'} `}
         onClick={handleWanted}
