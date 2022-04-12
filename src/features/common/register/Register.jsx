@@ -1,30 +1,36 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import CustomerRegister from './CustomerRegister';
-import EmployeeRegister from './EmployeeRegister';
-import TerminalReact from '../../tool/terminal/TerminalReact';
-import terminal from './terminal';
-const Register = () => {
-  const [isEmployee, setIsEmployee] = useState(false);
-  const [isCustomer, setIsCustomer] = useState(true);
+/* eslint-disable no-unused-vars */
+import React from "react";
+import TerminalReact from './../../tool/terminal/TerminalReact'
+import terminal from './terminal'
+import EmployeeRegister from "./EmployeeRegister";
+import CustomerRegister from "./CustomerRegister";
+import { Container } from '@nextui-org/react';
 
+const Register = () => {
+  const [isEmployee, setIsEmployee] = React.useState(false);
+  const [isCustomer, setIsCustomer] = React.useState(false);
+
+  const isChoisable = ![isEmployee,isCustomer].every(Boolean)
 
   return(
-    <div className="register-container">
+    <div>
     {!isEmployee && !isCustomer ? (
       <TerminalReact
-      className="terminal-lg"
+        isChoisable={isChoisable}
+        className="terminal-lg"
         terminalColor={terminal.TERMINAL_DARK}
         terminalText="welcome to wanted"
         terminalTextWeight={'500'}
         terminalTextSize={'2rem'}
+        setIsEmployee={setIsEmployee}
+        setIsCustomer={setIsCustomer}
       >
-        1231231253
+        
       </TerminalReact>
     ) : isEmployee ? (
-      <EmployeeRegister />
+      <EmployeeRegister isEmployee={isEmployee} setIsEmployee={setIsEmployee} />
     ) : (
-      <CustomerRegister />
+      <CustomerRegister isCustomer={isCustomer} setIsCustomer={setIsCustomer} />
     )}
   </div>
   )

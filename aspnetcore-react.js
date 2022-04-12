@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // @ts-nocheck
 // This script configures the .env.development.local file with additional environment variables to configure HTTPS using the ASP.NET Core
 // development certificate in the webpack development proxy.

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
@@ -6,7 +7,7 @@ import { selectAllMonthes } from './../../redux/registerSlice';
 import { Link } from 'react-router-dom';
 import { GoogleLoginButton } from 'react-social-login-buttons';
 
-const CustomerRegister = () => {
+const CustomerRegister = ({ isCustomer, setIsCustomer }) => {
   const allGenders = useSelector(selectAllGenders);
   const allRegisters = useSelector(selectAllMonthes);
 
@@ -91,9 +92,17 @@ const CustomerRegister = () => {
     e.preventDefault();
   };
 
+  // !handle main choisable customer employee menu
+  const handleBackUp = () => {
+    setIsCustomer(!isCustomer);
+  };
+
   return (
-    <div className="p-1 formContainer w-50 bg-success">
-      <h1 className="text-silver text-center">Axtarılan Proqramçılar</h1>
+    <div className="p-1 formContainer w-50 simple-border block-centerer">
+      <Button color="primary" outline onClick={handleBackUp}>
+        Back
+      </Button>
+      <h1 className="text-white text-center">Axtarılan Proqramçılar</h1>
       <div className="login-register-padding">
         <h2 className="text-white">Create a new account</h2>
         <p className="text-white">It’s quick and easy.</p>
@@ -217,7 +226,8 @@ const CustomerRegister = () => {
           {/* genders end => */}
           {/* if gender custom => start */}
           {gender.toLowerCase() === 'custom' && (
-            <FormGroup>
+           <>
+             <FormGroup>
               <Input
                 type="select"
                 name="option"
@@ -229,19 +239,23 @@ const CustomerRegister = () => {
                 <option value={2}>He: "Wish him a happy birthday!"</option>
                 <option value={6}>They: "Wish them a happy birthday!"</option>
               </Input>
-              <small className="text-islamic text-md">
+              <small className="text-white text-md">
                 Your pronoun is visible to everyone.
               </small>
             </FormGroup>
-          )}
+         
           <FormGroup>
-            <Input placeholder="Gender (optional)" />
-            <small className="text-islamic">
+            <Input placeholder="Gender (optional)" /> 
+          </FormGroup>
+           </>
+          )}
+          <div>
+          <small className="text-white">
               By clicking Sign Up, you agree to our Terms, Data Policy and
               Cookies Policy. You may receive SMS Notifications from us and can
               opt out any time.
             </small>
-          </FormGroup>
+          </div>
           {/* if gender custom => end */}
           {/* form submit button */}
           <FormGroup>
