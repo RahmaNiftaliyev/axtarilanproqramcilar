@@ -1,0 +1,9 @@
+.footer_background {
+    background: rgba(31, 29, 43, 0.4);
+    backdrop-filter: blur(1110px);
+    height: 222px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+}

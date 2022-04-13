@@ -19,8 +19,9 @@ const ReactCalendar = () => {
         height={window.innerHeight}
         rowHeight={70}
         onSelect={function (date) {
-          alert('You selected: ' + (date, 'ddd, MMM Do YYYY'));
+          alert('You selected: ' + (date + ' ddd, MMM Do YYYY'));
         }}
+        className={`react-wanted-calendar`}
       />
     </div>
   );

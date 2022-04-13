@@ -3,16 +3,16 @@ import { useTypeWriter } from '@vegadev/react-type-writer';
 import { Badge } from 'reactstrap';
 
 const TerminalReact = ({
-  isChoisable,
-  className,
-  terminalColor,
-  terminalText,
-  setIsCustomer,
-  setIsEmployee,
-}) => {
+                         isChoisable,
+                         className,
+                         terminalColor,
+                         terminalText,
+                         setIsCustomer,
+                         setIsEmployee,
+                       }) => {
   const typeWriterInvoker = () => {
     return {
-      text: [terminalText ? terminalText : "console.log('Hello World')"],
+      text: [terminalText ? terminalText : 'console.log(\'Hello World\')'],
       infiniteLoop: true,
       blinker: '|',
       delay: 100,
@@ -23,14 +23,14 @@ const TerminalReact = ({
   const text = useTypeWriter(typeWriterInvoker());
 
   return (
-    <div className={`${terminalColor} termina-md, ${className}`}>
-      <h1 className="terminal-pl-md">Welcome to our wanted society</h1>
-      <div className="terminal-pl-md">
-        <Badge color="danger">$root~ {text}</Badge>
+    <div className={`${terminalColor} terminal-md, ${className}`}>
+      <h1 className='terminal-pl-md'>Welcome to our wanted society</h1>
+      <div className='terminal-pl-md'>
+        <Badge color='danger'>$root~ {text}</Badge>
       </div>
       {isChoisable && (
         <div
-          className="gradient-background dflex justify-content-around align-items-center"
+          className='gradient-background d-flex justify-content-around align-items-center'
           style={{
             width: '80%',
             height: 'calc(100vh - 150px)',
@@ -42,11 +42,11 @@ const TerminalReact = ({
           }}
         >
           <div
-            className="cardsSelection customer"
+            className='cardsSelection customer'
             onClick={() => setIsCustomer((prev) => !prev)}
           ></div>
           <div
-            className="cardsSelection freelancer"
+            className='cardsSelection freelancer'
             onClick={() => setIsEmployee((prev) => !prev)}
           ></div>
         </div>

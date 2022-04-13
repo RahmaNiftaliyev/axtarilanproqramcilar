@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React from 'react';
 
 const inject = (
   ParamsReactDom,
@@ -7,16 +7,15 @@ const inject = (
   ParamsProvider,
   ParamsApp,
   ParamsStore,
-  ParamsReact
 ) => {
-  const container = document.getElementById("root");
+  const container = document.getElementById('root');
   const root = ParamsReactDom.createRoot(container);
   return root.render(
     <ParamsBrowserRouter>
       <ParamsProvider store={ParamsStore}>
-        <ParamsApp name="Axtarılan Proqramçılar" />
+        <ParamsApp name='Axtarılan Proqramçılar' />
       </ParamsProvider>
-    </ParamsBrowserRouter>
+    </ParamsBrowserRouter>,
   );
 };
 

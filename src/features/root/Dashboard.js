@@ -1,30 +1,45 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Register from './../common/register/Register';
-import Login from './../common/login/Login';
 import ReactCalendar from './../tool/calendar/ReactCalendar';
-import video from './../common/assets/Luna.mp4';
+import ChatApp from '../tool/chat/ChatApp';
+import Home from '../components/home/Home';
+import Explore from '../components/explore/Explore';
+import TopRanks from '../components/topranks/TopRanks';
+import OnlineCourses from '../components/onlinecourses/OnlineCourses';
+
 
 const Dashboard = () => {
-  const [wanted, setWanted] = React.useState(false);
+  const [freelancer, setFreelancer] = React.useState(false);
+  const [customer, setCustomer] = React.useState(false);
 
-  const handleWanted = () => {
-    setWanted(!wanted);
+  const handleDyanmicState = (callback = (paramsSetter = !freelancer && !customer ? null : freelancer ? setCustomer : setFreelancer) => {
+    if (paramsSetter) {
+      paramsSetter(prev => prev === true ? !prev : prev);
+    }
+
+  }) => {
+
+    callback(0);
   };
 
+
   return (
-    <div className={`${!wanted ? 'homeBackground' : ''} minHeight`}>
-      <button
-        className={`${!wanted ? 'wantedButton' : 'd-none'} `}
-        onClick={handleWanted}
-      >
-        Axtarılan proqramçılar
-      </button>
+    <div>
       <Routes>
-        {wanted && <Route path="/" element={<Register />} />}
-        <Route path="/login" element={<Login />} />
-        <Route path="/calendar" element={<ReactCalendar />} />
+        <Route path='/' element={<Home />} />
+        {/*FORM REGISTER LOGIN*/}
+        <Route path='/register' element={<Register freelancer={freelancer} customer={customer} />} />
+
+        {/*NAVIGATION LINKS EXPLORE TOP-RANKS ONLINE-COURSES */}
+        <Route path='/explore' element={<Explore />} />
+        <Route path='/ranks' element={<TopRanks />} />
+        <Route path='/courses' element={<OnlineCourses />} />
+
+        {/*TOOLS*/}
+        <Route path='/calendar' element={<ReactCalendar />} />
+        <Route path='/chat' element={<ChatApp />} />
       </Routes>
     </div>
   );

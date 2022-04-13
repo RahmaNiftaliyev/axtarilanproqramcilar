@@ -4,17 +4,13 @@
 
 [page of developer and founder](https://rahmanniftaliyev.com)
 
-![1649693408420.png](image/README/1649693408420.png)
-
-![1649693452332.png](image/README/1649693452332.png)
+![1649806054429.png](image/README/1649806054429.png)
 
 package.json
 
 ![](image/README/1649693470292.png)
 
-
 folder structure
-
 
 ![](image/README/1649693692021.png)
 

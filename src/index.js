@@ -10,7 +10,4 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import inject from './inject';
 
 
-
-
-
-inject(ReactDOM, BrowserRouter, Provider, App, store, React);
+inject(ReactDOM, BrowserRouter, Provider, App, store);

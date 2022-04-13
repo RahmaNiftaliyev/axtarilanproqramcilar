@@ -1,39 +1,27 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import TerminalReact from './../../tool/terminal/TerminalReact'
-import terminal from './terminal'
-import EmployeeRegister from "./EmployeeRegister";
-import CustomerRegister from "./CustomerRegister";
-import { Container } from '@nextui-org/react';
+import React from 'react';
+import CustomerRegister from './CustomerRegister';
+import EmployeeRegister from './EmployeeRegister';
 
-const Register = () => {
-  const [isEmployee, setIsEmployee] = React.useState(false);
-  const [isCustomer, setIsCustomer] = React.useState(false);
 
-  const isChoisable = ![isEmployee,isCustomer].every(Boolean)
+// eslint-disable-next-line react/prop-types
+const Register = ({ freelancer, customer }) => {
 
-  return(
+  return (
     <div>
-    {!isEmployee && !isCustomer ? (
-      <TerminalReact
-        isChoisable={isChoisable}
-        className="terminal-lg"
-        terminalColor={terminal.TERMINAL_DARK}
-        terminalText="welcome to wanted"
-        terminalTextWeight={'500'}
-        terminalTextSize={'2rem'}
-        setIsEmployee={setIsEmployee}
-        setIsCustomer={setIsCustomer}
-      >
-        
-      </TerminalReact>
-    ) : isEmployee ? (
-      <EmployeeRegister isEmployee={isEmployee} setIsEmployee={setIsEmployee} />
-    ) : (
-      <CustomerRegister isCustomer={isCustomer} setIsCustomer={setIsCustomer} />
-    )}
-  </div>
-  )
+      {
+        !freelancer && !customer ?
+          (
+            <div>
+              <h1>Register</h1>
+              <p>Register as a freelancer or customer</p>
+              <button>Freelancer</button>
+              <button>Customer</button>
+            </div>
+          ) : freelancer ? <EmployeeRegister /> : <CustomerRegister />
+      }
+    </div>
+  );
 };
 
 export default Register;

@@ -1,14 +1,13 @@
-/* eslint-disable no-unused-vars */
+/*eslint-disable*/
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Form, FormGroup, Input, Button } from 'reactstrap';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { selectAllGenders } from './../../redux/gendersSlice';
 import { selectAllMonthes } from './../../redux/registerSlice';
-import { Link } from 'react-router-dom';
-import terminal from './terminal';
+import { Link, useNavigate } from 'react-router-dom';
 import { GithubLoginButton } from 'react-social-login-buttons';
-import { useNavigate } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
   const allGenders = useSelector(selectAllGenders);
   const allRegisters = useSelector(selectAllMonthes);
@@ -48,7 +47,7 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
   const dayLogicController = (
     counter = allRegisters.find((monthObj) => {
       return parseInt(monthObj.id) === birthday.month ? monthObj : null;
-    })
+    }),
   ) => {
     let days = [];
     const maxContent = counter;
@@ -92,31 +91,31 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
 
   return (
     <div className={`p-1 formContainer w-50 simple-border block-centerer`}>
-      <Button color="primary" outline onClick={handleBackUp}>
+      <Button color='primary' outline onClick={handleBackUp}>
         Back
       </Button>
-      <h1 className="text-white text-center">Axtarılan Proqramçılar</h1>
-      <div className="login-register-padding">
-        <h2 className="text-white">Create a new account</h2>
-        <p className="text-white">It’s quick and easy.</p>
-        <Form onSubmit={handleRegister} autoComplete="off">
+      <h1 className='text-white text-center'>Axtarılan Proqramçılar</h1>
+      <div className='login-register-padding'>
+        <h2 className='text-white'>Create a new account</h2>
+        <p className='text-white'>It’s quick and easy.</p>
+        <Form onSubmit={handleRegister} autoComplete='off'>
           {/* firstname and lastname */}
-          <FormGroup className="grid-initial frame-2">
+          <FormGroup className='grid-initial frame-2'>
             <Input
-              type="text"
-              id="firstName"
+              type='text'
+              id='firstName'
               placeholder={error && error.length > 0 ? error : 'First Name'}
-              name="firstName"
-              aria-labelledby="firstName"
+              name='firstName'
+              aria-labelledby='firstName'
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
             <Input
-              type="text"
-              id="lastName"
+              type='text'
+              id='lastName'
               placeholder={error && error.length > 0 ? error : 'Last Name'}
-              name="lastName"
-              aria-labelledby="lastName"
+              name='lastName'
+              aria-labelledby='lastName'
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
@@ -125,14 +124,14 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
 
           <FormGroup>
             <Input
-              type="email"
-              id="email"
-              autoComplete="off"
+              type='email'
+              id='email'
+              autoComplete='off'
               placeholder={
                 error && error.length > 0 ? error : 'Mobile number or email'
               }
-              name="email"
-              aria-labelledby="email"
+              name='email'
+              aria-labelledby='email'
               value={isSetted ? email : ''}
               onChange={emailNumberHandler}
             />
@@ -140,23 +139,23 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
           {/* password */}
           <FormGroup>
             <Input
-              type="password"
-              id="password"
+              type='password'
+              id='password'
               placeholder={error && error.length > 0 ? error : 'password'}
-              name="password"
-              aria-labelledby="password"
-              autoComplete="off"
+              name='password'
+              aria-labelledby='password'
+              autoComplete='off'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormGroup>
           {/* birthday year month day start => */}
-          <FormGroup className="grid-initial frame-3">
+          <FormGroup className='grid-initial frame-3'>
             <Input
-              type="select"
-              id="month"
-              name="month"
-              aria-labelledby="month"
+              type='select'
+              id='month'
+              name='month'
+              aria-labelledby='month'
               defaultValue={allRegisters[birthday.month].id - 1}
               onChange={handleDateOfBirth}
             >
@@ -169,10 +168,10 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
               })}
             </Input>
             <Input
-              type="select"
-              id="day"
-              name="day"
-              aria-labelledby="date"
+              type='select'
+              id='day'
+              name='day'
+              aria-labelledby='date'
               defaultValue={birthday.day}
               onChange={handleDateOfBirth}
             >
@@ -185,10 +184,10 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
               })}
             </Input>
             <Input
-              type="select"
-              name="year"
-              id="year"
-              aria-labelledby="year"
+              type='select'
+              name='year'
+              id='year'
+              aria-labelledby='year'
               defaultValue={birthday.year}
               onChange={handleDateOfBirth}
             >
@@ -206,7 +205,7 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
           {/* genders start => */}
           <FormGroup>
             <Input
-              type="select"
+              type='select'
               defaultValue={'gender'}
               onChange={(e) => setGender(e.target.value)}
             >
@@ -217,31 +216,31 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
           {/* genders end => */}
           {/* if gender custom => start */}
           {gender.toLowerCase() === 'custom' && (
-            <>
+            <div>
               <FormGroup>
                 <Input
-                  type="select"
-                  name="option"
-                  id="option"
-                  aria-labelledby="option"
+                  type='select'
+                  name='option'
+                  id='option'
+                  aria-labelledby='option'
                 >
                   <option disabled={true}>Select your pronoun</option>
                   <option value={1}>She: "Wish her a happy birthday!"</option>
                   <option value={2}>He: "Wish him a happy birthday!"</option>
                   <option value={6}>They: "Wish them a happy birthday!"</option>
                 </Input>
-                <small className="text-white text-md">
+                <small className='text-white text-md'>
                   Your pronoun is visible to everyone.
                 </small>
               </FormGroup>
 
               <FormGroup>
-                <Input placeholder="Gender (optional)" />
+                <Input placeholder='Gender (optional)' />
               </FormGroup>
-            </>
+            </div>
           )}
           <div>
-            <small className="text-white">
+            <small className='text-white'>
               By clicking Sign Up, you agree to our Terms, Data Policy and
               Cookies Policy. You may receive SMS Notifications from us and can
               opt out any time.
@@ -250,11 +249,11 @@ const EmployeeRegister = ({ isEmployee, setIsEmployee }) => {
           {/* if gender custom => end */}
           {/* form submit button */}
           <FormGroup>
-            <button className="m-1 login-register-button" type="submit">
+            <button className='m-1 login-register-button' type='submit'>
               Sign Up
             </button>
             <GithubLoginButton></GithubLoginButton>
-            <Link to="/" className="text-decoration-none text-islamic mt-2">
+            <Link to='/' className='text-decoration-none text-islamic mt-2'>
               Already have an account?
             </Link>
           </FormGroup>
