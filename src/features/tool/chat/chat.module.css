@@ -1,13 +1,192 @@
-.chatApp {
-    width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;1,400&display=swap');
+
+/*
+USAGE => font-family: 'Nunito Sans', sans-serif;
+*/
+
+
+:root {
+    --font-nunito: 'Nunito Sans', sans-serif;
+}
+
+.chatAppContainer {
     height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #010A01;
+}
+
+
+.chatApp {
+    width: calc(100% - 30px);
+    height: calc(100vh - 30px);
     display: grid;
     grid-template-columns:23% auto 23%;
     grid-template-rows: 1fr;
-    background: #141416;
+    -moz-box-shadow: 0 0 7px 2px #7BFF81;
+    -webkit-box-shadow: 0 0 7px 2px #7BFF81;
+    -o-box-shadow: 0 0 7px 2px #7BFF81;
+    box-shadow: 0 0 7px 2px #7BFF81;
+    border-radius: 22px;
+    animation-name: case;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
+@keyframes case {
+    0% {
+        box-shadow: 0 0 7px 2px #7BFF81;
+    }
+    25% {
+        box-shadow: 0 0 11px 2px #7BFF81;
+    }
+    50% {
+        box-shadow: 0 0 15px 2px #7BFF81;
+    }
+    75% {
+        box-shadow: 0 0 11px 2px #7BFF81;
+    }
+    100% {
+        box-shadow: 0 0 7px 2px #7BFF81;
+    }
+}
 
 .light_bg_chatapp {
     background-color: #1c1d22
 }
+
+.dark_bg_chatapp {
+    background-color: #141416
+}
+
+
+.border_light {
+    border: 1px solid #37393C;
+}
+
+
+.border_top_light {
+    border-top: 1px solid #37393C;
+}
+
+.border_right_light {
+    border-right: 1px solid #37393C;
+}
+
+.border_bottom_light {
+    border-bottom: 1px solid #37393C;
+}
+
+.right_pane_radius {
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+
+.border_left_light {
+    border-left: 1px solid #37393C;
+}
+
+.left_header_profile {
+    height: 140px;
+}
+
+.left_stories {
+    height: 144px;
+}
+
+.left_pane_radius {
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+}
+
+
+.header {
+    height: 64px;
+}
+
+
+.center_header {
+    padding-left: 24px;
+    padding-right: 35px;
+}
+
+.center_header h3 {
+    font-family: var(--font-nunito);
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 11px;
+}
+
+.center_header svg {
+    color: white;
+}
+
+.center_body {
+    height: calc(100% - 128px);
+}
+
+.center_bottom {
+    height: 64px;
+}
+
+.right_profile {
+    height: 232px;
+}
+
+.right_info {
+    height: 92px;
+}
+
+.right_media_links {
+    height: 146px;
+}
+
+.right_datas {
+    height: 216px;
+}
+
+[class*="profile_photo_"] {
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+.profile_photo_40 {
+    width: 40px;
+    height: 40px;
+
+}
+
+.profile_photo_48 {
+    width: 48px;
+    height: 48px;
+
+}
+
+
+.profile_photo_124 {
+    width: 124px;
+    height: 124px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

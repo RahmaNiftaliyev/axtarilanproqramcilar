@@ -9,10 +9,12 @@ function ChatApp() {
 
 
   return (
-    <div className={styles.chatApp}>
-      <LeftPln />
-      <CenterPln />
-      <RightPln />
+    <div className={`${styles.chatAppContainer}`}>
+      <div className={`${styles.chatApp} ${styles.border_light}`}>
+        <LeftPln />
+        <CenterPln />
+        <RightPln />
+      </div>
     </div>
   );
 }

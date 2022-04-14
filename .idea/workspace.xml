@@ -5,36 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d57f7a1e-17da-42ae-abc9-65a7d0a10476" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftMessages.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/arrow_right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/icon1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/icon2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/notification.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/settings.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/star.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/icons/time.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/contacts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/globe/ReactGlobeContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/axtarilanproqramcilar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/axtarilanproqramcilar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aspnetcore-react.js" beforeDir="false" afterPath="$PROJECT_DIR$/aspnetcore-react.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/README/1649693350502.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/README/1649693408420.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/README/1649693452332.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/rootReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/root/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/root/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/ChatApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/ChatApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/globe/ReactGlobeContent.jsx" beforeDir="false" />
     </list>
-    <list id="7d8f24de-f36e-42ff-8ea3-87b0ae7aa886" name="Changes by Kamran" comment="" />
-    <list id="50043860-855f-462a-a836-d775a19b1983" name="Changes by Ugurlu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +84,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/features/redux/ordersSlice.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/features/root/Dashboard.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/index.css" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
@@ -144,6 +132,7 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "javascript.nodejs.core.library.configured.version": "16.14.2",
     "javascript.nodejs.core.library.typings.version": "16.11.26",
+    "last_opened_file_path": "C:/Users/info/OneDrive/Desktop/FolderOfTheFolders/personal/axtarilanproqramcilar/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -155,7 +144,8 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "rcc.settings",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "C:\\Users\\info\\AppData\\Local\\JetBrains\\WebStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -165,6 +155,9 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\info\OneDrive\Desktop\FolderOfTheFolders\personal\axtarilanproqramcilar\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\info\OneDrive\Desktop\FolderOfTheFolders\personal\axtarilanproqramcilar\src" />
       <recent name="C:\Users\info\OneDrive\Desktop\FolderOfTheFolders\personal\axtarilanproqramcilar\src\features\components\topranks" />
@@ -233,7 +226,8 @@
       <workItem from="1649874002524" duration="1074000" />
       <workItem from="1649875103101" duration="367000" />
       <workItem from="1649875477246" duration="4683000" />
-      <workItem from="1649919205664" duration="10413000" />
+      <workItem from="1649919205664" duration="21305000" />
+      <workItem from="1649954946152" duration="7007000" />
     </task>
     <task id="LOCAL-00001" summary="global-errors-fixed">
       <created>1649876569101</created>
@@ -242,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649876569101</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chatappdata structure building...">
+      <created>1649940503951</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649940503951</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +256,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="react-globe error not fixed" />
     <MESSAGE value="global-errors-fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="global-errors-fixed" />
+    <MESSAGE value="chatappdata structure building..." />
+    <option name="LAST_COMMIT_MESSAGE" value="chatappdata structure building..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
