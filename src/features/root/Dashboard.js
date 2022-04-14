@@ -8,6 +8,7 @@ import Home from '../components/home/Home';
 import Explore from '../components/explore/Explore';
 import TopRanks from '../components/topranks/TopRanks';
 import OnlineCourses from '../components/onlinecourses/OnlineCourses';
+import ReactGlobeContent from '../tool/globe/ReactGlobeContent';
 
 
 const Dashboard = () => {
@@ -40,6 +41,7 @@ const Dashboard = () => {
         {/*TOOLS*/}
         <Route path='/calendar' element={<ReactCalendar />} />
         <Route path='/chat' element={<ChatApp />} />
+        <Route path='/globe' element={<ReactGlobeContent />} />
       </Routes>
     </div>
   );

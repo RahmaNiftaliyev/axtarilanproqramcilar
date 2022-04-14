@@ -1,3 +1,4 @@
+//no-anonymus-default-export
 import usersReducer from './../features/redux/usersSlice';
 import developersReducer from './../features/redux/developersSlice';
 import customersReducer from './../features/redux/customersSlice';

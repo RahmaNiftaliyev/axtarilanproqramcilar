@@ -1,20 +1,20 @@
 import React from 'react';
+import LeftPln from './LeftPln';
+import CenterPln from './CenterPln';
+import RightPln from './RightPln';
+import styles from './chat.module.css';
 
-const ChatApp = () => {
-  // const [message, setMessage] = useState('');
-  // const [messages, setMessages] = useState([]);
 
-  // const handleMessage = (e) => {
-  //   setMessages([...messages, message]);
-  //   setMessage('');
-  // };
+function ChatApp() {
+
 
   return (
-    <div>
-      <h1>akula ugur</h1>
-
+    <div className={styles.chatApp}>
+      <LeftPln />
+      <CenterPln />
+      <RightPln />
     </div>
   );
-};
+}
 
 export default ChatApp;
