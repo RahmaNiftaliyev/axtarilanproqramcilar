@@ -4,23 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57f7a1e-17da-42ae-abc9-65a7d0a10476" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="d57f7a1e-17da-42ae-abc9-65a7d0a10476" name="Changes" comment="chat section building">
+      <change afterPath="$PROJECT_DIR$/src/features/components/home/assets/earthlights1k.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/Group.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/emotion-happy-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/progile.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/README/1649693350502.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/README/1649693408420.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/README/1649693452332.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/home/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/root/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/root/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/ChatApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/ChatApp.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/assets/img/profile.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/tool/globe/ReactGlobeContent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TODO_SCOPE": "All Places",
     "WebServerToolWindowFactoryState": "false",
     "code.cleanup.on.save": "true",
@@ -142,9 +141,10 @@
     "nodejs.jest.jest_package": "C:/Users/info/OneDrive/Desktop/FolderOfTheFolders/personal/axtarilanproqramcilar/node_modules/jest",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\info\\OneDrive\\Desktop\\FolderOfTheFolders\\personal\\axtarilanproqramcilar\\node_modules\\prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\info\\AppData\\Local\\JetBrains\\WebStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -227,7 +227,9 @@
       <workItem from="1649875103101" duration="367000" />
       <workItem from="1649875477246" duration="4683000" />
       <workItem from="1649919205664" duration="21305000" />
-      <workItem from="1649954946152" duration="7007000" />
+      <workItem from="1649954946152" duration="7215000" />
+      <workItem from="1650001646040" duration="7223000" />
+      <workItem from="1650039755248" duration="8931000" />
     </task>
     <task id="LOCAL-00001" summary="global-errors-fixed">
       <created>1649876569101</created>
@@ -243,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649940503951</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chatappdata structure building... css section">
+      <created>1649962717301</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649962717301</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +266,9 @@
     <MESSAGE value="react-globe error not fixed" />
     <MESSAGE value="global-errors-fixed" />
     <MESSAGE value="chatappdata structure building..." />
-    <option name="LAST_COMMIT_MESSAGE" value="chatappdata structure building..." />
+    <MESSAGE value="chatappdata structure building... css section" />
+    <MESSAGE value="chat section building" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat section building" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,30 +1,41 @@
 import React from 'react';
-import Footer from '../../common/footer/Footer';
-import Luna from './../../common/assets/Luna.mp4';
+import ReactEarth from 'react-earth';
 
 const Home = () => {
 
+  const cities = [{
+    'lat': 42.3601,
+    'lng': 71.0589,
+  }, {
+    'lat': 74.0721,
+    'lng': 4.7110,
+  }, {
+    'lat': 45.31,
+    'lng': 2.04,
+  }, {
+    'lat': 174.72,
+    'lng': 36.8249,
+  }, {
+    'lat': 18.42,
+    'lng': 33.9249,
+  }];
+
+
   return (
     <div className={'home-dashboard'}>
-      <video src={Luna} loop autoPlay muted style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        zIndex: '-1',
-      }} />
-      <nav className={'nav-section d-flex align-items-center justify-content-between'}>
-
-      </nav>
-
-
-      <Footer />
-
+      <ReactEarth
+        className={'globe-container'}
+        cloudOpacity={0.3}
+        citySize={50}
+        showCloud={true}
+        speed={8}
+        width={900}
+        height={900}
+        cities={cities}
+      />
     </div>
   );
-};
 
+};
 
 export default Home;

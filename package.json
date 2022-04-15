@@ -14,10 +14,12 @@
     "base-js": "1.0.1",
     "bootstrap": "5.1.3",
     "cjs": "0.0.11",
+    "emoji-mart": "^3.0.1",
     "nan": "2.15.0",
     "prop-types": "^15.8.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-earth": "^0.1.2",
     "react-github-login-button": "1.0.1",
     "react-google-login": "5.2.2",
     "react-helmet": "6.1.0",
@@ -50,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
 }

@@ -20,6 +20,19 @@ body {
 
 .home-dashboard {
     min-height: 100vh;
+    background: url("./features/common/assets/svg/backgrpund.svg");
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.globe-container {
+    position: absolute;
+    right: 20px;
+    height: 100% !important;
+    display: flex;
+    align-items: center;
 }
 
 .nav-section {
@@ -129,6 +142,9 @@ option {
 }
 
 
+.cursor-pointer {
+    cursor: pointer;
+}
 
 
 

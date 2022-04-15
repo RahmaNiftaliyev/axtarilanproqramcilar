@@ -3,7 +3,7 @@ import styles from './chat.module.css';
 
 const RightPln = () => {
   return (
-    <div className={`${styles.light_bg_chatapp} ${styles.border_left_light} ${styles.right_pane_radius}`}>
+    <div className={`${styles.light_bg_chatapp} ${styles.border_left_light}`}>
       <div className={`${styles.header} ${styles.border_bottom_light}`}>
 
       </div>

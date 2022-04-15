@@ -10,7 +10,7 @@ function ChatApp() {
 
   return (
     <div className={`${styles.chatAppContainer}`}>
-      <div className={`${styles.chatApp} ${styles.border_light}`}>
+      <div className={`${styles.chatApp}`}>
         <LeftPln />
         <CenterPln />
         <RightPln />

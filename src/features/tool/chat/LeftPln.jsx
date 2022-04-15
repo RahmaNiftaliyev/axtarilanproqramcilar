@@ -12,10 +12,10 @@ const LeftPln = () => {
 
 
   return (
-    <div className={`${styles.light_bg_chatapp} ${styles.border_right_light} ${styles.left_pane_radius}`}>
+    <div className={`${styles.light_bg_chatapp} ${styles.border_right_light}`}>
       <div className={`${styles.left_header_profile} ${styles.border_bottom_light}`}></div>
-      <LeftStories />
-      <LeftMessages />
+      <LeftStories profile={user.userProfile} stories={user.userStories} />
+      <LeftMessages profile={user.userProfile} messages={user.userMessages} />
     </div>
   );
 };
