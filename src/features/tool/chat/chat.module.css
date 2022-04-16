@@ -22,7 +22,7 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns:23% auto 23%;
+    grid-template-columns: 23% auto 23%;
     grid-template-rows: 1fr;
     overflow: hidden;
 }
@@ -108,6 +108,33 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     width: 58px;
 }
 
+/* 608 40 */
+
+
+.form_chat_center {
+    display: flex;
+    height: 40px;
+    width: calc(100% - 135px);
+    display: flex;
+    flex-direction: column;
+}
+
+.form_chat_center>input {
+    height: inherit;
+    background: #26272D;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.form_chat_center>input::placeholder {
+    font-family: var(--font-nunito);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
 
 .right_profile {
     height: 232px;
@@ -146,22 +173,3 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     width: 124px;
     height: 124px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

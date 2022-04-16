@@ -4,10 +4,7 @@ import CenterPln from './CenterPln';
 import RightPln from './RightPln';
 import styles from './chat.module.css';
 
-
 function ChatApp() {
-
-
   return (
     <div className={`${styles.chatAppContainer}`}>
       <div className={`${styles.chatApp}`}>

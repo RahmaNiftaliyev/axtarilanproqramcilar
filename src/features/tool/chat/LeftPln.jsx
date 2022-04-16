@@ -10,10 +10,11 @@ const LeftPln = () => {
     userMessages: { messages: [], unread: 0, id: '' },
   });
 
-
   return (
     <div className={`${styles.light_bg_chatapp} ${styles.border_right_light}`}>
-      <div className={`${styles.left_header_profile} ${styles.border_bottom_light}`}></div>
+      <div
+        className={`${styles.left_header_profile} ${styles.border_bottom_light}`}
+      ></div>
       <LeftStories profile={user.userProfile} stories={user.userStories} />
       <LeftMessages profile={user.userProfile} messages={user.userMessages} />
     </div>

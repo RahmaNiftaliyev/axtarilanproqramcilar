@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d57f7a1e-17da-42ae-abc9-65a7d0a10476" name="Changes" comment="chat section building">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/home/assets/earthlights1k.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/Group.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/emotion-happy-line.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/tool/chat/assets/img/progile.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/root/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/root/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/home/assets/earthlights1k.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/home/assets/earthlights1k.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/ChatApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/ChatApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftMessages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftMessages.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftStories.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/assets/img/profile.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/contacts.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +227,7 @@
       <workItem from="1649919205664" duration="21305000" />
       <workItem from="1649954946152" duration="7215000" />
       <workItem from="1650001646040" duration="7223000" />
-      <workItem from="1650039755248" duration="9480000" />
+      <workItem from="1650039755248" duration="10583000" />
     </task>
     <task id="LOCAL-00001" summary="global-errors-fixed">
       <created>1649876569101</created>

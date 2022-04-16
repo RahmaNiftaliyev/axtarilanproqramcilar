@@ -1,10 +1,10 @@
 import React from 'react';
-
+import styles from './calendar.module.css'
 
 const ReactCalendar = () => {
   return (
-    <div>
-      <h1>React Calendar</h1>
+    <div className={`${styles.background} minHeight`}>
+      
     </div>
   );
 };
