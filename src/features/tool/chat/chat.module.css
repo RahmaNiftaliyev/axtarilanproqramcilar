@@ -60,6 +60,7 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 
 .left_header_profile {
     height: 140px;
+    padding:12px 16px 23px;
 }
 
 .left_stories {

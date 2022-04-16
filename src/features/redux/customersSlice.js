@@ -4,21 +4,20 @@ import {
   createSlice,
   createAsyncThunk,
   createEntityAdapter,
-} from "@reduxjs/toolkit";
-
+} from '@reduxjs/toolkit';
 
 const adapterizer = () => {
   return {
     selectId: (customer) => customer.id,
     sortComparer: (preCustomer, nextCustomer) =>
       preCustomer.id.sortComparer(nextCustomer.id),
-  }
-}
+  };
+};
 
 const customersAdapter = createEntityAdapter(adapterizer());
 
 const initialState = {
-  status: "idle",
+  status: 'idle',
   error: null,
   selectedCustomer: {},
   customers: {
@@ -29,7 +28,7 @@ const initialState = {
 
 const sliceInvoker = () => {
   return {
-    name: "customers",
+    name: 'customers',
     initialState,
     reducers: {},
     extraReducers: {},
