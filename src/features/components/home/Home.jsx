@@ -50,14 +50,12 @@ const Home = () => {
         <div className="aside-header">
           <div className="card-logo"></div>
         </div>
+        <div className="aside-body"></div>
+        <div className="aside-bottom"></div>
       </div>
-      <div className="Main">
-    
-      </div>
+      <div className="Main"></div>
       <div className="Globe">
-        <div className='glass-rocket'>
-
-        </div>
+        <div className="glass-rocket"></div>
         <canvas
           ref={canvasRef}
           style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: 1 }}

@@ -34,13 +34,15 @@
     "react-scripts": "^5.0.1",
     "react-social-login-buttons": "3.6.0",
     "react-threejs": "^0.0.4",
+    "react-voice-recorder": "^2.1.2",
     "reactstrap": "9.0.2",
     "select2": "4.1.0-rc.0",
     "socket.io-adapter": "~2.4.0",
     "socket.io-client": "^4.4.1",
     "socket.io-parser": "~4.0.4",
     "styled-components": "5.3.5",
-    "webpack-remove-debug": "^0.1.0"
+    "webpack-remove-debug": "^0.1.0",
+    "webpack-require": "^0.0.16"
   },
   "scripts": {
     "start": "react-scripts start",

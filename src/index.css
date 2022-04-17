@@ -23,6 +23,7 @@ body {
 }
 
 
+
 .home-dashboard {
     background-color: #111;
     overflow: hidden;
@@ -62,12 +63,24 @@ body {
     box-shadow: 0px 0px 10px #292929;
 }
 
+.aside-body {
+    height: calc(100% - 420px);
+    border-bottom: 1px solid #292929;
+    box-shadow: 0px 0px 10px #292929;
+}
+
+.aside-bottom {
+    height: 120px;
+}
+
 .card-logo {
     height: 170px;
     width: 260px;
     background-color: #2c2c2c;
     border-radius: 12px;
     border: 1px solid #292929;
+    box-shadow: 0px 0px 10px #292929;
+
 }
 
 .Globe {
@@ -100,8 +113,33 @@ body {
 
 .Main {
     grid-area: Main;
-    
 
+
+}
+
+
+.registers-home-page {
+    background:url(./features/common/assets/jpg/registerBackground.jpg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logic-container {
+    width: 70%;
+    height: auto;
+
+}
+
+.selection-container {
+    height: 70vh;
+    width: 100%;
+    background-color: #111;
+}
+
+.register-header-text-view-code {
+    
 }
 
 .terminal-dark {
@@ -177,4 +215,16 @@ option {
     width: 30%;
     height: 90%;
     border: 1px solid white;
+}
+
+
+.microphone-settings {
+    position: absolute;
+    top: -440px;
+    right: 26px;
+}
+
+
+.cursor-pointer {
+    cursor: pointer;
 }

@@ -60,7 +60,45 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 
 .left_header_profile {
     height: 140px;
-    padding:12px 16px 23px;
+    padding: 12px 16px 23px;
+}
+
+.left_header_icon_container {
+    width: 54px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left_header_search_box,
+.center_header_search_box {
+    background: #26272D;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.left_header_search_box {
+    width: 100%;
+    margin-top: 24px;
+}
+
+
+.center_header_search_box {
+    width: 50%;
+    height: 40px;
+}
+
+.left_header_search_box>input,
+.center_header_search_box>input {
+    height: inherit;
+    width: calc(100% - 50px);
+    background: none;
+    color: white;
 }
 
 .left_stories {
@@ -85,7 +123,8 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     margin-left: 11px;
 }
 
-.center_header svg {
+.center_header svg,
+.left_header_profile svg {
     color: white;
     font-size: 1.5rem;
 }
@@ -111,13 +150,17 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 
 /* 608 40 */
 
-
 .form_chat_center {
+    width: calc(100% - 135px);
+    flex-direction: column;
+}
+
+.form_chat_center,
+.left_header_search_box {
     display: flex;
     height: 40px;
-    width: calc(100% - 135px);
     display: flex;
-    flex-direction: column;
+
 }
 
 .form_chat_center>input {
@@ -126,9 +169,11 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     border-radius: 8px;
     padding-left: 12px;
     padding-right: 12px;
+    color: white;
 }
 
-.form_chat_center>input::placeholder {
+.form_chat_center>input::placeholder,
+.left_header_search_box>input::placeholder {
     font-family: var(--font-nunito);
     font-style: normal;
     font-weight: 400;
