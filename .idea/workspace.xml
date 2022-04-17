@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d57f7a1e-17da-42ae-abc9-65a7d0a10476" name="Changes" comment="chat section building">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/home/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/CenterPln.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/LeftPln.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/RightPln.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/tool/chat/chat.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
@@ -222,6 +221,7 @@
       <workItem from="1650001646040" duration="7223000" />
       <workItem from="1650039755248" duration="10583000" />
       <workItem from="1650149398840" duration="18000" />
+      <workItem from="1650208177256" duration="1804000" />
     </task>
     <task id="LOCAL-00001" summary="global-errors-fixed">
       <created>1649876569101</created>

@@ -4,7 +4,6 @@
 USAGE => font-family: 'Nunito Sans', sans-serif;
 */
 
-
 :root {
     --font-nunito: 'Nunito Sans', sans-serif;
 }
@@ -16,7 +15,6 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     justify-content: center;
     align-items: center;
 }
-
 
 .chatApp {
     width: 100%;
@@ -35,11 +33,9 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     background-color: #141416
 }
 
-
 .border_light {
     border: 1px solid #37393C;
 }
-
 
 .border_top_light {
     border-top: 1px solid #37393C;
@@ -52,7 +48,6 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 .border_bottom_light {
     border-bottom: 1px solid #37393C;
 }
-
 
 .border_left_light {
     border-left: 1px solid #37393C;
@@ -67,7 +62,6 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     width: 54px;
     display: flex;
     justify-content: space-between;
-
 }
 
 .left_header_search_box,
@@ -79,14 +73,12 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     color: white;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .left_header_search_box {
     width: 100%;
     margin-top: 24px;
 }
-
 
 .center_header_search_box {
     width: 50%;
@@ -105,11 +97,9 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     height: 144px;
 }
 
-
 .header {
     height: 64px;
 }
-
 
 .center_header {
     padding-left: 24px;
@@ -135,6 +125,24 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 
 .center_body {
     height: calc(100% - 128px);
+    padding: 24px;
+    position: relative;
+}
+
+.center_body>.videocall_icon_container {
+    position: absolute;
+    padding: 10px;
+    border-radius: 100%;
+    box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+    transition: box-shadow 1s;
+}
+
+.videocall_icon_container>svg {
+    font-size: 30px;
+}
+
+.videocall_icon_container:hover {
+    box-shadow: -5px -5px 30px 5px blue, 5px 5px 30px 5px red;
 }
 
 .center_bottom {
@@ -148,6 +156,7 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     width: 58px;
 }
 
+
 /* 608 40 */
 
 .form_chat_center {
@@ -160,7 +169,6 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     display: flex;
     height: 40px;
     display: flex;
-
 }
 
 .form_chat_center>input {
@@ -182,8 +190,51 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     color: rgba(255, 255, 255, 0.6);
 }
 
+.right_pln_header {
+    padding-left: 29.5px;
+}
+
+.right_pln_header>h3,
+.right_pln_header>svg {
+    color: white;
+}
+
+.right_pln_header>h3 {
+    font-family: var(--font-nunito);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 13px;
+    margin-bottom: 0;
+}
+
 .right_profile {
     height: 232px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right_profile>h3 {
+    font-family: var(--font-nunito);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.right_profile>a {
+    font-family: var(--font-nunito);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
 }
 
 .right_info {
@@ -214,8 +265,12 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     height: 48px;
 }
 
-
 .profile_photo_124 {
     width: 124px;
     height: 124px;
+    object-fit: contain;
+    margin-top: 25px;
+    background-image: url("./assets/img/progile.jpg");
+    background-size: cover;
+    object-fit: contain;
 }

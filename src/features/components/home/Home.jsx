@@ -45,10 +45,12 @@ const Home = () => {
 
   return (
     <div className="home-dashboard">
-      <div className="Nav"></div>
+      <div className="Nav">
+        <div className="nav-content-container"></div>
+      </div>
       <div className="Aside">
         <div className="aside-header">
-          <div className="card-logo"></div>
+          {/* <div className="card-logo"></div> */}
         </div>
         <div className="aside-body"></div>
         <div className="aside-bottom"></div>

@@ -1,13 +1,25 @@
 import React from 'react';
 import styles from './chat.module.css';
+import { FaTimes } from 'react-icons/fa';
+import profile from './assets/img/progile.jpg';
 
 const RightPln = () => {
   return (
     <div className={`${styles.light_bg_chatapp} ${styles.border_left_light}`}>
-      <div className={`${styles.header} ${styles.border_bottom_light}`}></div>
       <div
-        className={`${styles.right_profile} ${styles.border_bottom_light}`}
-      ></div>
+        className={`${styles.header} ${styles.border_bottom_light} ${styles.right_pln_header}  d-flex align-items-center`}
+      >
+        <FaTimes />
+        <h3>Contact info</h3>
+      </div>
+      <div className={`${styles.right_profile} ${styles.border_bottom_light}`}>
+        {/* profile photo */}
+        <div className={`${styles.profile_photo_124}`}>
+        </div>
+        {/* profile name and contact information */}
+        <h3>Lara Mueller</h3>
+        <a href="tel:+49 1522 792358">+49 1522 792358</a>
+      </div>
       <div
         className={`${styles.right_info} ${styles.border_bottom_light}`}
       ></div>

@@ -1,16 +1,18 @@
 import React from 'react';
-import styles from './chat.module.css';
+
 import { RiSearch2Line } from 'react-icons/ri';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
-import 'emoji-mart/css/emoji-mart.css';
+import { FcVideoCall } from 'react-icons/fc';
 import { Picker } from 'emoji-mart';
+import { Recorder } from 'react-voice-recorder';
+import 'react-voice-recorder/dist/index.css';
+import styles from './chat.module.css';
+import 'emoji-mart/css/emoji-mart.css';
 import profile from './assets/img/progile.jpg';
 import smile from './assets/img/emotion-happy-line.png';
 import group from './assets/img/Group.png';
 import microphone from './assets/img/mic-line.png';
-import { Recorder } from 'react-voice-recorder';
-import 'react-voice-recorder/dist/index.css';
 
 const CenterPln = () => {
   const [emojiEnable, setEmojiEnable] = React.useState(false);
@@ -108,7 +110,11 @@ const CenterPln = () => {
           </div>
         )}
         <div
-          className={`${styles.center_header_icon_container} d-flex justify-content-between`}
+          className={`${styles.center_header_icon_container} d-flex ${
+            !centerHeaderSearchEnable
+              ? 'justify-content-between'
+              : 'justify-content-end'
+          }`}
         >
           {!centerHeaderSearchEnable && (
             <RiSearch2Line
@@ -128,7 +134,14 @@ const CenterPln = () => {
         </div>
       </div>
       {/*CHAT CENTER BODY SECTION*/}
-      <div className={`${styles.center_body} ${styles.dark_bg_chatapp}`}></div>
+      <div className={`${styles.center_body} ${styles.dark_bg_chatapp}`}>
+        <div
+          className={`${styles.videocall_icon_container}`}
+          title="video call"
+        >
+          <FcVideoCall className="cursor-pointer" />
+        </div>
+      </div>
       {/*CHAT CENTER BOTTOM SECTION*/}
       <div
         className={`${styles.center_bottom} ${styles.light_bg_chatapp} ${styles.border_top_light} d-flex align-items-center justify-content-between`}
@@ -184,6 +197,7 @@ const CenterPln = () => {
             style={{
               visibility: 'hidden',
             }}
+            onChange={(e) => setMessage(message + ' ' + e.target.files[0].name)}
           />
           <label htmlFor="file">
             <img
