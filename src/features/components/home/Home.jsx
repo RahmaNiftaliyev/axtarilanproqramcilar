@@ -55,7 +55,9 @@ const Home = () => {
         <div className="aside-body"></div>
         <div className="aside-bottom"></div>
       </div>
-      <div className="Main"></div>
+      <div className="Main">
+        <div className="main-content-container"></div>
+      </div>
       <div className="Globe">
         <div className="glass-rocket"></div>
         <canvas
@@ -63,7 +65,9 @@ const Home = () => {
           style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: 1 }}
         />
       </div>
-      <div className="UnderGlobe"></div>
+      <div className="UnderGlobe">
+        <div className="underglobe-content-container"></div>
+      </div>
     </div>
   );
 };
