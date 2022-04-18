@@ -3,6 +3,8 @@ import styles from './chat.module.css';
 import { FaTimes } from 'react-icons/fa';
 import profile from './assets/img/progile.jpg';
 
+
+
 const RightPln = () => {
   return (
     <div className={`${styles.light_bg_chatapp} ${styles.border_left_light}`}>

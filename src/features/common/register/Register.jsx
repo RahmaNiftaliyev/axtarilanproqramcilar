@@ -19,15 +19,18 @@ const Register = ({ freelancer, customer }) => {
   const text = useTypeWriter(typeWriterInvoker());
 
   return (
-    <div className="registers-home-page">
-     <div className='logic-container'>
-     <h1 style={{
-        color:"white"
-      }}>{text}</h1>
-      <div className="selection-container"></div>
-     </div>
-    </div>
-  );
-};
+      !freelancer && !customer ?
+      <div className="registers-home-page">
+      <div className='logic-container'>
+      <h1 style={{
+         color:"white"
+       }}>{text}</h1>
+       <div className="selection-container"></div>
+      </div>
+     </div> : 
+     freelancer ? <EmployeeRegister /> : <CustomerRegister /> 
+    
+  )
+}
 
 export default Register;

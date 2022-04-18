@@ -8,6 +8,7 @@ import Home from '../components/home/Home';
 import Explore from '../components/explore/Explore';
 import TopRanks from '../components/topranks/TopRanks';
 import OnlineCourses from '../components/onlinecourses/OnlineCourses';
+import TestView from "./../test/manual/TestView";
 
 const Dashboard = () => {
   const [freelancer, setFreelancer] = React.useState(false);
@@ -29,6 +30,8 @@ const Dashboard = () => {
     callback(0);
   };
 
+  handleDyanmicState()
+
   return (
     <div>
       <Routes>
@@ -47,6 +50,10 @@ const Dashboard = () => {
         {/*TOOLS*/}
         <Route path='/calendar' element={<ReactCalendar />} />
         <Route path='/chat' element={<ChatApp />} />
+
+
+        {/* TEST URL FOR CUSTOM VIEW */}
+        <Route path="/test" element={<TestView />} />
       </Routes>
     </div>
   );

@@ -21,8 +21,10 @@ const CenterPln = () => {
   const [searchValue, setSearchValue] = React.useState('');
   const [iconColor, setIconColor] = React.useState('#fff');
   const [messages, setMessages] = React.useState([]);
-  const [centerHeaderSearchEnable, setCenterHeaderSearchEnable] =
-    React.useState(false);
+  const [
+    centerHeaderSearchEnable,
+    setCenterHeaderSearchEnable,
+  ] = React.useState(false);
   const [audioDetails, setAudioDetails] = React.useState({
     url: null,
     blob: null,
