@@ -290,6 +290,59 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 
 .right_datas {
     height: 216px;
+    padding: 24px;
+}
+
+.right_datas li {
+    background: #26272D;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    font-family: var(--font-nunito);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.right_datas li>p>svg {
+    margin-right: 9px;
+}
+
+.right_datas li>p>span {
+    margin-left: 24px;
+}
+
+
+
+.right_datas li:nth-child(2) {
+    margin-top: 24px;
+}
+
+.right_datas li:last-child {
+    margin-top: 1px;
+}
+
+.right_datas *:not(span) {
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.right_datas span {
+    opacity: .6;
+    font-family: var(--font-nunito);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 [class*="profile_photo_"] {

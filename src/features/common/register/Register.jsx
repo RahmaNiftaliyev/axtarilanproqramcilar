@@ -8,7 +8,10 @@ import { useTypeWriter } from '@vegadev/react-type-writer';
 const Register = ({ freelancer, customer }) => {
   const typeWriterInvoker = () => {
     return {
-      text: ["Axtarılan Proqramçılarda qeydiyyatdan keç","Sign in Wanted Developers App"],
+      text: [
+        'Axtarılan Proqramçılarda qeydiyyatdan keç',
+        'Sign in Wanted Developers App',
+      ],
       infiniteLoop: true,
       blinker: '|',
       delay: 100,
@@ -18,19 +21,13 @@ const Register = ({ freelancer, customer }) => {
 
   const text = useTypeWriter(typeWriterInvoker());
 
-  return (
-      !freelancer && !customer ?
-      <div className="registers-home-page">
-      <div className='logic-container'>
-      <h1 style={{
-         color:"white"
-       }}>{text}</h1>
-       <div className="selection-container"></div>
-      </div>
-     </div> : 
-     freelancer ? <EmployeeRegister /> : <CustomerRegister /> 
-    
-  )
-}
+  return !freelancer && !customer ? (
+    <div className="registers-home-page"></div>
+  ) : freelancer ? (
+    <EmployeeRegister />
+  ) : (
+    <CustomerRegister />
+  );
+};
 
 export default Register;

@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './chat.module.css';
 import { FaTimes } from 'react-icons/fa';
+import { AiOutlineStar, AiOutlineClockCircle } from 'react-icons/ai';
+import { IoMdNotificationsOutline } from 'react-icons/io';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+
 import profile from './assets/img/progile.jpg';
 
 const RightPln = () => {
@@ -32,8 +36,34 @@ const RightPln = () => {
         <div className={`${styles.right_media_container}`}></div>
       </div>
       <div
-        className={`${styles.right_datas} ${styles.border_bottom_light}`}
-      ></div>
+        className={`${styles.right_datas} ${styles.border_bottom_light} ${styles.pl_24} ${styles.pr_24}`}
+      >
+        <ul>
+          <li>
+            <p>
+              <AiOutlineStar />
+              Marked messages
+            </p>
+            <MdOutlineKeyboardArrowRight />
+          </li>
+          <li>
+            <p>
+              <IoMdNotificationsOutline />
+              Notifications <br />
+              <span>On</span>
+            </p>
+            <MdOutlineKeyboardArrowRight />
+          </li>
+          <li>
+            <p>
+              <AiOutlineClockCircle />
+              Self Deleting Messages <br />
+              <span>Off</span>
+            </p>
+            <MdOutlineKeyboardArrowRight />
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

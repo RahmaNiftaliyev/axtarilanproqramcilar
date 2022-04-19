@@ -7,6 +7,10 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+ol,ul {
+    padding: 0!important;
+}
+
 .block-center {
     margin-left: auto;
     margin-right: auto;
@@ -31,26 +35,26 @@ body {
     grid-template-columns: 280px 1fr 600px;
     grid-template-rows: 140px 1fr 350px;
     gap: 0px 0px;
-    grid-template-areas: 'Aside Nav Globe' 'Aside Main Globe' 'Aside Main UnderGlobe';
+    grid-template-areas: 'Aside Nav Globe''Aside Main Globe''Aside Main UnderGlobe';
 }
 
 .Nav {
     grid-area: Nav;
-    padding:0 30px 16px 30px;
+    padding: 0 30px 16px 30px;
 }
 
 .nav-content-container {
     width: 100%;
     height: 100%;
     background-color: #202020;
-    border-radius:0 0 12px 12px;
+    border-radius: 0 0 12px 12px;
     box-shadow: 0 0 2px 2px #5c5c5c;
     margin-left: auto;
     margin-right: auto;
-    -webkit-border-radius:0 0 12px 12px;
-    -moz-border-radius:0 0 12px 12px;
-    -ms-border-radius:0 0 12px 12px;
-    -o-border-radius:0 0 12px 12px;
+    -webkit-border-radius: 0 0 12px 12px;
+    -moz-border-radius: 0 0 12px 12px;
+    -ms-border-radius: 0 0 12px 12px;
+    -o-border-radius: 0 0 12px 12px;
 }
 
 .Aside {
@@ -144,7 +148,10 @@ body {
 }
 
 .registers-home-page {
-    background: url(./features/common/assets/jpg/registerBackground.jpg);
+    background: url(./features/common/assets/jpg/register.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     justify-content: center;

@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
-// import home from './assets/home.png';
-// import round from './assets/yellowRound.png';
-// import cubics from './assets/redCubics.png';
+import telegram from './assets/socials/Telegram.png';
+import facebook from './assets/socials/Facebook.png';
+import instagram from './assets/socials/Instagram.png';
+import linkedn from './assets/socials/LinkedIn.png';
+import twitter from './assets/socials/Twitter.png';
+import tiktok from './assets/socials/Tiktok.png';
 
 const Home = () => {
   const canvasRef = useRef();
@@ -66,7 +69,16 @@ const Home = () => {
         />
       </div>
       <div className="UnderGlobe">
-        <div className="underglobe-content-container"></div>
+        <div className="underglobe-content-container d-flex align-items-end">
+          <div className="w-100 d-flex justify-content-around">
+            <img src={telegram} alt="social media icon" />
+            <img src={facebook} alt="social media icon" />
+            <img src={twitter} alt="social media icon" />
+            <img src={tiktok} alt="social media icon" />
+            <img src={instagram} alt="social media icon" />
+            <img src={linkedn} alt="social media icon" />
+          </div>
+        </div>
       </div>
     </div>
   );
