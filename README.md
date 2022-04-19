@@ -10,6 +10,8 @@ package.json
 
 ![](image/README/1649693470292.png)
 
+![](image/README/RahmaNiftaliyev-2021.stl)
+
 folder structure
 
 ![](image/README/1649693692021.png)

@@ -239,10 +239,53 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
 
 .right_info {
     height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right_info>* {
+    font-family: var(--font-nunito);
+    margin-bottom: 0 !important;
+}
+
+.right_info>h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+
+.right_info>p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+
 }
 
 .right_media_links {
     height: 146px;
+}
+
+.right_media_links>h3 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
+    margin-top: 24px;
+}
+
+.right_media_container {
+    height: 72px;
+    width: 100%;
+    overflow-x: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .right_datas {
@@ -273,4 +316,13 @@ USAGE => font-family: 'Nunito Sans', sans-serif;
     background-image: url("./assets/img/progile.jpg");
     background-size: cover;
     object-fit: contain;
+}
+
+.pl_24 {
+    padding-left: 24px;
+}
+
+
+.pr_24 {
+    padding-right: 24px;
 }
