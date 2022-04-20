@@ -21,10 +21,8 @@ const CenterPln = () => {
   const [searchValue, setSearchValue] = React.useState('');
   const [iconColor, setIconColor] = React.useState('#fff');
   const [messages, setMessages] = React.useState([]);
-  const [
-    centerHeaderSearchEnable,
-    setCenterHeaderSearchEnable,
-  ] = React.useState(false);
+  const [centerHeaderSearchEnable, setCenterHeaderSearchEnable] =
+    React.useState(false);
   const [audioDetails, setAudioDetails] = React.useState({
     url: null,
     blob: null,
@@ -162,7 +160,7 @@ const CenterPln = () => {
                 recent: 'Récents',
               },
             }}
-            onClick={(emoji) => setMessage(message + ' ' + emoji.native)}
+            onClick={(emoji) => setMessage(message + emoji.native)}
           />
         )}
 
