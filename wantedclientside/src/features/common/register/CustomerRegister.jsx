@@ -98,11 +98,15 @@ const CustomerRegister = ({ setCustomer }) => {
   };
 
   return (
-    <div className="p-1 formContainer w-50 simple-border block-centerer">
-      <Button color="primary" outline onClick={handleBackUp}>
+    <div className="p-1 formContainer w-25 simple-border block-centerer">
+     <div className='mx-auto' style={{
+       width:"max-content"
+     }}>
+     <Button color="primary" outline onClick={handleBackUp}>
         Back
       </Button>
-      <h1 className="text-white text-center">Axtarılan Proqramçılar</h1>
+      <h1 className="text-white">Axtarılan Proqramçılar</h1>
+     </div>
       <div className="login-register-padding">
         <h2 className="text-white">Create a new account</h2>
         <p className="text-white">It’s quick and easy.</p>
@@ -263,7 +267,7 @@ const CustomerRegister = ({ setCustomer }) => {
               Sign Up
             </button>
             <GoogleLoginButton></GoogleLoginButton>
-            <Link to="/" className="text-decoration-none text-islamic mt-2">
+            <Link to="/login" className="text-decoration-none text-islamic mt-2">
               Already have an account?
             </Link>
           </FormGroup>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Register from './../common/register/Register';
+import Login from './../common/login/Login';
 import ReactCalendar from './../tool/calendar/ReactCalendar';
 import ChatApp from '../tool/chat/ChatApp';
 import Home from '../components/home/Home';
@@ -14,15 +15,12 @@ import { FaPastafarianism } from 'react-icons/fa';
 const Dashboard = () => {
   const [freelancer, setFreelancer] = React.useState(false);
   const [customer, setCustomer] = React.useState(false);
-  const [dynamicRegister, setDynamicRegister] = React.useState({});
 
   const handleDyanmicState = (clickedTitle = null) => {
     clickedTitle === 'customer'
       ? setCustomer(!customer)
       : setFreelancer(!freelancer);
   };
-
-
 
   return (
     <div>
@@ -41,6 +39,7 @@ const Dashboard = () => {
             />
           }
         />
+        <Route path="/login" element={<Login />} />
 
         {/*NAVIGATION LINKS EXPLORE TOP-RANKS ONLINE-COURSES */}
         <Route path="/explore" element={<Explore />} />

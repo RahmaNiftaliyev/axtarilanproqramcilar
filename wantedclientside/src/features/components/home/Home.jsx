@@ -1,13 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
-import QRCode from 'react-qr-code';
-import Iframe from 'react-iframe';
-import telegram from './assets/socials/Telegram.png';
-import facebook from './assets/socials/Facebook.png';
-import instagram from './assets/socials/Instagram.png';
-import linkedIn from './assets/socials/LinkedIn.png';
-import twitter from './assets/socials/Twitter.png';
-import tiktok from './assets/socials/Tiktok.png';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const canvasRef = useRef();
@@ -59,7 +53,21 @@ const Home = () => {
   return (
     <div className="home-dashboard">
       <div className="Nav">
-        <div className="nav-content-container"></div>
+        <div className="nav-content-container d-flex align-items-center p-3 justify-content-end">
+          <div></div>
+          <div>
+            <Link to="/login">
+              <Button color="warning" className="me-1">
+                Log In
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button color="warning" className="ms-1">
+                Sign Up
+              </Button>
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="Aside">
         <div className="aside-header">
@@ -79,81 +87,7 @@ const Home = () => {
         />
       </div>
       <div className="UnderGlobe">
-        <div className="underglobe-content-container d-flex flex-column justify-content-between">
-          <div
-            className="w-100 d-flex justify-content-between qr-iframe-container px-3"
-            style={{
-              paddingTop: '8px',
-            }}
-          >
-            <QRCode value={url} size="220" />
-            <Iframe
-              url={
-                url === `${window.location}`
-                  ? 'http://www.youtube.com/embed/xDMP3i36naA'
-                  : url
-              }
-              width="300px"
-              height="220px"
-              display="initial"
-            />
-          </div>
-          <div
-            className="w-100 d-flex justify-content-around"
-            style={{
-              paddingBottom: '8px',
-            }}
-          >
-            <div className="social-icon-container-item">
-              <img
-                src={telegram}
-                alt="social media icon"
-                title="telegram"
-                onClick={handleClick}
-              />
-            </div>
-            <div className="social-icon-container-item">
-              <img
-                src={facebook}
-                alt="social media icon"
-                title="facebook"
-                onClick={handleClick}
-              />
-            </div>
-            <div className="social-icon-container-item">
-              <img
-                src={twitter}
-                alt="social media icon"
-                title="twitter"
-                onClick={handleClick}
-              />
-            </div>
-            <div className="social-icon-container-item">
-              <img
-                src={tiktok}
-                title="tiktok"
-                alt="social media icon"
-                onClick={handleClick}
-              />
-            </div>
-            <div className="social-icon-container-item">
-              <img
-                src={instagram}
-                title="instagram"
-                alt="social media icon"
-                onClick={handleClick}
-              />
-            </div>
-            <div className="social-icon-container-item">
-              <img
-                src={linkedIn}
-                title="linkedIn"
-                alt="social media icon"
-                onClick={handleClick}
-              />
-            </div>
-          </div>
-        </div>
+        <div className="underglobe-content-container d-flex flex-column justify-content-between"></div>
       </div>
     </div>
   );

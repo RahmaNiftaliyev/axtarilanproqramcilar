@@ -7,8 +7,9 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-ol,ul {
-    padding: 0!important;
+ol,
+ul {
+    padding: 0 !important;
 }
 
 .block-center {
@@ -33,9 +34,9 @@ body {
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     grid-template-columns: 280px 1fr 600px;
-    grid-template-rows: 140px 1fr 350px;
+    grid-template-rows: 90px 1fr 350px;
     gap: 0px 0px;
-    grid-template-areas: 'Aside Nav Globe''Aside Main Globe''Aside Main UnderGlobe';
+    grid-template-areas: 'Aside Nav Globe' 'Aside Main Globe' 'Aside Main UnderGlobe';
 }
 
 .Nav {
@@ -261,11 +262,11 @@ option {
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    background-color: rgba(255,255,255,.1);
+    background-color: rgba(255, 255, 255, .1);
 }
 
 .qr-iframe-container {
-    height:calc(100% - 100px);
+    height: calc(100% - 100px);
 }
 
 
@@ -281,14 +282,14 @@ option {
 
 .choose-container-item {
     width: 40%;
-    height:calc(100% - 40px);
+    height: calc(100% - 40px);
     margin: 20px;
     padding: 15px;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0);
-    box-shadow: -30px -30px 1px 1px rgba(255,0,0,.2), 30px 30px 1px 1px rgba(0,0,255,.2);
+    box-shadow: -30px -30px 1px 1px rgba(255, 0, 0, .2), 30px 30px 1px 1px rgba(0, 0, 255, .2);
     border: 2px solid #5c5c5c;
 
 }
@@ -301,7 +302,7 @@ option {
 }
 
 
-.choose-container-item:first-child > button {
+.choose-container-item:first-child>button {
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -313,18 +314,18 @@ option {
 }
 
 
-.choose-container-item:last-child > button {
+.choose-container-item:last-child>button {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-.choose-container-item > h2 {
+.choose-container-item>h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
 
-.choose-container-item > button {
+.choose-container-item>button {
     padding: 8px 20px;
     display: block;
     margin-left: auto;

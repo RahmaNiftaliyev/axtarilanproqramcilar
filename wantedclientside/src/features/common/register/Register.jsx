@@ -5,7 +5,13 @@ import EmployeeRegister from './EmployeeRegister';
 import { useTypeWriter } from '@vegadev/react-type-writer';
 
 // eslint-disable-next-line react/prop-types
-const Register = ({ handleDynamicState, freelancer, customer,setCustomer,setFreelancer }) => {
+const Register = ({
+  handleDynamicState,
+  freelancer,
+  customer,
+  setCustomer,
+  setFreelancer,
+}) => {
   const typeWriterInvoker = () => {
     return {
       text: [
@@ -75,9 +81,13 @@ const Register = ({ handleDynamicState, freelancer, customer,setCustomer,setFree
       </div>
     </div>
   ) : freelancer ? (
-    <EmployeeRegister setFreelancer={setFreelancer} />
+    <div className="registers-home-page">
+      <EmployeeRegister setFreelancer={setFreelancer} />
+    </div>
   ) : (
-    <CustomerRegister setCustomer={setCustomer} />
+    <div className="registers-home-page">
+      <CustomerRegister setCustomer={setCustomer} />
+    </div>
   );
 };
 

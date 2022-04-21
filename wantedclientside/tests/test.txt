@@ -1,0 +1,85 @@
+import QRCode from 'react-qr-code';
+import Iframe from 'react-iframe';
+import telegram from './assets/socials/Telegram.png';
+import facebook from './assets/socials/Facebook.png';
+import instagram from './assets/socials/Instagram.png';
+import linkedIn from './assets/socials/LinkedIn.png';
+import twitter from './assets/socials/Twitter.png';
+import tiktok from './assets/socials/Tiktok.png';
+     
+     
+     
+     
+          <div
+            className="w-100 d-flex justify-content-between qr-iframe-container px-3"
+            style={{
+              paddingTop: '8px',
+            }}
+          >
+            <QRCode value={url} size="220" />
+            <Iframe
+              url={
+                url === `${window.location}`
+                  ? 'http://www.youtube.com/embed/xDMP3i36naA'
+                  : url
+              }
+              width="300px"
+              height="220px"
+              display="initial"
+            />
+          </div>
+          <div
+            className="w-100 d-flex justify-content-around"
+            style={{
+              paddingBottom: '8px',
+            }}
+          >
+            <div className="social-icon-container-item">
+              <img
+                src={telegram}
+                alt="social media icon"
+                title="telegram"
+                onClick={handleClick}
+              />
+            </div>
+            <div className="social-icon-container-item">
+              <img
+                src={facebook}
+                alt="social media icon"
+                title="facebook"
+                onClick={handleClick}
+              />
+            </div>
+            <div className="social-icon-container-item">
+              <img
+                src={twitter}
+                alt="social media icon"
+                title="twitter"
+                onClick={handleClick}
+              />
+            </div>
+            <div className="social-icon-container-item">
+              <img
+                src={tiktok}
+                title="tiktok"
+                alt="social media icon"
+                onClick={handleClick}
+              />
+            </div>
+            <div className="social-icon-container-item">
+              <img
+                src={instagram}
+                title="instagram"
+                alt="social media icon"
+                onClick={handleClick}
+              />
+            </div>
+            <div className="social-icon-container-item">
+              <img
+                src={linkedIn}
+                title="linkedIn"
+                alt="social media icon"
+                onClick={handleClick}
+              />
+            </div>
+          </div>
