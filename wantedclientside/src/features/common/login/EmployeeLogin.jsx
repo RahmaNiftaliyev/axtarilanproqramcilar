@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import { GithubLoginButton } from 'react-social-login-buttons';
+
 
 const EmployeeLogin = () => {
   const [password, setPassword] = useState("");
@@ -26,7 +28,7 @@ const EmployeeLogin = () => {
 
   return (
     <div className="homeBackground">
-      <div className="p-1 formContainer w-25 px-4 py-3">
+      <div className="p-1 formContainer w-50 px-4 py-3 login-button-logic-margin-container">
         <Form onSubmit={handleSubmit} autoComplete="off">
           <FormGroup>
             <Label htmlFor="email" className="text-erotica">Email</Label>
@@ -58,6 +60,7 @@ const EmployeeLogin = () => {
             <Button color="primary" block outline>
               Login
             </Button>
+            <GithubLoginButton />
             <Link to="/recovery">Forgot Password?</Link>
           </FormGroup>
         </Form>

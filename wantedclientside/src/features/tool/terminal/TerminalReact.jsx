@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTypeWriter } from '@vegadev/react-type-writer';
+  import { useTypeWriter } from '@vegadev/react-type-writer';
 import { Badge } from 'reactstrap';
 
 const TerminalReact = ({

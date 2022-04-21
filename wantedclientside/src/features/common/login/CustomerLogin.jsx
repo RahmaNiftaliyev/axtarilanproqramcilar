@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
+import { GoogleLoginButton } from 'react-social-login-buttons';
 
-const CustomerLogin = () => { 
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+
+const CustomerLogin = () => {
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
   const isDisabled = [email, password].every(Boolean);
   const navigate = useNavigate();
 
   const setErrorController = (callback) => {
-    callback("pls set all fields");
-    setTimeout(() => callback(""), 2000);
+    callback('pls set all fields');
+    setTimeout(() => callback(''), 2000);
   };
 
   const handleSubmit = (e) => {
@@ -26,29 +28,33 @@ const CustomerLogin = () => {
 
   return (
     <div className="homeBackground">
-      <div className="p-1 formContainer w-25 px-4 py-3">
+      <div className="p-1 formContainer w-50 px-4 py-3 login-button-logic-margin-container">
         <Form onSubmit={handleSubmit} autoComplete="off">
           <FormGroup>
-            <Label htmlFor="email" className="text-erotica">Email</Label>
+            <Label htmlFor="email" className="text-erotica">
+              Email
+            </Label>
             <Input
               type="email"
               name="email"
               id="email"
               placeholder={
-                error && error.length > 0 ? error : "Enter your email"
+                error && error.length > 0 ? error : 'Enter your email'
               }
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="password" className="text-erotica">Password</Label>
+            <Label htmlFor="password" className="text-erotica">
+              Password
+            </Label>
             <Input
               type="password"
               name="password"
               id="password"
               placeholder={
-                error && error.length > 0 ? error : "Enter your password"
+                error && error.length > 0 ? error : 'Enter your password'
               }
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -58,18 +64,18 @@ const CustomerLogin = () => {
             <Button color="primary" block outline>
               Login
             </Button>
+            <GoogleLoginButton />
             <Link to="/recovery">Forgot Password?</Link>
           </FormGroup>
         </Form>
         <FormGroup className="d-flex flex-column">
-        
           <Button
             type
             primary
             outline
             block
             color="success"
-            onClick={() => navigate("/register")}
+            onClick={() => navigate('/register')}
           >
             Sign up for Axtarılan proqramçılar
           </Button>

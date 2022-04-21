@@ -1,18 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const canvasRef = useRef();
-
-  const [url, setUrl] = React.useState(`${window.location}`);
-
-  const handleClick = (e) => {
-    let url = `https://www.${e.target.title}.com/signin`;
-
-    setUrl(url);
-  };
 
   useEffect(() => {
     let phi = 0;

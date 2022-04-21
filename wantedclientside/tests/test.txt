@@ -7,7 +7,13 @@ import linkedIn from './assets/socials/LinkedIn.png';
 import twitter from './assets/socials/Twitter.png';
 import tiktok from './assets/socials/Tiktok.png';
      
-     
+       const [url, setUrl] = React.useState(`${window.location}`);
+
+  const handleClick = (e) => {
+    let url = `https://www.${e.target.title}.com/signin`;
+
+    setUrl(url);
+  };
      
      
           <div
