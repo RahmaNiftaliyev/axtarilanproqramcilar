@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useTypeWriter } from '@vegadev/react-type-writer';
 import EmployeeLogin from './EmployeeLogin';
 import CustomerLogin from './CustomerLogin';
+import { useNavigate, Link } from 'react-router-dom';
+
+
+
 
 const Login = () => {
   const [loginCustomer, setLoginCustomer] = useState(false);
@@ -27,6 +31,14 @@ const Login = () => {
     }
   };
 
+
+  const navigate = useNavigate();
+
+  const handleNavigationSignUpPage = () => {
+    navigate('/register');
+  };
+
+
   const typeWriterInvoker = () => {
     return {
       text: [
@@ -49,7 +61,26 @@ const Login = () => {
     <div className="login-home-page">
       <div className="upper-content">
         {/* upper content top */}
-        <div className="upper-content-top"></div>
+        <div className="upper-content-top">
+        <h3>lorem ipsum</h3>
+          <div>
+          <ul className='d-flex'>
+            <li>
+              <Link to="/explore">Explore</Link>
+            </li>
+            <li>
+              <Link to="/ranks">Top ranks</Link>
+            </li>
+            <li>
+              <Link to="/courses">Online Courses</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+          <button onClick={handleNavigationSignUpPage}>Sign Up</button>
+          </div>
+        </div>
         {/* upper content right */}
         <div className="upper-content-left">
           <h1>Wanted {text}</h1>

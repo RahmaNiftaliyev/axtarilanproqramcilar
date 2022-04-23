@@ -350,13 +350,91 @@ option {
 
 /* CHOOSE CONTAINER REGISTER HOME PAGE */
 
+.register-freelancer-or-customer-page {
+    min-height: inherit;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto 120px;
+    grid-template-areas:'nav' 'content' 'footer';
+}
+
+
+
+.register-navigation-bar {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0);
+    border-bottom: 2px solid #5c5c5c;
+    padding: 0px 20px;
+}
+
+
+.upper-content-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.register-navigation-bar > div,
+.upper-content-top > div {
+    display: flex;
+    align-items: center;
+}
+
+.register-navigation-bar > div >  ul,
+.upper-content-top > div > ul {
+    list-style-type: none;
+}
+
+.register-navigation-bar > div > ul a,
+.upper-content-top > div > ul a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 700;
+}
+
+.register-navigation-bar > div > ul ~ button,
+.upper-content-top > div > ul ~ button {
+    background: #FEC007;
+    border: 0px;
+    color: black;
+    font-size: 1.5rem;
+    padding:5px 20px;
+    margin: 10px;
+    font-weight: 500;
+    border-radius:4px ;
+    -webkit-border-radius:4px ;
+    -moz-border-radius:4px ;
+    -ms-border-radius:4px ;
+    -o-border-radius:4px ;
+}
+
 .choose-container {
     width: 80%;
     height: 60vh;
     margin: auto;
     padding: 20px 0;
+    grid-area: content;
 }
 
+.register-footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0);
+    border-top: 2px solid #5c5c5c;
+}
 
 .choose-container-item {
     width: 40%;
@@ -367,7 +445,6 @@ option {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0);
-    box-shadow: -30px -30px 1px 1px rgba(255, 0, 0, .2), 30px 30px 1px 1px rgba(0, 0, 255, .2);
     border: 2px solid #5c5c5c;
 
 }

@@ -1,0 +1,15 @@
+.container_topranks {
+    min-height:100vh;
+    background-image: url(./assets/png/leaderboard.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 56px;
+}
+
+.container_topranks > table {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    border: 1px solid white;
+}
