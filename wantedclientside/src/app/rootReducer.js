@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 //no-anonymus-default-export
 import usersReducer from './../features/redux/usersSlice';
 import developersReducer from './../features/redux/developersSlice';

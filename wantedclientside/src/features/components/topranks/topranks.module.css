@@ -1,5 +1,5 @@
 .container_topranks {
-    min-height:100vh;
+    height:100vh;
     background-image: url(./assets/png/leaderboard.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -10,6 +10,25 @@
 .container_topranks > table {
     height: 100%;
     width: 100%;
-    background-color: red;
-    border: 1px solid white;
+    color: white;
+    overflow-y: scroll!important;
+}
+
+.container_topranks > table > thead > tr > th {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.container_topranks > table > tbody > tr > td {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
 }

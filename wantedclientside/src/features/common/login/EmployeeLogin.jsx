@@ -27,7 +27,7 @@ const EmployeeLogin = () => {
   };
 
   return (
-    <div className="homeBackground">
+    <div className="homeBackground border border-1">
       <div className="p-1 formContainer w-50 px-4 py-3 login-button-logic-margin-container">
         <Form onSubmit={handleSubmit} autoComplete="off">
           <FormGroup>

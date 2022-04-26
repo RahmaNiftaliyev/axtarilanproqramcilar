@@ -1,3 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+/* 
+!usage => font-family: 'Prompt', sans-serif;
+*/
+
+
+:root {
+    --font-prompt: 'Prompt', sans-serif;
+}
+
 .background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid transparent;
+    padding: 40px;
+    position: relative;
+}
+
+.background_dark {
     background-image: url(./assets/calendar.png);
 }
+
+.background_light {
+    background-image: url(./assets/calendar_light.png);
+}
+
+.theme_button {
+    position: absolute;
+    background: none;
+    right: 20px;
+    top: 20px;
+    font-size: 3rem;
+    color: red;
+}
+
+.calendar {
+    max-width: 1200px;
+    height: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc((100vh - 580px) / 2);
+    background: linear-gradient(142.42deg, rgba(254, 248, 255, 0.21) 1.79%, rgba(254, 248, 255, 0) 100.42%);
+    box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.46), inset 5px 5px 12px rgba(255, 255, 255, 0.46);
+    /* backdrop-filter: blur(85px); */
+    border-radius: 20px;
+    mix-blend-mode: pass-through;
+    padding: 30px 60px;
+}
+
+.calendar_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.calendar_header_left {
+    display: flex;
+    align-items: center;
+    margin-left: 55px;
+
+}
+
+.calendar_header_left>h3,
+.calendar_header_right>h3 {
+    font-family: var(--font-prompt);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 21px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.calendar_header_left>h3 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.calendar_header_right {
+    margin-right: 55px;
+}
+
+.calendar_header_right>h3 {
+    text-transform: uppercase;
+}
+
+
+.calendar_body>table {
+    width: 100%;
+}
+
+.calendar_body>table>thead>tr>th {
+    text-align: center;
+    color: #FFB876;
+    font-family: var(--font-prompt);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+/* 
+.calendar_body>table>thead>tr>th:first-child {
+    text-align: left;
+}
+
+.calendar_body>table>thead>tr>th:last-child {
+    text-align: right;
+} */

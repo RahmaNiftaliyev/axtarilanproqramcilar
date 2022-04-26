@@ -78,9 +78,7 @@ const Home = () => {
           style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: 1 }}
         />
       </div>
-      <div className="UnderGlobe">
-        <div className="underglobe-content-container d-flex flex-column justify-content-between"></div>
-      </div>
+    
     </div>
   );
 };
