@@ -64,6 +64,7 @@
     margin-left: 55px;
 }
 
+
 .calendar_header_left>h3,
 .calendar_header_right>h3 {
     font-family: var(--font-prompt);
@@ -121,4 +122,13 @@
 .calendar_body>table>tbody>tr>td {
     color: white;
     font-weight: 400;
+}
+
+.calendar_text_dark {
+    color: #343841 !important;
+}
+
+.calendar_image_dark {
+    filter: brightness(0) saturate(100%);
+    -webkit-filter: brightness(0) saturate(100%);
 }

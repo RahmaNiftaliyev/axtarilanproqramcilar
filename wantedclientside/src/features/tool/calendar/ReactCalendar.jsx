@@ -52,19 +52,27 @@ const ReactCalendar = () => {
             <img
               src={left}
               alt="arrow-left"
-              className={`cursor-pointer`}
+              className={`cursor-pointer ${
+                toggle ? '' : styles.calendar_image_dark
+              }`}
               width="55"
             />
-            <h3>{selectedMonth.toLocaleString('default', {}).split(',')[0]}</h3>
+            <h3 className={`${toggle ? '' : styles.calendar_text_dark}`}>
+              {selectedMonth.toLocaleString('default', {}).split(',')[0]}
+            </h3>
             <img
               src={right}
               alt="arrow-right"
-              className={`cursor-pointer`}
+              className={`cursor-pointer ${
+                toggle ? '' : styles.calendar_image_dark
+              }`}
               width="55"
             />
           </div>
           <div className={styles.calendar_header_right}>
-            <h3>today</h3>
+            <h3 className={`${toggle ? '' : styles.calendar_text_dark}`}>
+              today
+            </h3>
           </div>
         </div>
         {/* !CALENDAR BODY DAYS AND MONTH */}
@@ -86,45 +94,69 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 6 && (
-                      <td>{day}</td>
+                      <td
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
                     )
-                  )
+                  );
                 })}
               </tr>
               <tr>
                 {dayCounter.map((day, index) => {
                   return (
-                    index <= 13 && index > 6 && (
-                      <td>{day}</td>
+                    index <= 13 &&
+                    index > 6 && (
+                      <td
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
                     )
-                  )
+                  );
                 })}
               </tr>
               <tr>
                 {dayCounter.map((day, index) => {
                   return (
-                    index <= 20 && index > 13 && (
-                      <td>{day}</td>
+                    index <= 20 &&
+                    index > 13 && (
+                      <td
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
                     )
-                  )
+                  );
                 })}
               </tr>
               <tr>
                 {dayCounter.map((day, index) => {
                   return (
-                    index <= 27 && index > 20 && (
-                      <td>{day}</td>
+                    index <= 27 &&
+                    index > 20 && (
+                      <td
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
                     )
-                  )
+                  );
                 })}
               </tr>
               <tr>
                 {dayCounter.map((day, index) => {
                   return (
-                    index <= dayCounter.length && index > 27 && (
-                      <td>{day}</td>
+                    index <= dayCounter.length &&
+                    index > 27 && (
+                      <td
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
                     )
-                  )
+                  );
                 })}
               </tr>
             </tbody>
