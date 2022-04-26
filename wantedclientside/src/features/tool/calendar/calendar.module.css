@@ -3,7 +3,6 @@
 !usage => font-family: 'Prompt', sans-serif;
 */
 
-
 :root {
     --font-prompt: 'Prompt', sans-serif;
 }
@@ -40,8 +39,11 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: calc((100vh - 580px) / 2);
-    background: linear-gradient(142.42deg, rgba(254, 248, 255, 0.21) 1.79%, rgba(254, 248, 255, 0) 100.42%);
-    box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.46), inset 5px 5px 12px rgba(255, 255, 255, 0.46);
+    background: linear-gradient(142.42deg,
+            rgba(254, 248, 255, 0.21) 1.79%,
+            rgba(254, 248, 255, 0) 100.42%);
+    box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.46),
+        inset 5px 5px 12px rgba(255, 255, 255, 0.46);
     /* backdrop-filter: blur(85px); */
     border-radius: 20px;
     mix-blend-mode: pass-through;
@@ -60,7 +62,6 @@
     display: flex;
     align-items: center;
     margin-left: 55px;
-
 }
 
 .calendar_header_left>h3,
@@ -87,25 +88,37 @@
     text-transform: uppercase;
 }
 
-
 .calendar_body>table {
     width: 100%;
 }
 
-.calendar_body>table>thead>tr>th {
+.calendar_body>table>thead>tr>th,
+.calendar_body>table>tbody>tr>td {
     text-align: center;
-    color: #FFB876;
+    color: #ffb876;
     font-family: var(--font-prompt);
     font-style: normal;
     font-weight: 600;
     font-size: 2rem;
+    padding: 10px 0;
 }
 
-/* 
-.calendar_body>table>thead>tr>th:first-child {
-    text-align: left;
+.calendar_body>table>tbody>tr>td:hover {
+    background: linear-gradient(142.42deg,
+            rgba(254, 248, 255, 0.8) 1.79%,
+            rgba(254, 248, 255, 0.5) 100.42%);
+    box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.46),
+        inset 5px 5px 12px rgba(255, 255, 255, 0.46);
+    cursor: pointer;
+    color: #ffb876;
 }
 
-.calendar_body>table>thead>tr>th:last-child {
-    text-align: right;
-} */
+.calendar_body>table>thead>tr>th {
+    color: #ffb876;
+    font-weight: 600;
+}
+
+.calendar_body>table>tbody>tr>td {
+    color: white;
+    font-weight: 400;
+}

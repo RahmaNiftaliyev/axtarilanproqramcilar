@@ -6,18 +6,32 @@ import right from './assets/right.png';
 
 const ReactCalendar = () => {
   const [date, onChange] = useState(new Date());
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [toggle, setToggle] = useState(true);
   const [selected, setSelected] = useState(new Date());
+  const [dayCounter, setDayCounter] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState(new Date());
+
+  console.log(dayCounter);
 
   const handleDarkAndLightThem = () => {
     setToggle(!toggle);
   };
 
   useEffect(() => {
+    let months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     setSelected(date);
     setSelectedMonth(date);
-  }, [date]);
+    setDayCounter([]);
+
+    months.forEach((month, index) => {
+      if (index === parseInt(currentMonth)) {
+        for (let i = 1; i <= month; i++) {
+          setDayCounter((prevState) => [...prevState, i]);
+        }
+      }
+    });
+  }, [date, currentMonth]);
 
   return (
     <div
@@ -67,6 +81,53 @@ const ReactCalendar = () => {
                 <th>Sa</th>
               </tr>
             </thead>
+            <tbody>
+              <tr>
+                {dayCounter.map((day, index) => {
+                  return (
+                    index <= 6 && (
+                      <td>{day}</td>
+                    )
+                  )
+                })}
+              </tr>
+              <tr>
+                {dayCounter.map((day, index) => {
+                  return (
+                    index <= 13 && index > 6 && (
+                      <td>{day}</td>
+                    )
+                  )
+                })}
+              </tr>
+              <tr>
+                {dayCounter.map((day, index) => {
+                  return (
+                    index <= 20 && index > 13 && (
+                      <td>{day}</td>
+                    )
+                  )
+                })}
+              </tr>
+              <tr>
+                {dayCounter.map((day, index) => {
+                  return (
+                    index <= 27 && index > 20 && (
+                      <td>{day}</td>
+                    )
+                  )
+                })}
+              </tr>
+              <tr>
+                {dayCounter.map((day, index) => {
+                  return (
+                    index <= dayCounter.length && index > 27 && (
+                      <td>{day}</td>
+                    )
+                  )
+                })}
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
