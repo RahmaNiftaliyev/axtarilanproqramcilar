@@ -30,28 +30,18 @@ const ReactCalendar = () => {
 
   const changeMonth = (direction) => {
     direction === 'left'
-      ? setCurrentMonth(currentMonth - 1)
-      : setCurrentMonth(currentMonth + 1);
+      ? setCurrentMonth(currentMonth - 1 >= 0 ? currentMonth - 1 : 11)
+      : setCurrentMonth(currentMonth + 1 <= 11 ? currentMonth + 1 : 0);
     setStringMonth(strmonths[currentMonth]);
   };
 
   const handleDarkAndLightThem = (e) => {
     setToggle(!toggle);
-    e.target.classList.add();
-    if (
-      toggle &&
-      e.target.classList.indexOf(`${styles.calendar_text_dark}`) !== -1
-    ) {
-      e.target.classList.remove(`${styles.calendar_text_dark}`);
-    } else {
-      e.target.classList.add(`${styles.calendar_text_dark}`);
-    }
 
     if (events) {
       events.forEach((event) => {
         event.targetSpace.title = event.message;
         event.targetSpace.classList.add(`${styles.calendar_event_class}`);
-        console.log(event);
       });
     }
   };
@@ -151,7 +141,14 @@ const ReactCalendar = () => {
               <tr>
                 {dayCounter.map((day, index) => {
                   return (
-                    index <= 6 && <td onClick={userEventsController}>{day}</td>
+                    index <= 6 && (
+                      <td
+                        onClick={userEventsController}
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
+                    )
                   );
                 })}
               </tr>
@@ -159,7 +156,14 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 13 &&
-                    index > 6 && <td onClick={userEventsController}>{day}</td>
+                    index > 6 && (
+                      <td
+                        onClick={userEventsController}
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
+                    )
                   );
                 })}
               </tr>
@@ -167,7 +171,14 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 20 &&
-                    index > 13 && <td onClick={userEventsController}>{day}</td>
+                    index > 13 && (
+                      <td
+                        onClick={userEventsController}
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
+                    )
                   );
                 })}
               </tr>
@@ -175,7 +186,14 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 27 &&
-                    index > 20 && <td onClick={userEventsController}>{day}</td>
+                    index > 20 && (
+                      <td
+                        onClick={userEventsController}
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
+                    )
                   );
                 })}
               </tr>
@@ -183,7 +201,14 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= dayCounter.length &&
-                    index > 27 && <td onClick={userEventsController}>{day}</td>
+                    index > 27 && (
+                      <td
+                        onClick={userEventsController}
+                        className={`${toggle ? '' : styles.calendar_text_dark}`}
+                      >
+                        {day}
+                      </td>
+                    )
                   );
                 })}
               </tr>

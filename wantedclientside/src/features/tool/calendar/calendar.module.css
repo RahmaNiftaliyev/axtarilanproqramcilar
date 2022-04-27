@@ -113,6 +113,11 @@
         inset 5px 5px 12px rgba(255, 255, 255, 0.46);
     cursor: pointer;
     color: #ffb876;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 .calendar_body>table>thead>tr>th {
