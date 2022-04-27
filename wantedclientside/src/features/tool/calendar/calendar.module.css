@@ -91,6 +91,7 @@
 
 .calendar_body>table {
     width: 100%;
+    border-collapse: separate;
 }
 
 .calendar_body>table>thead>tr>th,
@@ -124,6 +125,13 @@
     font-weight: 400;
 }
 
+
+.calendar_body>table>tbody>tr> {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
 .calendar_text_dark {
     color: #343841 !important;
 }
@@ -131,4 +139,14 @@
 .calendar_image_dark {
     filter: brightness(0) saturate(100%);
     -webkit-filter: brightness(0) saturate(100%);
+}
+
+.calendar_event_class {
+    background: radial-gradient(82.86% 82.86% at 28.57% 17.14%, #FFA800, #FF4D00);
+    box-shadow: 1px 1px 1px 1px rgba(223, 81, 21, 0.47);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }

@@ -26,6 +26,7 @@ const ReactCalendar = () => {
     'November',
     'December',
   ]);
+  const [events, setEvents] = useState([]);
 
   const changeMonth = (direction) => {
     direction === 'left'
@@ -34,8 +35,42 @@ const ReactCalendar = () => {
     setStringMonth(strmonths[currentMonth]);
   };
 
-  const handleDarkAndLightThem = () => {
+  const handleDarkAndLightThem = (e) => {
     setToggle(!toggle);
+    e.target.classList.add();
+    if (
+      toggle &&
+      e.target.classList.indexOf(`${styles.calendar_text_dark}`) !== -1
+    ) {
+      e.target.classList.remove(`${styles.calendar_text_dark}`);
+    } else {
+      e.target.classList.add(`${styles.calendar_text_dark}`);
+    }
+
+    if (events) {
+      events.forEach((event) => {
+        event.targetSpace.title = event.message;
+        event.targetSpace.classList.add(`${styles.calendar_event_class}`);
+        console.log(event);
+      });
+    }
+  };
+
+  const userEventsController = (e) => {
+    const customReminderMessage = prompt('Enter your reminder message', '');
+
+    if (customReminderMessage.length > 0) {
+      setEvents([
+        ...events,
+        {
+          message: customReminderMessage,
+          date: selected,
+          targetSpace: e.target,
+        },
+      ]);
+      e.target.classList.add(`${styles.calendar_event_class}`);
+      e.target.title = events[events.length - 1].message;
+    }
   };
 
   useEffect(() => {
@@ -100,7 +135,7 @@ const ReactCalendar = () => {
         </div>
         {/* !CALENDAR BODY DAYS AND MONTH */}
         <div className={`${styles.calendar_body}`}>
-          <table>
+          <table cellPadding="6" cellSpacing="6">
             <thead>
               <tr>
                 <th>Su</th>
@@ -116,13 +151,7 @@ const ReactCalendar = () => {
               <tr>
                 {dayCounter.map((day, index) => {
                   return (
-                    index <= 6 && (
-                      <td
-                        className={`${toggle ? '' : styles.calendar_text_dark}`}
-                      >
-                        {day}
-                      </td>
-                    )
+                    index <= 6 && <td onClick={userEventsController}>{day}</td>
                   );
                 })}
               </tr>
@@ -130,13 +159,7 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 13 &&
-                    index > 6 && (
-                      <td
-                        className={`${toggle ? '' : styles.calendar_text_dark}`}
-                      >
-                        {day}
-                      </td>
-                    )
+                    index > 6 && <td onClick={userEventsController}>{day}</td>
                   );
                 })}
               </tr>
@@ -144,13 +167,7 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 20 &&
-                    index > 13 && (
-                      <td
-                        className={`${toggle ? '' : styles.calendar_text_dark}`}
-                      >
-                        {day}
-                      </td>
-                    )
+                    index > 13 && <td onClick={userEventsController}>{day}</td>
                   );
                 })}
               </tr>
@@ -158,13 +175,7 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= 27 &&
-                    index > 20 && (
-                      <td
-                        className={`${toggle ? '' : styles.calendar_text_dark}`}
-                      >
-                        {day}
-                      </td>
-                    )
+                    index > 20 && <td onClick={userEventsController}>{day}</td>
                   );
                 })}
               </tr>
@@ -172,13 +183,7 @@ const ReactCalendar = () => {
                 {dayCounter.map((day, index) => {
                   return (
                     index <= dayCounter.length &&
-                    index > 27 && (
-                      <td
-                        className={`${toggle ? '' : styles.calendar_text_dark}`}
-                      >
-                        {day}
-                      </td>
-                    )
+                    index > 27 && <td onClick={userEventsController}>{day}</td>
                   );
                 })}
               </tr>
