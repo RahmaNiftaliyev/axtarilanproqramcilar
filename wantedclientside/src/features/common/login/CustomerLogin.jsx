@@ -3,12 +3,28 @@ import { Link } from 'react-router-dom';
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLoginButton } from 'react-social-login-buttons';
+import { GoogleLogin } from 'react-google-login';
+import { refreshTokenSetup } from './refreshTokenSetup';
 
+const clientId =
+  '688177021263-rmglgbgoe7v6kps1m3qjh50badrfjtns.apps.googleusercontent.com';
 
 const CustomerLogin = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
+
+  
+
+  const onSuccess = (res) => {
+    console.log(`[login success] current user: ${res.profileObj}`);
+
+    refreshTokenSetup(res);
+  };
+
+  const onFailure = (res) => {
+    console.log(`[login failure] res: ${res}`);
+  };
 
   const isDisabled = [email, password].every(Boolean);
   const navigate = useNavigate();
@@ -64,7 +80,15 @@ const CustomerLogin = () => {
             <Button color="primary" block outline>
               Login
             </Button>
-            <GoogleLoginButton />
+            <GoogleLogin
+              clientId={clientId}
+              buttonText="Login with Google"
+              onSuccess={onSuccess}
+              onFailure={onFailure}
+              cookiePolicy={'single_host_origin'}
+              isSignedIn={true}
+              className="google-login-button"
+            />
             <Link to="/recovery">Forgot Password?</Link>
           </FormGroup>
         </Form>
