@@ -11,8 +11,28 @@ const ReactCalendar = () => {
   const [selected, setSelected] = useState(new Date());
   const [dayCounter, setDayCounter] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState(new Date());
+  const [stringMonth, setStringMonth] = useState('');
+  const [strmonths, setStrmonths] = useState([
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]);
 
-  console.log(dayCounter);
+  const changeMonth = (direction) => {
+    direction === 'left'
+      ? setCurrentMonth(currentMonth - 1)
+      : setCurrentMonth(currentMonth + 1);
+    setStringMonth(strmonths[currentMonth]);
+  };
 
   const handleDarkAndLightThem = () => {
     setToggle(!toggle);
@@ -28,10 +48,11 @@ const ReactCalendar = () => {
       if (index === parseInt(currentMonth)) {
         for (let i = 1; i <= month; i++) {
           setDayCounter((prevState) => [...prevState, i]);
+          setStringMonth(strmonths[currentMonth]);
         }
       }
     });
-  }, [date, currentMonth]);
+  }, [currentMonth, date, strmonths]);
 
   return (
     <div
@@ -56,9 +77,10 @@ const ReactCalendar = () => {
                 toggle ? '' : styles.calendar_image_dark
               }`}
               width="55"
+              onClick={changeMonth.bind(this, 'left')}
             />
             <h3 className={`${toggle ? '' : styles.calendar_text_dark}`}>
-              {selectedMonth.toLocaleString('default', {}).split(',')[0]}
+              {stringMonth}
             </h3>
             <img
               src={right}
@@ -67,6 +89,7 @@ const ReactCalendar = () => {
                 toggle ? '' : styles.calendar_image_dark
               }`}
               width="55"
+              onClick={changeMonth.bind(this, 'right')}
             />
           </div>
           <div className={styles.calendar_header_right}>
