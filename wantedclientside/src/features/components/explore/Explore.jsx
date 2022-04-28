@@ -1,10 +1,10 @@
 import React from 'react';
-
+import styles from './explore.module.css'
 
 const Explore = () => {
   return (
-    <div>
-      <h1>Explore</h1>
+    <div className={`${styles.explore_container}`}>
+      
     </div>
   );
 };

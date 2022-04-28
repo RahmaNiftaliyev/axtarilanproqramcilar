@@ -1,0 +1,7 @@
+.explore_container {
+    min-height: 100vh;
+    background-image: url(./assets/cool-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

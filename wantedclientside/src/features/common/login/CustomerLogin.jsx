@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
-import { GoogleLoginButton } from 'react-social-login-buttons';
 import { GoogleLogin } from 'react-google-login';
 import { refreshTokenSetup } from './refreshTokenSetup';
 
@@ -85,7 +84,7 @@ const CustomerLogin = () => {
               buttonText="Login with Google"
               onSuccess={onSuccess}
               onFailure={onFailure}
-              cookiePolicy={'single_host_origin'}
+              // cookiePolicy={'single_host_origin'}
               isSignedIn={true}
               className="google-login-button"
             />
