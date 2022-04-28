@@ -12,6 +12,11 @@ const ReactCalendar = () => {
   const [dayCounter, setDayCounter] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState(new Date());
   const [stringMonth, setStringMonth] = useState('');
+  const [firstDay, setFirstDay] = useState(new Date('2022-01-01'));
+  const [preViousMonthLastDaysData, setPreViousMonthLastDaysData] = useState(
+    []
+  );
+
   const [strmonths, setStrmonths] = useState([
     'January',
     'February',
@@ -26,6 +31,29 @@ const ReactCalendar = () => {
     'November',
     'December',
   ]);
+  const [weekDate, setWeekDate] = useState([
+    'Sun',
+    'Mon',
+    'Tue',
+    'Wen',
+    'Thur',
+    'Fri',
+    'Sat',
+  ]);
+
+  const firstDayViewSetter = () => {
+    let returnAble;
+    const stringFirstDay = firstDay.toString().split(' ')[0];
+    weekDate.forEach((day, index) => {
+      if (day === stringFirstDay) {
+        index++;
+        returnAble = index;
+      }
+    });
+
+    return returnAble;
+  };
+
   const [events, setEvents] = useState([]);
 
   const changeMonth = (direction) => {
@@ -68,6 +96,17 @@ const ReactCalendar = () => {
     setSelected(date);
     setSelectedMonth(date);
     setDayCounter([]);
+
+    setPreViousMonthLastDaysData((preData) => {
+      let counter = firstDayViewSetter() - 1;
+      let maxDate = 31;
+      let newData = [];
+      for (let i = 0; i < counter; i++) {
+        debugger;
+        newData.push(maxDate--);
+      }
+      return newData.reverse();
+    });
 
     months.forEach((month, index) => {
       if (index === parseInt(currentMonth)) {
