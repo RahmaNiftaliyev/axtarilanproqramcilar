@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+/* 
+    !usage => font-family: 'Roboto', sans-serif;
+*/
+
+:root {
+  --roboto: 'Roboto', sans-serif;
+}
+
+.ide_background > * {
+  font-family: var(--roboto);
+}
+
+.ide_background {
+  background: rgba(51, 51, 51, 0.8);
+  backdrop-filter: blur(50px);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 32px auto 22px;
+  grid-template-areas:
+    'aside header header header header'
+    'aside main main main main'
+    'aside footer footer footer footer';
+}
+
+.aside {
+  grid-area: aside;
+  padding: 17px 24px;
+}
+
+.aside_header {
+  width: 120px;
+}
+
+.aside_header > h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.red,
+.yellow,
+.green {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.round_container {
+  width: 62px;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: yellow;
+}
+
+.svg_options {
+  width: 220px;
+  margin-top: 25px;
+}
+
+.svg_options > div {
+  padding: 5px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+
+.svg_options > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #191919;
+}
+
+.main {
+  grid-area: main;
+  padding: 24px;
+  background-color: #222222;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #2d2d2d;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.footer ul span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer ul li {
+  margin-right: 18px;
+  cursor: pointer;
+}

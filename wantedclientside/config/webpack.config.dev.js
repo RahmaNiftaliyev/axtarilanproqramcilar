@@ -1,3 +1,4 @@
+/* eslint-disable strict */
 'use strict';
 
 var autoprefixer = require('autoprefixer');

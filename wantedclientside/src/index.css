@@ -37,7 +37,7 @@ body {
     grid-template-columns: 280px 1fr 600px;
     grid-template-rows: 90px 1fr;
     gap: 0px 0px;
-    grid-template-areas: 'Aside Nav Globe' 'Aside Main Globe';
+    grid-template-areas: 'Aside Nav Globe''Aside Main Globe';
 }
 
 .Nav {
@@ -49,7 +49,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: #202020;
-    box-shadow: 0 0 1px 4px #51af62;    
+    box-shadow: 0 0 1px 4px #51af62;
     margin-left: auto;
     margin-right: auto;
 }
@@ -99,7 +99,7 @@ body {
     z-index: 5;
     width: 600px;
     height: 100%;
-    box-shadow: 0 0 1px 4px #51af62;   
+    box-shadow: 0 0 1px 4px #51af62;
 }
 
 .UnderGlobe {
@@ -125,13 +125,13 @@ body {
     width: 100%;
     height: 100%;
     background-color: #202020;
-    box-shadow: 0 0 1px 1px #a49a9a;
+    box-shadow: 0 0 1px 4px #51af62;
     margin-left: auto;
     margin-right: auto;
 }
 
 .registers-home-page {
-    background: url(./features/common/assets/jpg/register.jpg);
+    background: url(./features/common/assets/svg/matrix\ code.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -501,5 +501,3 @@ option {
 .choosie-login-logic div:hover~span {
     display: inline-block;
 }
-
-

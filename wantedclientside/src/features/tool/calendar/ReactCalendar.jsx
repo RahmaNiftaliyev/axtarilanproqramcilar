@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import styles from './calendar.module.css';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
@@ -5,17 +6,12 @@ import left from './assets/left.png';
 import right from './assets/right.png';
 
 const ReactCalendar = () => {
+  // !INITIAL STATE OF THE CALENDAR BEGINS HERE
   const [date, onChange] = useState(new Date());
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-  const [toggle, setToggle] = useState(true);
-  const [selected, setSelected] = useState(new Date());
-  const [dayCounter, setDayCounter] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState(new Date());
-  const [stringMonth, setStringMonth] = useState('');
+  const [selected, setSelected] = useState(new Date());
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [firstDay, setFirstDay] = useState(new Date('2022-01-01'));
-  const [preViousMonthLastDaysData, setPreViousMonthLastDaysData] = useState(
-    []
-  );
 
   const [strmonths, setStrmonths] = useState([
     'January',
@@ -41,20 +37,17 @@ const ReactCalendar = () => {
     'Sat',
   ]);
 
-  const firstDayViewSetter = () => {
-    let returnAble;
-    const stringFirstDay = firstDay.toString().split(' ')[0];
-    weekDate.forEach((day, index) => {
-      if (day === stringFirstDay) {
-        index++;
-        returnAble = index;
-      }
-    });
-
-    return returnAble;
-  };
-
+  const [preViousMonthLastDaysData, setPreViousMonthLastDaysData] = useState(
+    []
+  );
+  const [dayCounter, setDayCounter] = useState([]);
   const [events, setEvents] = useState([]);
+  const [stringMonth, setStringMonth] = useState('');
+  const [toggle, setToggle] = useState(true);
+
+  // !INITIAL STATE OF THE CALENDAR ENDS HERE
+
+  // !FUNCTION TO GET THE PREVIOUS MONTH LAST DAYS DATA BEGINS HERE
 
   const changeMonth = (direction) => {
     direction === 'left'
@@ -63,6 +56,9 @@ const ReactCalendar = () => {
     setStringMonth(strmonths[currentMonth]);
   };
 
+  // !FUNCTION TO GET THE PREVIOUS MONTH LAST DAYS DATA ENDS HERE
+
+  // !lIGHT AND DARK MODE BEGINS HERE
   const handleDarkAndLightThem = (e) => {
     setToggle(!toggle);
 
@@ -73,6 +69,8 @@ const ReactCalendar = () => {
       });
     }
   };
+
+  // !lIGHT AND DARK MODE ENDS HERE
 
   const userEventsController = (e) => {
     const customReminderMessage = prompt('Enter your reminder message', '');
@@ -91,18 +89,31 @@ const ReactCalendar = () => {
     }
   };
 
+  // !FUNCTION TO GET THE DAYS OF THE PREVIOUS MONTH
   useEffect(() => {
     let months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     setSelected(date);
     setSelectedMonth(date);
     setDayCounter([]);
 
+    const firstDayViewSetter = () => {
+      let returnAble;
+      const stringFirstDay = firstDay.toString().split(' ')[0];
+      weekDate.forEach((day, index) => {
+        if (day === stringFirstDay) {
+          index++;
+          returnAble = index;
+        }
+      });
+
+      return returnAble;
+    };
+
     setPreViousMonthLastDaysData((preData) => {
       let counter = firstDayViewSetter() - 1;
       let maxDate = 31;
       let newData = [];
       for (let i = 0; i < counter; i++) {
-        debugger;
         newData.push(maxDate--);
       }
       return newData.reverse();
@@ -116,7 +127,7 @@ const ReactCalendar = () => {
         }
       }
     });
-  }, [currentMonth, date, strmonths]);
+  }, [currentMonth, date, strmonths, firstDay, weekDate]);
 
   return (
     <div

@@ -1,7 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './rootReducer';
 
-const storeBuilder = () => {return {reducer:rootReducer}}
+const storeBuilder = (paramsRootReducer) => {
+  return {
+    reducer: paramsRootReducer ? paramsRootReducer : {},
+  };
+};
 
-const store = configureStore(storeBuilder());
-export default store
+const store = configureStore(storeBuilder(rootReducer));
+export default store;

@@ -5,12 +5,12 @@ import Register from './../common/register/Register';
 import Login from './../common/login/Login';
 import ReactCalendar from './../tool/calendar/ReactCalendar';
 import ChatApp from '../tool/chat/ChatApp';
+import IDE from './../tool/IDE/jsx/IDE';
 import Home from '../components/home/Home';
 import Explore from '../components/explore/Explore';
 import TopRanks from '../components/topranks/TopRanks';
 import OnlineCourses from '../components/onlinecourses/OnlineCourses';
 import TestView from './../test/manual/TestView';
-import { FaPastafarianism } from 'react-icons/fa';
 import Recovery from '../common/login/Recovery';
 
 const Dashboard = () => {
@@ -51,6 +51,7 @@ const Dashboard = () => {
         {/*TOOLS*/}
         <Route path="/calendar" element={<ReactCalendar />} />
         <Route path="/chat" element={<ChatApp />} />
+        <Route path="/codeeditor" element={<IDE />} />
 
         {/* TEST URL FOR CUSTOM VIEW */}
         <Route path="/test" element={<TestView />} />

@@ -2,6 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import facebook from './../../common/assets/png/Facebook.png';
+import google from './../../common/assets/png/Google.png';
+import instagram from './../../common/assets/png/Instagram.png';
+import twitter from './../../common/assets/png/Twitter.png';
+import whatsapp from './../../common/assets/png/WhatsApp.png';
 
 const Home = () => {
   const canvasRef = useRef();
@@ -45,8 +50,34 @@ const Home = () => {
   return (
     <div className="home-dashboard">
       <div className="Nav">
-        <div className="nav-content-container d-flex align-items-center p-3 justify-content-end">
-          <div></div>
+        <div className="nav-content-container d-flex align-items-center p-3 justify-content-between">
+          <div>
+            <img
+              src={facebook}
+              alt=""
+              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-1s"
+            />
+            <img
+              src={google}
+              alt=""
+              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-2s"
+            />
+            <img
+              src={instagram}
+              alt=""
+              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-3s"
+            />
+            <img
+              src={twitter}
+              alt=""
+              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-4s"
+            />
+            <img
+              src={whatsapp}
+              alt=""
+              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-5s"
+            />
+          </div>
           <div>
             <Link to="/login">
               <Button color="warning" className="me-1">
@@ -78,7 +109,6 @@ const Home = () => {
           style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: 1 }}
         />
       </div>
-    
     </div>
   );
 };

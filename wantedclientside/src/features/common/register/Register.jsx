@@ -5,6 +5,7 @@ import EmployeeRegister from './EmployeeRegister';
 import { useTypeWriter } from '@vegadev/react-type-writer';
 import { useNavigate, Link } from 'react-router-dom';
 
+
 // eslint-disable-next-line react/prop-types
 const Register = ({
   handleDynamicState,
