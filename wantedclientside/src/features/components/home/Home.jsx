@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
-import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import facebook from './../../common/assets/png/Facebook.png';
 import google from './../../common/assets/png/Google.png';
 import instagram from './../../common/assets/png/Instagram.png';
@@ -50,46 +50,27 @@ const Home = () => {
   return (
     <div className="home-dashboard">
       <div className="Nav">
-        <div className="nav-content-container d-flex align-items-center p-3 justify-content-between">
-          <div>
-            <img
-              src={facebook}
-              alt=""
-              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-1s"
-            />
-            <img
-              src={google}
-              alt=""
-              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-2s"
-            />
-            <img
-              src={instagram}
-              alt=""
-              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-3s"
-            />
-            <img
-              src={twitter}
-              alt=""
-              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-4s"
-            />
-            <img
-              src={whatsapp}
-              alt=""
-              className="animate__animated animate__backInDown animate__infinite animate__slower animate__delay-5s"
-            />
-          </div>
-          <div>
-            <Link to="/login">
-              <Button color="warning" className="me-1">
-                Log In
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button color="warning" className="ms-1">
-                Sign Up
-              </Button>
-            </Link>
-          </div>
+        <div className="nav-content-container d-flex align-items-center  justify-content-end">
+          <ul>
+            <li>
+              <Link to="/">Explore</Link>
+            </li>
+            <li>
+              <Link to="/">Top Ranks</Link>
+            </li>
+            <li>
+              <Link to="/">Online Courses</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">Sign In</Link>
+            </li>
+            <li>
+              <Link to="/">Log In</Link>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="Aside">

@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ff566db-490d-455c-8c47-1eec96bb20e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/wantedclientside/config/webpack.config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/wantedclientside/config/webpack.config.dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wantedclientside/config/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/wantedclientside/config/webpack.config.prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wantedclientside/src/app/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/wantedclientside/src/app/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wantedclientside/src/features/tool/calendar/ReactCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/wantedclientside/src/features/tool/calendar/ReactCalendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wantedclientside/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wantedclientside/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Wanted/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Wanted/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/obj/Debug/netstandard2.0/Business.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Business/obj/Debug/netstandard2.0/Business.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/netstandard2.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/netstandard2.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/obj/Debug/netstandard2.0/Entities.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/obj/Debug/netstandard2.0/Entities.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WantedServerSide/obj/Debug/net6.0/WantedServerSide.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WantedServerSide/obj/Debug/net6.0/WantedServerSide.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WantedServerSide/obj/Debug/net6.0/WantedServerSide.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WantedServerSide/obj/Debug/net6.0/WantedServerSide.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wantedclientside/src/features/tool/IDE/jsx/IDE.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/wantedclientside/src/features/tool/IDE/jsx/IDE.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,8 @@
       <updated>1651233357102</updated>
       <workItem from="1651233853093" duration="3000" />
       <workItem from="1651421998802" duration="1000" />
+      <workItem from="1652274894118" duration="102000" />
+      <workItem from="1652275028598" duration="14000" />
     </task>
     <servers />
   </component>

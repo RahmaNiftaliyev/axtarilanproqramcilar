@@ -14,8 +14,6 @@ const IDE = () => {
   const [plugins, setPlugins] = useState('');
   const [settings, setSettings] = useState('');
 
-  useEffect(() => {});
-
   // Select a language or open a different editor to get started. Start typing to dismiss or don't show this again
 
   return (
@@ -51,8 +49,8 @@ const IDE = () => {
               accept=""
               style={{
                 visibility: 'hidden',
-                width: '1px',
-                height: '1px',
+                width: '0',
+                height: '0',
               }}
             />
           </div>
