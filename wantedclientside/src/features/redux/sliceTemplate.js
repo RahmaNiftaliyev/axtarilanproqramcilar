@@ -1,8 +1,4 @@
-import {
-  createSlice,
-  createEntityAdapter,
-  createAsyncThunk,
-} from '@reduxjs/toolkit';
+import { createSlice, createEntityAdapter, createAsyncThunk } from '@reduxjs/toolkit';
 /*
  *   @param {string}  moreSelection
  */
@@ -10,8 +6,7 @@ import {
 export function templateSliceCreater(moreSelection) {
   return new Promise((resolve, reject) => {
     try {
-      if (typeof moreSelection !== 'string')
-        throw new Error('moreSelection is not a string');
+      if (typeof moreSelection !== 'string') throw new Error('moreSelection is not a string');
       if (!moreSelection) throw new Error('moreSelection is not defined');
 
       resolve({
@@ -25,71 +20,58 @@ export function templateSliceCreater(moreSelection) {
             entities: {},
           },
         },
-        getData: createAsyncThunk(
-          `${moreSelection}/getData`,
-          async (id = '') => {
-            try {
-              const data = await fetch(`/api/${id}`);
-              return await data.json();
-            } catch (err) {
-              console.log(err);
-            }
+        getData: createAsyncThunk(`${moreSelection}/getData`, async (id = '') => {
+          try {
+            const data = await fetch(`/api/${id}`);
+            return await data.json();
+          } catch (err) {
+            console.log(err);
           }
-        ),
-        postData: createAsyncThunk(
-          `${moreSelection}/postData`,
-          async (params) => {
-            try {
-              const data = await fetch(`/api`, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(params),
-              });
-              return await data.json();
-            } catch (err) {
-              console.log(err);
-            }
+        }),
+        postData: createAsyncThunk(`${moreSelection}/postData`, async (params) => {
+          try {
+            const data = await fetch(`/api`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(params),
+            });
+            return await data.json();
+          } catch (err) {
+            console.log(err);
           }
-        ),
-        putData: createAsyncThunk(
-          `${moreSelection}/putData`,
-          async (params) => {
-            try {
-              const data = await fetch(`/api`, {
-                method: 'PUT',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(params),
-              });
-              return await data.json();
-            } catch (err) {
-              console.log(err);
-            }
+        }),
+        putData: createAsyncThunk(`${moreSelection}/putData`, async (params) => {
+          try {
+            const data = await fetch(`/api`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(params),
+            });
+            return await data.json();
+          } catch (err) {
+            console.log(err);
           }
-        ),
-        deleteData: createAsyncThunk(
-          `${moreSelection}/deleteData`,
-          async (id) => {
-            try {
-              const data = await fetch(`/api/${id}`, {
-                method: 'DELETE',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-              });
-              return await data.json();
-            } catch (err) {
-              console.log(err);
-            }
+        }),
+        deleteData: createAsyncThunk(`${moreSelection}/deleteData`, async (id) => {
+          try {
+            const data = await fetch(`/api/${id}`, {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+            return await data.json();
+          } catch (err) {
+            console.log(err);
           }
-        ),
+        }),
         templateAdapter: createEntityAdapter({
           selectId: (temp) => temp.id,
-          sortComparer: (preTemp, nextTemp) =>
-            nextTemp.id.localeCompare(preTemp.id),
+          sortComparer: (preTemp, nextTemp) => nextTemp.id.localeCompare(preTemp.id),
         }),
 
         templateSlice: createSlice({

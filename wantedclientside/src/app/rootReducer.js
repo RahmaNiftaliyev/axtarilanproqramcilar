@@ -10,6 +10,7 @@ import postsReducer from './../features/redux/postsSlice';
 import notificationsReducer from './../features/redux/notificationsSlice';
 import emailsReducer from './../features/redux/emailsSlice';
 import ordersReducer from './../features/redux/ordersSlice';
+import coursesReducer from './../features/redux/coursesSlice';
 
 export default {
   users: usersReducer,
@@ -22,4 +23,5 @@ export default {
   notifications: notificationsReducer,
   emails: emailsReducer,
   orders: ordersReducer,
+  courses: coursesReducer,
 };

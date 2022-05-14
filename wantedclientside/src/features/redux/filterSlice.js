@@ -1,0 +1,1 @@
+import { templateSliceCreater } from './sliceTemplate';
