@@ -95,7 +95,20 @@ export function templateSliceCreater(moreSelection) {
         templateSlice: createSlice({
           name: this.initialState.naming,
           initialState: this.initialState,
-          reducers: {},
+          reducers: {
+            setOneSelection: (state, action) => {
+              this.templateAdapter.addOne(state, action.payload);
+            },
+            setMoreSelection: (state, action) => {
+              this.templateAdapter.setAll(state, action.payload);
+            },
+            setStatus: (state, action) => {
+              state.status = action.payload;
+            },
+            setError: (state, action) => {
+              state.error = action.payload;
+            },
+          },
           extraReducers: {
             //!first fulfilled operations
             [this.getData.fulfilled]: (state, action) => {
