@@ -1,0 +1,47 @@
+.package_registry {
+    background: rgb(12, 22, 45) none repeat scroll 0% 0% / auto padding-box
+      border-box;
+    background-attachment: scroll;
+    background-color: #0c162d;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    clear: none;
+    color: #ffffff;
+    display: block;
+    font: 11.375px / 20.475px ui-monospace, SFMono-Regular, 'SF Mono', Menlo,
+      Consolas, 'Liberation Mono', monospace;
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+      'Liberation Mono', monospace;
+    font-size: 11.375px;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    max-width: 500px;
+    height: 500px;
+    letter-spacing: 0;
+    line-height: 20.475px;
+    list-style: outside none none;
+    min-height: 280px;
+    outline: rgb(255, 255, 255) none 0px;
+    right: auto;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px,
+    rgb(31,65,90) 0px 34px 65px 0px, rgba(0, 0, 0, 0.07) 0px 2.75px 2.21px 0px,
+    rgba(0, 0, 0, 0.043) 0px 6.65px 5.32px 0px,
+    rgba(121, 87, 125, 0.03) 0px 12.5px 10px 0px,
+    rgba(121, 87, 125, 0.03) 0px 22px 18px 0px,
+    rgba(121, 87, 125, 0.02) 0px 42px 33.4px 0px,
+    rgba(121, 87, 125, 0.016) 0px 100px 80px 0px;
+      border-radius: 6px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px;
+  }
+  
+  .package_registry > span {
+    position: absolute;
+    display: inline-block;
+    color: #3FB950;
+}

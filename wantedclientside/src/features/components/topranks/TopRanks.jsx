@@ -4,7 +4,7 @@ import styles from './topranks.module.css'
 const TopRanks = () => {
   return (
     <div className={`${styles.container_topranks}`}>
-        <table>
+        {/* <table>
           <thead>
               <tr>
                 <th>ID</th>
@@ -90,7 +90,7 @@ const TopRanks = () => {
               </tr>
 
           </tbody>
-        </table>
+        </table> */}
     </div>
   );
 };

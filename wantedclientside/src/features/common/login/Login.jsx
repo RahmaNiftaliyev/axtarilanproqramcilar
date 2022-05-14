@@ -3,9 +3,13 @@ import { useTypeWriter } from '@vegadev/react-type-writer';
 import EmployeeLogin from './EmployeeLogin';
 import CustomerLogin from './CustomerLogin';
 import { useNavigate, Link } from 'react-router-dom';
-
-
-
+import facebook from './../../common/assets/png/Facebook.png';
+import google from './../../common/assets/png/Google.png';
+import instagram from './../../common/assets/png/Instagram.png';
+import twitter from './../../common/assets/png/Twitter.png';
+import whatsapp from './../../common/assets/png/WhatsApp.png';
+import searchIcon from './../../components/home/assets/search-normal.png';
+import styles from './login.module.css';
 
 const Login = () => {
   const [loginCustomer, setLoginCustomer] = useState(false);
@@ -31,13 +35,11 @@ const Login = () => {
     }
   };
 
-
   const navigate = useNavigate();
 
   const handleNavigationSignUpPage = () => {
     navigate('/register');
   };
-
 
   const typeWriterInvoker = () => {
     return {
@@ -59,68 +61,70 @@ const Login = () => {
 
   return (
     <div className="login-home-page">
-      <div className="upper-content">
-        {/* upper content top */}
-        <div className="upper-content-top">
-        <h3>lorem ipsum</h3>
-          <div>
-          <ul className='d-flex'>
-            <li>
-              <Link to="/explore">Explore</Link>
+      <div className="home-dashboard">
+        <div className="Nav">
+          <div className="nav-content-container d-flex align-items-center">
+            <ul>
+              <li>
+                <Link to="/explore">Explore</Link>
+              </li>
+              <li>
+              <Link to="/discover">Site Map</Link>
             </li>
-            <li>
-              <Link to="/ranks">Top ranks</Link>
-            </li>
-            <li>
-              <Link to="/courses">Online Courses</Link>
-            </li>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-          <button onClick={handleNavigationSignUpPage}>Sign Up</button>
+              <li>
+                <Link to="/ranks">Top Ranks</Link>
+              </li>
+              <li>
+                <Link to="/courses">Online Courses</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/register">Sign In</Link>
+              </li>
+              <li>
+                <Link to="/login">Log In</Link>
+              </li>
+            </ul>
           </div>
         </div>
-        {/* upper content right */}
-        <div className="upper-content-left">
-          <h1>Wanted {text}</h1>
-          <p>
-            Hire freelancer 1 year warranty free and premium plans have a good
-            day with yout friends work together with Freelancer's Also your
-            social media and code IDE all in one
-          </p>
-        </div>
-        {/* upper content right */}
-        <div className="upper-content-right ">
-          {(!loginCustomer || !loginEmployee) && (
-            <div className="choosie-login-logic">
-              <h1 className="d-flex">
-                <div
-                  onMouseEnter={capitalizeOnMouseEnter}
-                  onMouseLeave={capitalizeOnMouseLeave}
-                >
-                  C
-                </div>
-                <span>ustomer</span>
-              </h1>
-              <h1 className="d-flex">
-                <div
-                  onMouseEnter={capitalizeOnMouseEnter}
-                  onMouseLeave={capitalizeOnMouseLeave}
-                >
-                  F
-                </div>
-                <span>reelancer</span>
-              </h1>
+        <div className="Aside d-flex align-items-center">
+          <div
+            className="d-flex flex-column align-items-center justify-content-between"
+            style={{
+              width: '100%',
+              height: 'calc(100% - 180px)',
+            }}
+          >
+            <div className="aside-header">
+              <div>
+                <img src={searchIcon} alt="wanted app asie search icon" />
+              </div>
             </div>
-          )}
-          {loginCustomer ? (
-            <CustomerLogin />
-          ) : loginEmployee ? (
-            <EmployeeLogin />
-          ) : null}
+            <div className="aside-bottom">
+              <div className="d-flex flex-column align-items-center justify-content-between">
+                <img src={facebook} alt="wanted app social media icons" />
+                <img src={instagram} alt="wanted app social media icons" />
+                <img src={twitter} alt="wanted app social media icons" />
+                <img src={google} alt="wanted app social media icons" />
+                <img src={whatsapp} alt="wanted app social media icons" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="bottom-content"></div>
+        <div className="Main"></div>
+        <div className="Footer">
+          <hr />
+          <p>Wanted &copy; 2022</p>
+        </div>
+        <div className="Globe">
+          <div className={`${styles.package_registry}`}>
+          <span>
+                ~/wanted/login
+              </span>
+          </div>
+        </div>
       </div>
     </div>
   );

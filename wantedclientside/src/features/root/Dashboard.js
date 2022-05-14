@@ -12,6 +12,8 @@ import TopRanks from '../components/topranks/TopRanks';
 import OnlineCourses from '../components/onlinecourses/OnlineCourses';
 import TestView from './../test/manual/TestView';
 import Recovery from '../common/login/Recovery';
+import ChatRegistration from '../tool/chat/ChatRegistration';
+import Discover from '../common/discover/Discover';
 
 const Dashboard = () => {
   const [freelancer, setFreelancer] = React.useState(false);
@@ -47,10 +49,12 @@ const Dashboard = () => {
         <Route path="/explore" element={<Explore />} />
         <Route path="/ranks" element={<TopRanks />} />
         <Route path="/courses" element={<OnlineCourses />} />
+        <Route path="/discover" element={<Discover />} />
 
         {/*TOOLS*/}
         <Route path="/calendar" element={<ReactCalendar />} />
         <Route path="/chat" element={<ChatApp />} />
+        <Route path="/chat/register" element={<ChatRegistration />} />
         <Route path="/codeeditor" element={<IDE />} />
 
         {/* TEST URL FOR CUSTOM VIEW */}

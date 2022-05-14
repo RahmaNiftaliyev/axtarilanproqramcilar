@@ -1,0 +1,87 @@
+/*  */
+
+.online_courses_main_container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #040d22, #421f46);
+}
+
+.online_courses_main_container > canvas {
+  z-index: 1 !important;
+}
+
+.online_courses_hero_container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1.5fr;
+  grid-template-rows: 100px auto;
+  grid-template-areas: 'nav nav nav' 'aside main aside-right';
+}
+
+.courses_aside {
+  grid-area: aside;
+}
+
+.courses_aside_right {
+  grid-area: aside-right;
+}
+
+.courses_main {
+  grid-area: main;
+}
+
+.courses_nav {
+  grid-area: nav;
+  display: grid;
+  position: relative;
+  z-index: 2;
+  grid-template-columns: 1fr 4fr 1.5fr;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px,
+    rgb(4, 13, 33) 0px 34px 65px 0px, rgba(0, 0, 0, 0.07) 0px 2.75px 2.21px 0px,
+    rgba(0, 0, 0, 0.043) 0px 6.65px 5.32px 0px,
+    rgba(0, 0, 0, 0.03) 0px 12.5px 10px 0px,
+    rgba(0, 0, 0, 0.03) 0px 22px 18px 0px,
+    rgba(0, 0, 0, 0.02) 0px 42px 33.4px 0px,
+    rgba(0, 0, 0, 0.016) 0px 100px 80px 0px;
+}
+
+
+.courses_nav_center {
+    padding: 20px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.courses_nav_center >  input[type="text"] {
+  background: rgba(227, 237, 247, 0.05);
+  box-shadow: inset 4px 4px 2px rgb(31,65,90),
+    inset -2px -2px 1px 1px rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  height: 100%;
+  width: 60%;
+  color: white;
+  padding-left: 20px;
+}
+
+
+.courses_nav_center > select {
+    background: rgba(227, 237, 247, 0.05);
+    box-shadow: inset 4px 4px 2px rgb(31,65,90),
+      inset -2px -2px 1px 1px rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    height: 100%;
+    width: 38%;
+    color: white;
+    padding:0 20px;
+}
+
+
+select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+
+}
+
+
