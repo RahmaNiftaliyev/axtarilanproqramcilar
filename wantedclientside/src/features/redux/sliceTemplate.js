@@ -15,10 +15,12 @@ export function templateSliceCreater(moreSelection) {
       if (!moreSelection) throw new Error('moreSelection is not defined');
 
       resolve({
+        //!ADAPTER FOR REDUX-TOOLKIT STATE TEMPLATE
         templateAdapter: createEntityAdapter({
           selectId: (temp) => temp.id,
           sortComparer: (preTemp, nextTemp) => preTemp.id.localeCompare(nextTemp.id),
         }),
+        //!ASYNC REQUIESTS BACK-END API SERVICE CONFIGURATION AFTER SETUPPROXY.JS FILE
         getData: createAsyncThunk(`${moreSelection}/getData`, async (id = '') => {
           try {
             const data = await fetch(`/api/${id}`);
@@ -68,9 +70,9 @@ export function templateSliceCreater(moreSelection) {
             console.log(err);
           }
         }),
-        // !slice begins here
+        // !SLICE CREATOR FOR TEMPLATE
         templateSlice: createSlice({
-            initialState: this.templateAdapter.getInitialState({
+          initialState: this.templateAdapter.getInitialState({
             status: 'idle',
             error: null,
             data: null,
@@ -96,7 +98,7 @@ export function templateSliceCreater(moreSelection) {
             },
           },
           extraReducers: {
-            //!first fulfilled operations
+            //!FIRST FULFILLED OPERATIONS
             [this.getData.fulfilled]: (state, action) => {
               state.moreSelection = this.templateAdapter.addMany(
                 state.moreSelection,
@@ -121,7 +123,7 @@ export function templateSliceCreater(moreSelection) {
                 action.payload.id
               );
             },
-            //!second pending operations
+            //!SECOND PENDING OPERATIONS
             [this.getData.pending]: (state, action) => {
               state.status = 'pending';
             },
@@ -134,7 +136,7 @@ export function templateSliceCreater(moreSelection) {
             [this.deleteData.pending]: (state, action) => {
               state.status = 'pending';
             },
-            //!third rejected operations
+            //!THIRD REJECTED OPERATIONS
             [this.getData.rejected]: (state, action) => {
               if (isRejectedWithValue(action.payload)) {
                 state.error = action.payload.value;
@@ -173,6 +175,7 @@ export function templateSliceCreater(moreSelection) {
             },
           },
         }).reducer,
+        //!ALL SELECTOR TEMPLATE ARE HERE FOR REFERENCE
         allSelectors: {
           getTemplateById: (state, id) => state.templateAdapter.getById(state, id),
           getTemplateAll: (state) => state.templateAdapter.getSelectors().selectAll(state),
@@ -183,16 +186,27 @@ export function templateSliceCreater(moreSelection) {
           getTemplateIsLoaded: (state) => state.templateAdapter.getSelectors().selectLoaded(state),
           getTemplateError: (state) => state.templateAdapter.getSelectors().selectError(state),
         },
+        // !ALL ACTIONS TEMPLATE ARE HERE FOR REFERENCE
         allActions: {
           getData: this.getData,
           postData: this.postData,
           putData: this.putData,
           deleteData: this.deleteData,
-          setOne: this.setOneSelection,
-          setMore: this.setMoreSelection,
-          setStatus: this.setStatus,
-          setError: this.setError,
-          reset: this.reset,
+          setOneSelection: this.templateSlice.actions.setOneSelection,
+          setMoreSelection: this.templateSlice.actions.setMoreSelection,
+          setStatus: this.templateSlice.actions.setStatus,
+          setError: this.templateSlice.actions.setError,
+          reset: this.templateSlice.actions.reset,
+        },
+        /* 
+          !AFTER IMPORT TEMPLATE => SELECTORS AND ACTIONS
+          !YOU CAN USE THEM => REACT-SIDE WITHIN YOUR COMPONENT
+        */
+        sliceTotal: {
+          templateActions: this.allActions, //!ASYNC AND STATIC FUNCTIONS ALL SETTED HERE
+          templateSelectors: this.allSelectors, //!SELECTORS ALL SETTED HERE
+          templateAdapter: this.templateAdapter, //!ADAPTER ALL SETTED HERE
+          templateState: this.templateSlice.reducer, //!SLICE REDUCER ALL SETTED HERE
         },
       });
     } catch (err) {
