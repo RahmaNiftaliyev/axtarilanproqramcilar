@@ -1,4 +1,9 @@
-import { createSlice, createEntityAdapter, createAsyncThunk,isRejectedWithValue } from '@reduxjs/toolkit';
+import {
+  createSlice,
+  createEntityAdapter,
+  createAsyncThunk,
+  isRejectedWithValue,
+} from '@reduxjs/toolkit';
 /*
  *   @param {string}  moreSelection
  */
@@ -65,12 +70,12 @@ export function templateSliceCreater(moreSelection) {
         }),
         // !slice begins here
         templateSlice: createSlice({
-          initialState: this.templateAdapter.getInitialState({
+            initialState: this.templateAdapter.getInitialState({
             status: 'idle',
-            naming: moreSelection,
             error: null,
             data: null,
           }),
+          name: `${moreSelection}Slice`,
           reducers: {
             setOneSelection: (state, action) => {
               this.templateAdapter.addOne(state, action.payload);
@@ -131,29 +136,63 @@ export function templateSliceCreater(moreSelection) {
             },
             //!third rejected operations
             [this.getData.rejected]: (state, action) => {
-              state.status = 'rejected';
-              state.error = action.error;
+              if (isRejectedWithValue(action.payload)) {
+                state.error = action.payload.value;
+                state.status = 'error';
+              } else {
+                state.error = 'Something went wrong';
+                state.status = 'error';
+              }
             },
             [this.postData.rejected]: (state, action) => {
-              state.status = 'rejected';
-              state.error = action.error;
+              if (isRejectedWithValue(action.payload)) {
+                state.error = action.payload.value;
+                state.status = 'error';
+              } else {
+                state.error = 'Something went wrong';
+                state.status = 'error';
+              }
             },
             [this.putData.rejected]: (state, action) => {
-              state.status = 'rejected';
-              state.error = action.error;
+              if (isRejectedWithValue(action.payload)) {
+                state.error = action.payload.value;
+                state.status = 'error';
+              } else {
+                state.error = 'Something went wrong';
+                state.status = 'error';
+              }
             },
             [this.deleteData.rejected]: (state, action) => {
-              state.status = 'rejected';
-              state.error = action.error;
+              if (isRejectedWithValue(action.payload)) {
+                state.error = action.payload.value;
+                state.status = 'error';
+              } else {
+                state.error = 'Something went wrong';
+                state.status = 'error';
+              }
             },
           },
         }).reducer,
-        allSelectors: this.templateAdapter.getSelectors((state) => state.templateSlice),
+        allSelectors: {
+          getTemplateById: (state, id) => state.templateAdapter.getById(state, id),
+          getTemplateAll: (state) => state.templateAdapter.getSelectors().selectAll(state),
+          getTemplateTotalCount: (state) =>
+            state.templateAdapter.getSelectors().selectTotalCount(state),
+          getTemplateIsLoading: (state) =>
+            state.templateAdapter.getSelectors().selectLoading(state),
+          getTemplateIsLoaded: (state) => state.templateAdapter.getSelectors().selectLoaded(state),
+          getTemplateError: (state) => state.templateAdapter.getSelectors().selectError(state),
+        },
         allActions: {
           getData: this.getData,
           postData: this.postData,
           putData: this.putData,
           deleteData: this.deleteData,
+          setOne: this.setOneSelection,
+          setMore: this.setMoreSelection,
+          setStatus: this.setStatus,
+          setError: this.setError,
+          reset: this.reset,
         },
       });
     } catch (err) {
