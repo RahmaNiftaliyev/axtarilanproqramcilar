@@ -3,6 +3,7 @@ import styles from './onlinecourses.module.css';
 import ParticlesBg from 'particles-bg';
 import { useSelector } from 'react-redux';
 import { selectAllCourses } from '../../redux/coursesSlice';
+import { BiMessageRoundedDetail, BiNotification, BiCartAlt } from 'react-icons/bi';
 
 const OnlineCourses = () => {
   const courses = useSelector(selectAllCourses);
@@ -56,7 +57,34 @@ const OnlineCourses = () => {
           </div>
           {/* Navigation bar  => right section */}
           <div className={`${styles.courses_nav_right}`}>
-            <button></button>
+            <button>Create new course</button>
+            <div>
+            <BiCartAlt
+              style={{
+                color: 'white',
+                fontSize: '1.5rem',
+                marginLeft: '5px',
+                marginRight: '5px',
+              }}
+            />
+            <BiMessageRoundedDetail
+              style={{
+                color: 'white',
+                fontSize: '1.5rem',
+                marginLeft: '5px',
+                marginRight: '5px',
+              }}
+            />
+            <BiNotification
+              style={{
+                color: 'white',
+                fontSize: '1.5rem',
+                marginLeft: '5px',
+                marginRight: '5px',
+              }}
+            />
+            </div>
+            <div className={`${styles.profile_pic_user}`}></div>
           </div>
         </div>
         <div className={`${styles.courses_main}`}></div>

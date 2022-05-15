@@ -1,4 +1,4 @@
-import { createSlice, createEntityAdapter, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createEntityAdapter, createAsyncThunk,isRejectedWithValue } from '@reduxjs/toolkit';
 /*
  *   @param {string}  moreSelection
  */
@@ -10,16 +10,10 @@ export function templateSliceCreater(moreSelection) {
       if (!moreSelection) throw new Error('moreSelection is not defined');
 
       resolve({
-        initialState: {
-          status: 'idle',
-          error: null,
-          naming: moreSelection,
-          oneSelection: {},
-          moreSelection: {
-            ids: [],
-            entities: {},
-          },
-        },
+        templateAdapter: createEntityAdapter({
+          selectId: (temp) => temp.id,
+          sortComparer: (preTemp, nextTemp) => preTemp.id.localeCompare(nextTemp.id),
+        }),
         getData: createAsyncThunk(`${moreSelection}/getData`, async (id = '') => {
           try {
             const data = await fetch(`/api/${id}`);
@@ -69,14 +63,14 @@ export function templateSliceCreater(moreSelection) {
             console.log(err);
           }
         }),
-        templateAdapter: createEntityAdapter({
-          selectId: (temp) => temp.id,
-          sortComparer: (preTemp, nextTemp) => nextTemp.id.localeCompare(preTemp.id),
-        }),
-
+        // !slice begins here
         templateSlice: createSlice({
-          name: this.initialState.naming,
-          initialState: this.initialState,
+          initialState: this.templateAdapter.getInitialState({
+            status: 'idle',
+            naming: moreSelection,
+            error: null,
+            data: null,
+          }),
           reducers: {
             setOneSelection: (state, action) => {
               this.templateAdapter.addOne(state, action.payload);
@@ -89,6 +83,11 @@ export function templateSliceCreater(moreSelection) {
             },
             setError: (state, action) => {
               state.error = action.payload;
+              state.status = 'error';
+            },
+            reset: (state, action) => {
+              state.status = 'idle';
+              state.error = null;
             },
           },
           extraReducers: {
@@ -148,10 +147,14 @@ export function templateSliceCreater(moreSelection) {
               state.error = action.error;
             },
           },
-        }),
-        allSelectors: this.templateAdapter.getSelectors(
-          (state) => state[this.initialState.naming].moreSelection
-        ),
+        }).reducer,
+        allSelectors: this.templateAdapter.getSelectors((state) => state.templateSlice),
+        allActions: {
+          getData: this.getData,
+          postData: this.postData,
+          putData: this.putData,
+          deleteData: this.deleteData,
+        },
       });
     } catch (err) {
       reject(err);

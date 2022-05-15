@@ -41,6 +41,12 @@
     rgba(0, 0, 0, 0.02) 0px 42px 33.4px 0px, rgba(0, 0, 0, 0.016) 0px 100px 80px 0px;
 }
 
+.courses_nav > div {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
 .courses_nav_center {
   padding: 20px;
   display: flex;
@@ -48,8 +54,8 @@
 }
 
 .courses_nav_center > input[type='text'] {
-  background: #272F43;
-  border: 1px solid #57606A;
+  background: #272f43;
+  border: 1px solid #57606a;
   border-radius: 4px;
   height: 100%;
   width: 60%;
@@ -58,8 +64,8 @@
 }
 
 .courses_nav_center > select {
-  background: #272F43;
-  border: 1px solid #57606A;
+  background: #272f43;
+  border: 1px solid #57606a;
   border-radius: 4px;
   height: 100%;
   width: 38%;
@@ -67,8 +73,26 @@
   padding: 0 20px;
 }
 
+.courses_nav_right {
+  justify-content: space-between;
+}
+
+.courses_nav_right > button {
+  background-color: #00966b;
+  border-radius: 8px;
+  color: white;
+  padding: 16px 29px;
+}
+
 select {
   -moz-appearance: none; /* Firefox */
   -webkit-appearance: none; /* Safari and Chrome */
   appearance: none;
+}
+
+.profile_pic_user {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid white;
 }
