@@ -38,7 +38,7 @@ const ReactCalendar = () => {
     setToggle(!toggle);
   };
 
-  const rowReturner = () => {};
+
 
   useEffect(() => {
     let today = new Date().getMonth();
@@ -46,7 +46,7 @@ const ReactCalendar = () => {
     let newArr = [];
     let newArr2 = [];
     let todayCounter = 0;
-    let settedArr = [] ; 
+    let settedArr = [];
 
     setAllDays((prevoiusValue) => {
       let newA = [...prevoiusValue];
@@ -72,7 +72,6 @@ const ReactCalendar = () => {
 
       return newA;
     });
-
   }, []);
 
   return (

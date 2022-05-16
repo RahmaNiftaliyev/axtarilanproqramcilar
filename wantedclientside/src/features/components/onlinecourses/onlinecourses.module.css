@@ -71,13 +71,16 @@
   justify-content: space-between;
 }
 
-
-
-.courses_nav_left > button {
-  background-color: #00966b;
-  border-radius: 8px;
-  color: white;
-  padding: 16px 29px;
+.courses_nav_left > button,
+.courses_nav_right > button {
+  border: 4px solid #888888;
+  outline: none;
+  background-color: #f4f5f6;
+  border-radius: 20px;
+  transition: 0.13s ease-in-out;
+  cursor: pointer;
+  padding: 12px 23px;
+  box-shadow: 0 0 4px rgb(207, 207, 207);
 }
 
 .courses_nav_center {
@@ -126,13 +129,6 @@
 
 .courses_nav_right {
   justify-content: space-between;
-}
-
-.courses_nav_right > button {
-  background-color: #00966b;
-  border-radius: 8px;
-  color: white;
-  padding: 16px 29px;
 }
 
 select {
