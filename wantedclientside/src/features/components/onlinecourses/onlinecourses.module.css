@@ -2,7 +2,8 @@
 
 .online_courses_main_container {
   min-height: 100vh;
-  background: #141623;
+  /* background: linear-gradient(135deg, #040d22, #421f46); */
+  background: #421f46;
 }
 
 .online_courses_main_container > canvas {
@@ -25,6 +26,29 @@
   grid-area: aside-right;
 }
 
+.courses_aside,
+.courses_aside_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile_content {
+  width: 95%;
+  height: 390px;
+  background: #040d22;
+  border-radius: 8px;
+}
+
+.profile_content_full {
+  width: 95%;
+  height: 100%;
+  background: #040d22;
+  border-radius: 8px;
+}
+
 .courses_main {
   grid-area: main;
 }
@@ -35,10 +59,6 @@
   position: relative;
   z-index: 2;
   grid-template-columns: 1fr 4fr 1.5fr;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgb(4, 13, 33) 0px 34px 65px 0px,
-    rgba(0, 0, 0, 0.07) 0px 2.75px 2.21px 0px, rgba(0, 0, 0, 0.043) 0px 6.65px 5.32px 0px,
-    rgba(0, 0, 0, 0.03) 0px 12.5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 22px 18px 0px,
-    rgba(0, 0, 0, 0.02) 0px 42px 33.4px 0px, rgba(0, 0, 0, 0.016) 0px 100px 80px 0px;
 }
 
 .courses_nav > div {
@@ -47,10 +67,41 @@
   align-items: center;
 }
 
+.courses_nav_left {
+  justify-content: space-between;
+}
+
+
+
+.courses_nav_left > button {
+  background-color: #00966b;
+  border-radius: 8px;
+  color: white;
+  padding: 16px 29px;
+}
+
 .courses_nav_center {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+}
+
+/* 
+
+
+      box-shadow: rgb(31, 65, 90) 0px 34px 65px 0px, rgba(0, 0, 0, 0.07) 0px 2.75px 2.21px 0px,
+    rgba(0, 0, 0, 0.043) 0px 6.65px 5.32px 0px, rgba(121, 87, 125, 0.03) 0px 12.5px 10px 0px,
+    rgba(121, 87, 125, 0.03) 0px 22px 18px 0px, rgba(121, 87, 125, 0.02) 0px 42px 33.4px 0px,
+    rgba(121, 87, 125, 0.016) 0px 100px 80px 0px;
+*/
+
+.courses_nav_center,
+.courses_aside,
+.courses_aside_right {
+  box-shadow: rgb(4, 13, 33) 0px 34px 65px 0px, rgba(0, 0, 0, 0.07) 0px 2.75px 2.21px 0px,
+    rgba(0, 0, 0, 0.043) 0px 6.65px 5.32px 0px, rgba(0, 0, 0, 0.03) 0px 12.5px 10px 0px,
+    rgba(0, 0, 0, 0.03) 0px 22px 18px 0px, rgba(0, 0, 0, 0.02) 0px 42px 33.4px 0px,
+    rgba(0, 0, 0, 0.016) 0px 100px 80px 0px;
 }
 
 .courses_nav_center > input[type='text'] {
@@ -94,5 +145,8 @@ select {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  border: 1px solid white;
+  background-image: url(./assets/img/profile/profile.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
