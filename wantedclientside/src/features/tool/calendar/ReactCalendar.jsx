@@ -13,6 +13,7 @@ const ReactCalendar = () => {
   // !per 42 days of calendar
   const [oneView, setOnewView] = useState([]);
   const [impINdex, setImpIndex] = useState([]);
+  const [initial, setInitial] = useState(true);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [todaysDate, setTodaysDate] = useState(new Date().getDate());
   const [trustedIndex, setTrustedIndex] = useState();
@@ -63,41 +64,26 @@ const ReactCalendar = () => {
   };
 
   const nextMonthSetter = () => {
-    if (currentMonth === 11) {
-      setCurrentMonth(0);
-    } else {
-      setCurrentMonth(currentMonth + 1);
-      setTodaysDate((pre) => {
-        let maximumNumber = maxDays[currentMonth];
-        let copyData = pre;
-        if (maximumNumber - copyData > 7) {
-          return pre + 7;
-        } else {
-          let newData = maximumNumber - copyData;
-          let newMonthsDate = 7 - newData;
-          return newMonthsDate;
+    let previousDayAddition = trustedIndex * 42;
+    let newArr = [];
+    if (previousDayAddition <= allDays.length - 28) {
+      previousDayAddition += 28;
+
+      for (; previousDayAddition < allDays.length; previousDayAddition++) {
+        if (newArr.length < 42) {
+          newArr.push(allDays[previousDayAddition]);
+          console.log(newArr);
+          if (newArr.length === 42) {
+            let data = Math.floor(previousDayAddition / 42);
+            setTrustedIndex(data);
+          }
         }
-      });
+      }
     }
   };
 
   const previousMonthSetter = () => {
-    if (currentMonth === 0) {
-      setCurrentMonth(11);
-    } else {
-      setTodaysDate((pre) => {
-        setCurrentMonth(currentMonth - 1);
-        let maximumNumber = maxDays[currentMonth];
-        let copyData = pre;
-        if (copyData - 7 > 0) {
-          return pre - 7;
-        } else {
-          let newData = copyData - 7;
-          let newMonthsDate = maximumNumber - newData;
-          return newMonthsDate;
-        }
-      });
-    }
+    let previousDayAddition = trustedIndex * 42 + 1;
   };
 
   // !CALENDAR FUNCTION BEGINS HERE
@@ -145,11 +131,10 @@ const ReactCalendar = () => {
     setCurrentMonth(new Date().getMonth());
     let max42ForLoop = [];
     let All42ArraysInside = [];
-    let todayCounter = 0;
     let trueIndexed42 = [];
     let sevenArr = [];
     let sevenTotalArr = [];
-
+    let todayCounter = 0;
     let previousYearsDays = [31, 30, 29, 28, 27, 26];
 
     setAllDays((prevoiusValue) => {
@@ -171,6 +156,7 @@ const ReactCalendar = () => {
         for (let i = 0; i < newA.length; i++) {
           max42ForLoop.push(newA[i]);
           if (max42ForLoop.length === 42) {
+            setInitial(false);
             All42ArraysInside.push(max42ForLoop);
             if (All42ArraysInside.length == 8) {
               setOnewView(All42ArraysInside);
@@ -183,6 +169,7 @@ const ReactCalendar = () => {
                   setTrustedIndex(todayCounter);
                   trueIndexed42 = oneView[trustedIndex];
                   for (let i = 0; i < trueIndexed42.length; i++) {
+
                     sevenArr.push(trueIndexed42[i]);
                     if (sevenArr.length === 7) {
                       sevenTotalArr.push(sevenArr);
@@ -203,7 +190,7 @@ const ReactCalendar = () => {
 
       return newA;
     });
-  }, [currentMonth, trustedIndex]);
+  }, [trustedIndex,setTrustedIndex]);
 
   return (
     <div
