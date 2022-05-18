@@ -8,7 +8,7 @@ import {
  *   @param {string}  moreSelection
  */
 
-export function templateSliceCreater(moreSelection) {
+export function templateSliceCreator(moreSelection) {
   return new Promise((resolve, reject) => {
     try {
       if (typeof moreSelection !== 'string') throw new Error('moreSelection is not a string');

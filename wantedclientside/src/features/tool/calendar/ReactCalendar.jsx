@@ -6,19 +6,43 @@ import left from './assets/left.png';
 import right from './assets/right.png';
 import { useNavigate } from 'react-router-dom';
 
+// const rendered42Days = (paramsImpIndex) => {
+//   return paramsImpIndex.map((day, index) => {
+//     return (
+//       <tr key={index}>
+//         {day.map((daymin, index) => {
+//           return (
+//             <td
+//               value={daymin}
+//               key={index}
+//               // className={`${daymin === todaysDate ? `${styles.active_calendar}` : ''}`}
+//             >
+//               {daymin}
+//             </td>
+//           );
+//         })}
+//       </tr>
+//     );
+//   });
+// };
+
 const ReactCalendar = () => {
   const [toggle, setToggle] = useState(true);
+
+  const navigate = useNavigate();
   // !365 days of the year
   const [allDays, setAllDays] = useState([]);
   // !per 42 days of calendar
-  const [oneView, setOnewView] = useState([]);
-  const [impINdex, setImpIndex] = useState([]);
-  const [initial, setInitial] = useState(true);
+
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [Month, setMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [todaysDate, setTodaysDate] = useState(new Date().getDate());
-  const [trustedIndex, setTrustedIndex] = useState();
+  const [allDaysIn, setAllDaysIn] = useState([]);
   const [maxDays, setMaxDays] = useState([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
-  const [weekDate, setWeekDate] = useState(['Sun', 'Mon', 'Tue', 'Wen', 'Thur', 'Fri', 'Sat']);
+  const [daysInMonth, setDaysInMonth] = useState(maxDays[currentMonth]);
+  const [calendar, setCalendarDays] = useState([]);
+  const [weekDate, setWeekDate] = useState(['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat']);
   const [strmonths, setStrmonths] = useState([
     'January',
     'February',
@@ -38,24 +62,14 @@ const ReactCalendar = () => {
     return <th key={index}>{day}</th>;
   });
 
-  const rendered42Days = (paramsImpIndex) => {
-    return paramsImpIndex.map((day, index) => {
-      return (
-        <tr key={index}>
-          {day.map((daymin, index) => {
-            return (
-              <td
-                value={daymin}
-                key={index}
-                className={`${daymin === todaysDate ? `${styles.active_calendar}` : ''}`}
-              >
-                {daymin}
-              </td>
-            );
-          })}
-        </tr>
-      );
-    });
+  const getDaysInMonth = (month, year) => {
+    let date = new Date(year, month, 1);
+    let days = [];
+    while (date.getMonth() === month) {
+      days.push(new Date(date));
+      date.setDate(date.getDate() + 1);
+    }
+    return days;
   };
 
   // !lIGHT AND DARK MODE BEGINS HERE
@@ -64,31 +78,62 @@ const ReactCalendar = () => {
   };
 
   const nextMonthSetter = () => {
-    let previousDayAddition = trustedIndex * 42;
-    let newArr = [];
-    if (previousDayAddition <= allDays.length - 28) {
-      previousDayAddition += 28;
-
-      for (; previousDayAddition < allDays.length; previousDayAddition++) {
-        if (newArr.length < 42) {
-          newArr.push(allDays[previousDayAddition]);
-          console.log(newArr);
-          if (newArr.length === 42) {
-            let data = Math.floor(previousDayAddition / 42);
-            setTrustedIndex(data);
-          }
-        }
-      }
+    if (currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+      setDaysInMonth((pre) => (pre = maxDays[currentMonth - 1]));
+    } else {
+      setCurrentMonth(currentMonth + 1);
+      setDaysInMonth((pre) => (pre = maxDays[currentMonth - 1]));
     }
   };
 
   const previousMonthSetter = () => {
-    let previousDayAddition = trustedIndex * 42 + 1;
+    if (currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+      setDaysInMonth((pre) => (pre = maxDays[currentMonth - 1]));
+    } else {
+      setCurrentMonth(currentMonth - 1);
+      setDaysInMonth((pre) => (pre = maxDays[currentMonth - 1]));
+    }
+  };
+
+  const renderedCalendarDays = () => {
+    let onlyDays = calendar.map((item, index) => {
+      let { day } = item;
+      return day;
+    });
+    onlyDays.pop();
+    let newArr = [];
+    for (let i = 0; i < onlyDays.length; i++) {
+      if (i % 7 === 0) {
+        newArr.push(onlyDays.slice(i, i + 7));
+      }
+    }
+
+    return newArr.map((item, index) => {
+      return (
+        <tr key={index}>
+          {item.map((day, index) => {
+            return (
+              <td
+                value={day}
+                key={index}
+                className={`${
+                  day === todaysDate && currentMonth === Month ? `${styles.active_calendar}` : ''
+                }`}
+              >
+                {day}
+              </td>
+            );
+          })}
+        </tr>
+      );
+    });
   };
 
   // !CALENDAR FUNCTION BEGINS HERE
-
-  const navigate = useNavigate();
 
   const checkForLeapYear = (year) => {
     if (year % 4 === 0 && year % 100 !== 0) {
@@ -98,16 +143,6 @@ const ReactCalendar = () => {
     } else {
       return false;
     }
-  };
-
-  const setNumberOfDays = (year, month) => {
-    let numberOfDays;
-    if (month === 1) {
-      numberOfDays = checkForLeapYear(year) ? 29 : 28;
-    } else {
-      numberOfDays = maxDays[month];
-    }
-    return numberOfDays;
   };
 
   // !CALENDAR ROUTING TO IDE SOCIAL MEDIA HOME PAGE AND CHAT APP
@@ -128,69 +163,46 @@ const ReactCalendar = () => {
   };
 
   useEffect(() => {
-    setCurrentMonth(new Date().getMonth());
-    let max42ForLoop = [];
-    let All42ArraysInside = [];
-    let trueIndexed42 = [];
-    let sevenArr = [];
-    let sevenTotalArr = [];
-    let todayCounter = 0;
-    let previousYearsDays = [31, 30, 29, 28, 27, 26];
+    let calendarDays = [];
+    let days = [];
+    let week = [];
+    let weekCount = 0;
+    let weekDay = 0;
+    let daysCount = 0;
+    let monthCount = 0;
+    let previousDays = [31, 30, 29, 28, 27, 26];
+    if (checkForLeapYear(currentYear)) {
+      setMaxDays([31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
+    } else {
+      setMaxDays([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
+    }
 
-    setAllDays((prevoiusValue) => {
-      let newA = [...prevoiusValue];
-      newA = newA.length > 0 ? [] : [];
-      maxDays.forEach((month) => {
-        for (let i = 1; i <= month; i++) {
-          newA.push(i);
-          if (newA.length === 365) {
-            for (let i = 0; i < previousYearsDays.length; i++) {
-              newA.pop();
-              newA.unshift(previousYearsDays[i]);
+    setAllDaysIn((pre) => {
+      maxDays.map((indexData) => {
+        for (let i = 1; i <= indexData; i++) {
+          days.push(i);
+          if (days.length === 364) {
+            for (let j = 0; j < previousDays.length; j++) {
+              days.pop();
+              days.unshift(previousDays[j]);
             }
           }
         }
+        pre = [...days];
       });
+      return pre;
+    });
 
-      if (newA.length === 365) {
-        for (let i = 0; i < newA.length; i++) {
-          max42ForLoop.push(newA[i]);
-          if (max42ForLoop.length === 42) {
-            setInitial(false);
-            All42ArraysInside.push(max42ForLoop);
-            if (All42ArraysInside.length == 8) {
-              setOnewView(All42ArraysInside);
-              for (let i = 0; i < maxDays.length; i++) {
-                if (i < currentMonth) {
-                  todayCounter += maxDays[i];
-                } else {
-                  todayCounter = todayCounter + todaysDate;
-                  todayCounter = Math.floor(todayCounter / 42);
-                  setTrustedIndex(todayCounter);
-                  trueIndexed42 = oneView[trustedIndex];
-                  for (let i = 0; i < trueIndexed42.length; i++) {
-
-                    sevenArr.push(trueIndexed42[i]);
-                    if (sevenArr.length === 7) {
-                      sevenTotalArr.push(sevenArr);
-                      if (i === 41) {
-                        setImpIndex(sevenTotalArr);
-                      }
-                      sevenArr = [];
-                    }
-                  }
-                  break;
-                }
-              }
-            }
-            max42ForLoop = [];
-          }
+    setCalendarDays((pre) => {
+      for (let i = 0; i < allDaysIn.length; i++) {
+        if (i % 7 === 0) {
+          week.push(allDaysIn.slice(i, i + 7));
+          weekCount++;
         }
       }
-
-      return newA;
+      return week;
     });
-  }, [trustedIndex,setTrustedIndex]);
+  }, [currentMonth, currentYear]);
 
   return (
     <div
@@ -339,8 +351,8 @@ const ReactCalendar = () => {
               </div>
               <div className={styles.calendar_header_right}>
                 <h3 className={`${toggle ? '' : styles.calendar_text_dark}`}>{`${todaysDate}/${
-                  new Date().getMonth() + 1
-                }/${new Date().getFullYear()}`}</h3>
+                  currentMonth + 1
+                }/${currentYear}`}</h3>
               </div>
             </div>
             {/* !CALENDAR BODY DAYS AND MONTH */}
@@ -349,7 +361,7 @@ const ReactCalendar = () => {
                 <thead>
                   <tr>{renderedWeekDays}</tr>
                 </thead>
-                <tbody>{rendered42Days(impINdex)}</tbody>
+                <tbody>{renderedCalendarDays()}</tbody>
               </table>
             </div>
           </div>
