@@ -6,26 +6,6 @@ import left from './assets/left.png';
 import right from './assets/right.png';
 import { useNavigate } from 'react-router-dom';
 
-// const rendered42Days = (paramsImpIndex) => {
-//   return paramsImpIndex.map((day, index) => {
-//     return (
-//       <tr key={index}>
-//         {day.map((daymin, index) => {
-//           return (
-//             <td
-//               value={daymin}
-//               key={index}
-//               // className={`${daymin === todaysDate ? `${styles.active_calendar}` : ''}`}
-//             >
-//               {daymin}
-//             </td>
-//           );
-//         })}
-//       </tr>
-//     );
-//   });
-// };
-
 const ReactCalendar = () => {
   const [toggle, setToggle] = useState(true);
 
@@ -39,9 +19,12 @@ const ReactCalendar = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [todaysDate, setTodaysDate] = useState(new Date().getDate());
   const [allDaysIn, setAllDaysIn] = useState([]);
+  const [newArr, setNewArr] = useState([]);
   const [maxDays, setMaxDays] = useState([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
   const [daysInMonth, setDaysInMonth] = useState(maxDays[currentMonth]);
+  const [indexData, setIndexData] = useState(0);
   const [calendar, setCalendarDays] = useState([]);
+  const [rendered, setRendered] = useState([]);
   const [weekDate, setWeekDate] = useState(['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat']);
   const [strmonths, setStrmonths] = useState([
     'January',
@@ -72,12 +55,37 @@ const ReactCalendar = () => {
     return days;
   };
 
+  // const renderedDays = newArr.map((arr,index) => {
+  //   return(
+  //     <tr key={index}>
+  //      {
+  //         arr.map((day,index) => {
+  //           return (
+  //             <td key={index}>{day}</td>
+  //           )
+  //         })
+  //      }
+  //     </tr>
+  //   )
+  // })
+
   // !lIGHT AND DARK MODE BEGINS HERE
   const handleDarkAndLightThem = (e) => {
     setToggle(!toggle);
   };
 
   const nextMonthSetter = () => {
+    let indexValue = indexData;
+    let copyData = [...newArr];
+
+    for (let i = 0; i < 4; i++) {
+      indexValue++;
+      copyData.shift();
+      copyData.push(calendar[indexValue]);
+    }
+
+    setIndexData(indexValue);
+
     if (currentMonth === 11) {
       setCurrentMonth(0);
       setCurrentYear(currentYear + 1);
@@ -89,6 +97,15 @@ const ReactCalendar = () => {
   };
 
   const previousMonthSetter = () => {
+    let indexValue = indexData;
+    let copyData = [...newArr];
+
+    for (let i = 0; i < 4; i++) {
+      indexValue--;
+      copyData.pop();
+      copyData.unshift(calendar[indexValue]);
+    }
+
     if (currentMonth === 0) {
       setCurrentMonth(11);
       setCurrentYear(currentYear - 1);
@@ -97,40 +114,6 @@ const ReactCalendar = () => {
       setCurrentMonth(currentMonth - 1);
       setDaysInMonth((pre) => (pre = maxDays[currentMonth - 1]));
     }
-  };
-
-  const renderedCalendarDays = () => {
-    let onlyDays = calendar.map((item, index) => {
-      let { day } = item;
-      return day;
-    });
-    onlyDays.pop();
-    let newArr = [];
-    for (let i = 0; i < onlyDays.length; i++) {
-      if (i % 7 === 0) {
-        newArr.push(onlyDays.slice(i, i + 7));
-      }
-    }
-
-    return newArr.map((item, index) => {
-      return (
-        <tr key={index}>
-          {item.map((day, index) => {
-            return (
-              <td
-                value={day}
-                key={index}
-                className={`${
-                  day === todaysDate && currentMonth === Month ? `${styles.active_calendar}` : ''
-                }`}
-              >
-                {day}
-              </td>
-            );
-          })}
-        </tr>
-      );
-    });
   };
 
   // !CALENDAR FUNCTION BEGINS HERE
@@ -181,7 +164,7 @@ const ReactCalendar = () => {
       maxDays.map((indexData) => {
         for (let i = 1; i <= indexData; i++) {
           days.push(i);
-          if (days.length === 364) {
+          if (days.length === 365) {
             for (let j = 0; j < previousDays.length; j++) {
               days.pop();
               days.unshift(previousDays[j]);
@@ -202,7 +185,27 @@ const ReactCalendar = () => {
       }
       return week;
     });
-  }, [currentMonth, currentYear]);
+
+    setNewArr((pre) => {
+      let betaArr = [];
+      let todayBeforeThan = 0;
+
+      for (let i = 0; i < currentMonth; i++) {
+        todayBeforeThan += maxDays[i];
+        if (currentMonth - 1 === i) {
+          todayBeforeThan += todaysDate;
+        }
+      }
+      let trueIndex = Math.floor(todayBeforeThan / 42) * 6;
+      let lastIndex = trueIndex + 5;
+      setIndexData(lastIndex);
+      for (; trueIndex <= lastIndex; trueIndex++) {
+        betaArr.push(calendar[trueIndex]);
+      }
+
+      return betaArr;
+    });
+  }, [setCalendarDays, setNewArr, currentMonth, currentYear, calendar, newArr]);
 
   return (
     <div
@@ -361,7 +364,7 @@ const ReactCalendar = () => {
                 <thead>
                   <tr>{renderedWeekDays}</tr>
                 </thead>
-                <tbody>{renderedCalendarDays()}</tbody>
+                <tbody></tbody>
               </table>
             </div>
           </div>
