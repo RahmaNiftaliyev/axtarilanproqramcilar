@@ -1,0 +1,42 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": ["react", "react-hooks"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-console": ["warn"],
+    "react/prop-types": ["warn"],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+    "react/jsx-one-expression-per-line": ["error"],
+    "react/self-closing-comp": ["error"],
+    "react/jsx-wrap-multilines": ["error"],
+    "react/jsx-tag-spacing": ["error"],
+    "react/jsx-pascal-case": ["error"],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/jsx-props-no-spreading": ["off"],
+    "react/jsx-fragments": ["error"]
+  }
+}
