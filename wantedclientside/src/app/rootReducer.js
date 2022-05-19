@@ -11,6 +11,8 @@ import notificationsReducer from './../features/redux/notificationsSlice';
 import emailsReducer from './../features/redux/emailsSlice';
 import ordersReducer from './../features/redux/ordersSlice';
 import coursesReducer from './../features/redux/coursesSlice';
+import calendarReducer from './../features/redux/calendarSlice';
+
 
 export default {
   users: usersReducer,
@@ -24,4 +26,5 @@ export default {
   emails: emailsReducer,
   orders: ordersReducer,
   courses: coursesReducer,
+  calendar: calendarReducer,
 };

@@ -55,20 +55,6 @@ const ReactCalendar = () => {
     return days;
   };
 
-  // const renderedDays = newArr.map((arr,index) => {
-  //   return(
-  //     <tr key={index}>
-  //      {
-  //         arr.map((day,index) => {
-  //           return (
-  //             <td key={index}>{day}</td>
-  //           )
-  //         })
-  //      }
-  //     </tr>
-  //   )
-  // })
-
   // !lIGHT AND DARK MODE BEGINS HERE
   const handleDarkAndLightThem = (e) => {
     setToggle(!toggle);
@@ -79,9 +65,14 @@ const ReactCalendar = () => {
     let copyData = [...newArr];
 
     for (let i = 0; i < 4; i++) {
-      indexValue++;
-      copyData.shift();
-      copyData.push(calendar[indexValue]);
+      if(indexValue < 42){
+        
+        copyData.push(newArr[indexValue]);
+        indexValue++;
+      } else {
+        break;
+      }
+      
     }
 
     setIndexData(indexValue);
@@ -117,7 +108,6 @@ const ReactCalendar = () => {
   };
 
   // !CALENDAR FUNCTION BEGINS HERE
-
   const checkForLeapYear = (year) => {
     if (year % 4 === 0 && year % 100 !== 0) {
       return true;
@@ -205,7 +195,7 @@ const ReactCalendar = () => {
 
       return betaArr;
     });
-  }, [setCalendarDays, setNewArr, currentMonth, currentYear, calendar, newArr]);
+  }, [currentMonth, currentYear, todaysDate]);
 
   return (
     <div
@@ -375,3 +365,17 @@ const ReactCalendar = () => {
 };
 
 export default ReactCalendar;
+
+// const renderedDays = newArr.map((arr,index) => {
+//   return(
+//     <tr key={index}>
+//      {
+//         arr.map((day,index) => {
+//           return (
+//             <td key={index}>{day}</td>
+//           )
+//         })
+//      }
+//     </tr>
+//   )
+// })
