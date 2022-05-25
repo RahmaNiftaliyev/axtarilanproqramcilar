@@ -1,0 +1,2 @@
+- name: test-autograde
+  uses: masaditya/test-autograde@v10.0
