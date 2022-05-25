@@ -4,11 +4,11 @@ import { RiSearch2Line } from 'react-icons/ri';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
 import { FcVideoCall } from 'react-icons/fc';
-import { Picker } from 'emoji-mart';
+// import { Picker } from 'emoji-mart';
 import { Recorder } from 'react-voice-recorder';
 import 'react-voice-recorder/dist/index.css';
 import styles from './chat.module.css';
-import 'emoji-mart/css/emoji-mart.css';
+// import 'emoji-mart/css/emoji-mart.css';
 import profile from './assets/img/progile.jpg';
 import smile from './assets/img/emotion-happy-line.png';
 import group from './assets/img/Group.png';
@@ -146,7 +146,7 @@ const CenterPln = () => {
       <div
         className={`${styles.center_bottom} ${styles.light_bg_chatapp} ${styles.border_top_light} d-flex align-items-center justify-content-between`}
       >
-        {emojiEnable && (
+        {/* {emojiEnable && (
           <Picker
             set="apple"
             style={{ position: 'absolute', bottom: '70px', left: '26px' }}
@@ -162,7 +162,7 @@ const CenterPln = () => {
             }}
             onClick={(emoji) => setMessage(message + emoji.native)}
           />
-        )}
+        )} */}
 
         {microphoneEnable && (
           <div className="microphone-settings">

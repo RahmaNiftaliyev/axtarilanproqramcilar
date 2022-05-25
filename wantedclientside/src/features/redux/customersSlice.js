@@ -30,7 +30,9 @@ const sliceInvoker = () => {
   return {
     name: 'customers',
     initialState,
-    reducers: {},
+    reducers: {
+      
+    },
     extraReducers: {},
   };
 };

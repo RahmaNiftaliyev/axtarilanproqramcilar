@@ -1,6 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-import dateFns from 'date-fns';
-import shortid from 'shortid';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
   currentDate: new Date(),
@@ -37,7 +35,7 @@ const initialState = {
   },
   events: [
     {
-      id: shortid.generate(),
+      id: nanoid(),
       title: 'Event 1',
       desc: 'This is the description of the event',
       location: '',
@@ -49,7 +47,7 @@ const initialState = {
       department: 'IT',
     },
     {
-      id: shortid.generate(),
+      id: nanoid(),
       title: 'Event 2',
       desc: 'This is the description of the event',
       location: '',
@@ -61,7 +59,7 @@ const initialState = {
       department: 'IT',
     },
     {
-      id: shortid.generate(),
+      id: nanoid(),
       title: 'Event 3',
       desc: 'This is the description of the event',
       location: '',
@@ -73,7 +71,7 @@ const initialState = {
       department: 'IT',
     },
     {
-      id: shortid.generate(),
+      id: nanoid(),
       title: 'Event 4',
       desc: 'This is the description of the event',
       location: '',
@@ -91,66 +89,15 @@ const calendarSlice = createSlice({
   name: 'calendar',
   initialState,
   reducers: {
-    changeMonth: (state, action) => {
-      return {
-        ...state,
-        month: dateFns.addMonths(state.month, action.payload.direction),
-        week: dateFns.addMonths(state.month, action.payload.direction),
-      };
+    addCalendar: (state, action) => {
+      state.events.push(action.payload);
     },
-    changeWeek: (state, action) => {
-      return {
-        ...state,
-        week: dateFns.addWeeks(state.week, action.payload.direction),
-        month: dateFns.addWeeks(state.week, action.payload.direction),
-      };
-    },
-    changeDisplay: (state, action) => {
-      return {
-        ...state,
-        displayingMonth: action.payload.month,
-      };
-    },
-    toggleNewEventModal: (state, action) => {
-      return { ...state, creatingNewEvent: !state.creatingNewEvent };
-    },
-    handleEventChange: (state, action) => {
-      return {
-        ...state,
-        newEvent: {
-          ...state.newEvent,
-          [action.payload.key]: action.payload.value,
-        },
-      };
-    },
-    addEvent: (state, action) => {
-      let newEvents = [...state.events];
-      const newEventWithId = { ...state.newEvent };
-      newEventWithId.id = shortid.generate();
-      newEvents.push(newEventWithId);
-      const newState = {
-        ...state,
-        events: newEvents,
-        newEvent: state.defaultEvent,
-      };
-      return newState;
-    },
-    removeEvent: (state, action) => {
-      state.events = state.events.filter((event) => event.id !== action.payload);
+    removeCalendar: (state, action) => {
+      state.events.splice(action.payload, 1);
     },
   },
   extraReducers: {},
 });
-
-export const {
-  changeMonth,
-  changeWeek,
-  changeDisplay,
-  toggleNewEventModal,
-  handleEventChange,
-  addEvent,
-  removeEvent,
-} = calendarSlice.actions;
 
 export const selectAllCalendar = (state) => state.calendar;
 

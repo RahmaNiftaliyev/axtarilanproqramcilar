@@ -1,3 +1,27 @@
 {
-    "standard.enable": false
+    "standard.enable": false,
+    "cSpell.words": [
+        "axtarilanproqramcilar",
+        "browserslist",
+        "bufferutil",
+        "cobe",
+        "identitytoolkit",
+        "linebreak",
+        "multilines",
+        "nextui",
+        "preval",
+        "reduxjs",
+        "threejs",
+        "vegadev"
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "": true,
+        "**/node_modules": false
+    }
 }

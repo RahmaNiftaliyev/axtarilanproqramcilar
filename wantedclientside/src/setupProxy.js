@@ -1,4 +1,5 @@
-﻿// Language: javascript
+﻿/* A proxy server. */
+// Language: javascript
 // Path: src\setupProxy.js
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -20,20 +21,15 @@ module.exports = function (app) {
       }
 
       if (proxyRes.headers['set-cookie']) {
-        proxyRes.headers['set-cookie'] = proxyRes.headers['set-cookie'].map(
-          (cookie) => {
-            return cookie.replace(/path=\/api/g, 'path=/');
-          }
-        );
+        proxyRes.headers['set-cookie'] = proxyRes.headers['set-cookie'].map((cookie) => {
+          return cookie.replace(/path=\/api/g, 'path=/');
+        });
       } else {
         proxyRes.headers['set-cookie'] = [];
       }
 
       if (proxyRes.headers['location']) {
-        proxyRes.headers['location'] = proxyRes.headers['location'].replace(
-          /^\/api/,
-          ''
-        );
+        proxyRes.headers['location'] = proxyRes.headers['location'].replace(/^\/api/, '');
       } else if (proxyRes.headers['location'] === '/') {
         proxyRes.headers['location'] = '/';
       } else {
@@ -41,9 +37,10 @@ module.exports = function (app) {
       }
 
       if (proxyRes.headers['content-location']) {
-        proxyRes.headers['content-location'] = proxyRes.headers[
-          'content-location'
-        ].replace(/^\/api/, '');
+        proxyRes.headers['content-location'] = proxyRes.headers['content-location'].replace(
+          /^\/api/,
+          ''
+        );
       } else if (proxyRes.headers['content-location'] === '') {
         proxyRes.headers['content-location'] = '/';
       } else {

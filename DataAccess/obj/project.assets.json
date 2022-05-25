@@ -5619,25 +5619,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\info\\.nuget\\packages\\": {}
+    "C:\\Users\\info\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\DataAccess\\DataAccess.csproj",
+      "projectPath": "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\info\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\DataAccess\\obj\\",
+      "outputPath": "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
+      ],
       "configFilePaths": [
         "C:\\Users\\info\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -5645,11 +5651,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Core\\Core.csproj"
+            "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Core\\Core.csproj": {
+              "projectPath": "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Core\\Core.csproj"
             },
-            "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Entities\\Entities.csproj"
+            "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Entities\\Entities.csproj": {
+              "projectPath": "c:\\Users\\info\\OneDrive\\Desktop\\Wanted\\Entities\\Entities.csproj"
             }
           }
         }
@@ -5685,7 +5691,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
